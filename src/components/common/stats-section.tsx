@@ -7,24 +7,24 @@ import { Users, Award, Clock, Heart } from "lucide-react"
 const stats = [
   {
     icon: Users,
-    number: 1476,
+    number: 3500,
     suffix: "+",
-    label: "Pacientes satisfechos",
-    description: "Han confiado en nosotros"
+    label: "Pacientes atendidos",
+    description: "En programas personalizados"
   },
   {
     icon: Award,
-    number: 15,
+    number: 20,
     suffix: "+",
     label: "Años de experiencia",
-    description: "En medicina estética"
+    description: "En medicina integrativa"
   },
   {
     icon: Clock,
-    number: 3500,
-    suffix: "+",
-    label: "Tratamientos realizados",
-    description: "Con resultados exitosos"
+    number: 4,
+    suffix: "",
+    label: "Centros de prestigio",
+    description: "SHA, Teknon, Planas, Vimass"
   },
   {
     icon: Heart,

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vimass Clinic - Medicina Estética",
-  description: "Clínica de medicina estética con resultados naturales",
+  title: "Vimass Clinic - Medicina Integrativa y Longevidad",
+  description: "Clínica de medicina integrativa dirigida por la Dra. Celina Suárez. Más de 20 años especializados en medicina funcional, antiaging y protocolos de longevidad saludable.",
 };
 
 export default function RootLayout({

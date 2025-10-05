@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ChevronDown, Menu } from "lucide-react"
@@ -17,6 +18,7 @@ const treatmentLinks = [
 
 export function MainNav() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
@@ -28,9 +30,13 @@ export function MainNav() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/" className="relative text-foreground hover:text-accent transition-all duration-300 group">
+          <Link href="/" className={`relative transition-all duration-300 group ${
+            pathname === '/' ? 'text-accent' : 'text-foreground hover:text-accent'
+          }`}>
             <span>Inicio</span>
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+            <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ${
+              pathname === '/' ? 'w-full' : 'w-0 group-hover:w-full'
+            }`}></span>
           </Link>
           
           {/* Dropdown Tratamientos */}
@@ -41,10 +47,14 @@ export function MainNav() {
           >
             <Link
               href="/tratamientos"
-              className="flex items-center gap-1 text-foreground hover:text-accent transition-all duration-300 group relative"
+              className={`flex items-center gap-1 transition-all duration-300 group relative ${
+                pathname.startsWith('/tratamientos') ? 'text-accent' : 'text-foreground hover:text-accent'
+              }`}
             >
               <span>Tratamientos</span>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ${
+                pathname.startsWith('/tratamientos') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
               <ChevronDown className={`h-4 w-4 transition-all duration-200 ${dropdownOpen ? 'rotate-180 text-accent' : ''}`} />
             </Link>
             
@@ -65,17 +75,29 @@ export function MainNav() {
             )}
           </div>
 
-          <Link href="/equipo" className="relative text-foreground hover:text-accent transition-all duration-300 group">
+          <Link href="/equipo" className={`relative transition-all duration-300 group ${
+            pathname === '/equipo' ? 'text-accent' : 'text-foreground hover:text-accent'
+          }`}>
             <span>Equipo</span>
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+            <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ${
+              pathname === '/equipo' ? 'w-full' : 'w-0 group-hover:w-full'
+            }`}></span>
           </Link>
-          <Link href="/resultados" className="relative text-foreground hover:text-accent transition-all duration-300 group">
+          <Link href="/resultados" className={`relative transition-all duration-300 group ${
+            pathname === '/resultados' ? 'text-accent' : 'text-foreground hover:text-accent'
+          }`}>
             <span>Resultados</span>
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+            <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ${
+              pathname === '/resultados' ? 'w-full' : 'w-0 group-hover:w-full'
+            }`}></span>
           </Link>
-          <Link href="/contacto" className="relative text-foreground hover:text-accent transition-all duration-300 group">
+          <Link href="/contacto" className={`relative transition-all duration-300 group ${
+            pathname === '/contacto' ? 'text-accent' : 'text-foreground hover:text-accent'
+          }`}>
             <span>Contacto</span>
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+            <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ${
+              pathname === '/contacto' ? 'w-full' : 'w-0 group-hover:w-full'
+            }`}></span>
           </Link>
           
           <Button asChild className="rounded-2xl bg-foreground text-background hover:bg-accent hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">

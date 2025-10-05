@@ -83,9 +83,9 @@ export default function HomePage() {
                   <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto">
                     <Stethoscope className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-title text-2xl">Dra. Celina</h3>
+                  <h3 className="font-title text-2xl">Dra. Celina Suárez</h3>
                   <p className="text-muted-foreground">
-                    Especialista en medicina estética con más de 10 años de experiencia y formación internacional.
+                    Especialista en Medicina Interna con más de 20 años de experiencia. Experta en longevidad, antiaging y medicina integrativa.
                   </p>
                 </div>
               </AnimatedCard>
@@ -118,20 +118,20 @@ export default function HomePage() {
             <div className="space-y-6">
               <div>
                 <h3 className="font-title text-3xl md:text-4xl mb-2">Dra. Celina Suárez</h3>
-                <p className="text-accent font-medium mb-4">Directora Médica</p>
+                <p className="text-accent font-medium mb-4">CEO & Fundadora • Directora Médica</p>
               </div>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Con más de una década de experiencia en medicina estética, la Dra. Celina Suárez se ha especializado 
-                  en técnicas mínimamente invasivas que respetan la anatomía facial y corporal.
+                  Con más de dos décadas transformando vidas a través de la medicina preventiva y regenerativa. 
+                  Reconocida internacionalmente como experta en longevidad saludable y medicina de precisión.
                 </p>
                 <p>
-                  Su filosofía se basa en realzar la belleza natural de cada paciente, creando resultados armoniosos 
-                  y sutiles que reflejan la personalidad única de cada persona.
+                  Consultora senior en SHA Wellness Clinic, Centro Médico Teknon y Clínica Planas. Su enfoque 
+                  integra medicina funcional, protocolos personalizados y las tecnologías más avanzadas.
                 </p>
                 <p>
-                  Formada en las mejores instituciones internacionales, combina la última tecnología con un toque 
-                  artístico excepcional para lograr la excelencia en cada tratamiento.
+                  Más de 3,500 pacientes han confiado en su visión holística que va más allá de la estética: 
+                  busca el bienestar integral y la optimización de la salud desde adentro hacia afuera.
                 </p>
               </div>
               <div className="pt-4">

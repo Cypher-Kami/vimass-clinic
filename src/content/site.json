@@ -1,26 +1,26 @@
 {
   "clinica": {
-    "nombre": "Clínica Estética Ejemplo",
-    "telefono": "+34 600 000 000",
-    "whatsapp": "+34 600 000 000",
-    "email": "info@clinicaejemplo.com",
-    "direccion": "Calle Belleza 12, Madrid",
+    "nombre": "Vimass Clinic",
+    "telefono": "+34 722 48 00 26",
+    "whatsapp": "+34 722 48 00 26",
+    "email": "info@vimass.es",
+    "direccion": "Passeig de Gràcia, Barcelona",
     "horario": "L-V 10:00–20:00"
   },
   "hero": {
-    "headline": "Resultados sutiles.",
-    "subline": "Medicina estética de precisión.",
+    "headline": "Medicina de precisión.",
+    "subline": "Longevidad y bienestar integral.",
     "cta": "Reservar valoración",
-    "tratamiento_estrella_slug": "labios"
+    "tratamiento_estrella_slug": "medicina-integrativa"
   },
-  "tratamientos_destacados": ["labios", "toxina-botulinica", "acido-hialuronico"],
+  "tratamientos_destacados": ["medicina-funcional", "antiaging", "medicina-integrativa"],
   "reseñas": [
-    { "nombre": "Carla", "texto": "Trato impecable y resultados naturales.", "rating": 5 },
-    { "nombre": "Nuria", "texto": "Muy profesionales, volveré sin duda.", "rating": 5 },
-    { "nombre": "Ana",   "texto": "Me explicaron todo con claridad.", "rating": 5 }
+    { "nombre": "Patricia", "texto": "Un enfoque completamente diferente, me siento mejor que nunca.", "rating": 5 },
+    { "nombre": "Carla", "texto": "La Dra. Suárez es excepcional, muy profesional y humana.", "rating": 5 },
+    { "nombre": "Ana", "texto": "Resultados increíbles con un trato personalizado único.", "rating": 5 }
   ],
   "sedes": [
-    { "ciudad": "Madrid", "direccion": "Calle Belleza 12", "maps": "https://maps.google.com?q=..."}
+    { "ciudad": "Barcelona", "direccion": "Passeig de Gràcia", "maps": "https://maps.google.com?q=Passeig+de+Gracia+Barcelona"}
   ],
   "legal": {
     "privacidad": "Texto de política de privacidad...",
