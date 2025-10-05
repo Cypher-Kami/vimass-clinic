@@ -11,6 +11,7 @@ import { Footer } from "@/components/layout/footer"
 import { CTAFloat } from "@/components/layout/cta-float"
 import { Toaster } from "sonner"
 import { titleFont, bodyFont } from "@/app/fonts"
+import { Sparkles, Star, UserCheck, CheckCircle, MapPin, Phone, Clock, MessageCircle, Stethoscope } from "lucide-react"
 
 export default function HomePage() {
   const site = getSite()
@@ -51,7 +52,7 @@ export default function HomePage() {
               {/* Tu mejor versión */}
               <div className="space-y-4">
                 <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto">
-                  <span className="text-2xl">✨</span>
+                  <Sparkles className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-title text-2xl">Tu mejor versión</h3>
                 <p className="text-muted-foreground">
@@ -62,7 +63,7 @@ export default function HomePage() {
               {/* Tratamiento estrella */}
               <div className="space-y-4">
                 <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto">
-                  <span className="text-2xl">💫</span>
+                  <Star className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-title text-2xl">Tratamiento estrella</h3>
                 <p className="text-muted-foreground">
@@ -73,7 +74,7 @@ export default function HomePage() {
               {/* Dra. Celina */}
               <div className="space-y-4">
                 <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto">
-                  <span className="text-2xl">👩‍⚕️</span>
+                  <Stethoscope className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-title text-2xl">Dra. Celina</h3>
                 <p className="text-muted-foreground">
@@ -147,19 +148,19 @@ export default function HomePage() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
+                  <CheckCircle className="w-5 h-5 text-accent" />
                   <span>Resultados naturales y armoniosos</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
+                  <CheckCircle className="w-5 h-5 text-accent" />
                   <span>Técnicas mínimamente invasivas</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
+                  <CheckCircle className="w-5 h-5 text-accent" />
                   <span>Recuperación rápida y cómoda</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
+                  <CheckCircle className="w-5 h-5 text-accent" />
                   <span>Seguimiento personalizado</span>
                 </div>
               </div>
@@ -204,24 +205,24 @@ export default function HomePage() {
             <div className="space-y-6">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
+                  <MapPin className="w-5 h-5 text-accent" />
                   <span className="font-medium">Dirección:</span>
                   <span className="text-muted-foreground">{site.clinica.direccion}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
+                  <Phone className="w-5 h-5 text-accent" />
                   <span className="font-medium">Teléfono:</span>
                   <a href={`tel:${site.clinica.telefono}`} className="text-accent hover:underline">
                     {site.clinica.telefono}
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
+                  <Clock className="w-5 h-5 text-accent" />
                   <span className="font-medium">Horario:</span>
                   <span className="text-muted-foreground">{site.clinica.horario}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
+                  <MessageCircle className="w-5 h-5 text-accent" />
                   <span className="font-medium">WhatsApp:</span>
                   <a 
                     href={`https://wa.me/${site.clinica.whatsapp.replace(/\D/g,"")}`} 
