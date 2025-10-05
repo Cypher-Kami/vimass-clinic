@@ -56,18 +56,25 @@ export const ImagePaths = {
       before: '/images/tratamientos/labios/before.jpg',
       after: '/images/tratamientos/labios/after.jpg'
     },
-    // Preparado para más tratamientos
     acido: {
-      // Preparado para cuando agregues más imágenes
+      hero: '/images/tratamientos/acido/hero.jpg',
+      before: '/images/tratamientos/acido/before.jpg',
+      after: '/images/tratamientos/acido/after.jpg'
     },
     antiaging: {
-      // Preparado para cuando agregues más imágenes
+      hero: '/images/tratamientos/antiaging/hero.jpg',
+      before: '/images/tratamientos/antiaging/before.jpg',
+      after: '/images/tratamientos/antiaging/after.jpg'
     },
     medicinaFuncional: {
-      // Preparado para cuando agregues más imágenes
+      hero: '/images/tratamientos/medicina-funcional/hero.jpg',
+      before: '/images/tratamientos/medicina-funcional/before.jpg',
+      after: '/images/tratamientos/medicina-funcional/after.jpg'
     },
     medicinaIntegrativa: {
-      // Preparado para cuando agregues más imágenes
+      hero: '/images/tratamientos/medicina-integrativa/hero.jpg',
+      before: '/images/tratamientos/medicina-integrativa/before.jpg',
+      after: '/images/tratamientos/medicina-integrativa/after.jpg'
     }
   },
 
@@ -77,7 +84,20 @@ export const ImagePaths = {
     '/images/resultados/result2.jpeg',
     '/images/resultados/result3.jpeg',
     '/images/resultados/result4.jpeg',
-    '/images/resultados/result5.jpeg'
+    '/images/resultados/result5.jpeg',
+    '/images/resultados/result6.jpeg',
+    '/images/resultados/result7.jpeg',
+    '/images/resultados/result8.jpeg',
+    '/images/resultados/result9.jpeg',
+    '/images/resultados/result10.jpeg',
+    '/images/resultados/result11.jpeg',
+    '/images/resultados/result12.jpeg',
+    '/images/resultados/result13.jpeg',
+    '/images/resultados/result14.jpeg',
+    '/images/resultados/result15.jpeg',
+    '/images/resultados/result16.jpeg',
+    '/images/resultados/result17.jpeg',
+    '/images/resultados/result18.jpeg'
   ],
 
   // Certificaciones y acreditaciones

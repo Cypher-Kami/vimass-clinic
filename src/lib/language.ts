@@ -66,6 +66,7 @@ export const translations = {
       resultsCta: 'Ver más resultados',
       beforeLabel: 'Antes',
       afterLabel: 'Después',
+      beforeAfterLabel: 'Antes y Después',
       
       // Reseñas
       reviewsTitle: 'Lo que dicen nuestros pacientes',
@@ -200,6 +201,9 @@ export const translations = {
         beforeLabel: 'Antes',
         afterLabel: 'Después',
         resultLabel: 'Resultado',
+        beforeAfterLabel: 'Antes y Después',
+        beforeAfterTitle: 'Antes y Después por Tratamiento',
+        galleryTitle: 'Galería de Resultados',
         description: 'Cada resultado refleja nuestro compromiso con la excelencia y la estética natural. Nuestros pacientes experimentan mejoras significativas manteniendo su esencia única.',
         resultInfo: 'Todos los resultados mostrados son reales y han sido logrados con los tratamientos que ofrecemos en nuestra clínica.'
       },
@@ -303,6 +307,7 @@ export const translations = {
       resultsCta: 'View more results',
       beforeLabel: 'Before',
       afterLabel: 'After',
+      beforeAfterLabel: 'Before and After',
       
       // Reviews
       reviewsTitle: 'What our patients say',
@@ -437,6 +442,9 @@ export const translations = {
         beforeLabel: 'Before',
         afterLabel: 'After',
         resultLabel: 'Result',
+        beforeAfterLabel: 'Before and After',
+        beforeAfterTitle: 'Before and After by Treatment',
+        galleryTitle: 'Results Gallery',
         description: 'Each result reflects our commitment to excellence and natural aesthetics. Our patients experience significant improvements while maintaining their unique essence.',
         resultInfo: 'All results shown are real and have been achieved with the treatments we offer at our clinic.'
       },

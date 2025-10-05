@@ -190,22 +190,33 @@ export function HomeClient({ clinica, reseñas, estrella, destacados }: HomeClie
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 rounded-2xl overflow-hidden shadow-soft">
-              <div className="relative aspect-square">
-                <Image src="/images/resultados/1-before.jpg" alt="Antes" fill className="object-cover" />
-                <div className="absolute top-2 left-2 bg-black/60 text-white px-2 py-1 rounded text-xs">{t('home.beforeLabel')}</div>
+            <div className="space-y-4">
+              <div className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="aspect-[4/3]">
+                  <Image 
+                    src={ImagePaths.resultados[0]} 
+                    alt="Resultado 1 - Antes y Después" 
+                    fill 
+                    className="object-cover transition-transform duration-500 group-hover:scale-105" 
+                  />
+                </div>
+                <div className="absolute bottom-3 left-3 bg-black/70 text-white px-3 py-1 rounded text-sm">
+                  {t('home.beforeAfterLabel')}
+                </div>
               </div>
-              <div className="relative aspect-square">
-                <Image src="/images/resultados/1-after.jpg" alt={t('home.afterLabel')} fill className="object-cover" />
-                <div className="absolute top-2 left-2 bg-black/60 text-white px-2 py-1 rounded text-xs">{t('home.afterLabel')}</div>
-              </div>
-              <div className="relative aspect-square">
-                <Image src="/images/resultados/2-before.jpg" alt={t('home.beforeLabel')} fill className="object-cover" />
-                <div className="absolute top-2 left-2 bg-black/60 text-white px-2 py-1 rounded text-xs">{t('home.beforeLabel')}</div>
-              </div>
-              <div className="relative aspect-square">
-                <Image src="/images/resultados/2-after.jpg" alt={t('home.afterLabel')} fill className="object-cover" />
-                <div className="absolute top-2 left-2 bg-black/60 text-white px-2 py-1 rounded text-xs">{t('home.afterLabel')}</div>
+              
+              <div className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="aspect-[4/3]">
+                  <Image 
+                    src={ImagePaths.resultados[1]} 
+                    alt="Resultado 2 - Antes y Después" 
+                    fill 
+                    className="object-cover transition-transform duration-500 group-hover:scale-105" 
+                  />
+                </div>
+                <div className="absolute bottom-3 left-3 bg-black/70 text-white px-3 py-1 rounded text-sm">
+                  {t('home.beforeAfterLabel')}
+                </div>
               </div>
             </div>
           </div>
