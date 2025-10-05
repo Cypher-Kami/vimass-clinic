@@ -1,5 +1,6 @@
 'use client'
 
+import Image from "next/image"
 import { ReserveDialog } from "@/components/common/reserve-dialog"
 import { MainNav } from "@/components/layout/main-nav"
 import { Footer } from "@/components/layout/footer"
@@ -9,6 +10,7 @@ import { Section } from "@/components/common/section"
 import { Toaster } from "sonner"
 import { titleFont, bodyFont } from "@/app/fonts"
 import { useLanguage } from "@/components/providers/language-provider"
+import { ImagePaths } from "@/lib/image-paths"
 import { 
   Phone, 
   Mail, 
@@ -208,6 +210,60 @@ export function ContactoClient({ clinica }: ContactoClientProps) {
 
             {/* Map Section */}
             <div className="space-y-6">
+              {/* Galería de la Clínica */}
+              <div>
+                <h2 className="font-title text-3xl mb-6">{t('pages.contacto.clinicGalleryTitle')}</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div className="aspect-[4/3]">
+                      <Image
+                        src={ImagePaths.clinica.interior.mostrador}
+                        alt="Mostrador de recepción - VIMASS Clinic"
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-3 left-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="text-sm font-medium">Recepción</p>
+                    </div>
+                  </div>
+                  
+                  <div className="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div className="aspect-[4/3]">
+                      <Image
+                        src={ImagePaths.clinica.interior.camilla}
+                        alt="Sala de tratamientos - VIMASS Clinic"
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-3 left-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="text-sm font-medium">Sala de Tratamientos</p>
+                    </div>
+                  </div>
+                  
+                  <div className="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div className="aspect-[4/3]">
+                      <Image
+                        src={ImagePaths.clinica.interior.camilla2}
+                        alt="Consultorio médico - VIMASS Clinic"
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-3 left-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="text-sm font-medium">Consultorio</p>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-center text-sm text-muted-foreground mt-4">
+                  {t('pages.contacto.clinicGalleryDescription')}
+                </p>
+              </div>
+              
               <div>
                 <h2 className="font-title text-3xl mb-4">{t('pages.contacto.locationTitle')}</h2>
                 <div className="flex items-start gap-3 mb-6">

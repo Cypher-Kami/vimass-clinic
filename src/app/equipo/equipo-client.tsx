@@ -9,6 +9,7 @@ import { WhatsAppFloat } from "@/components/layout/whatsapp-float"
 import { Toaster } from "sonner"
 import { titleFont, bodyFont } from "@/app/fonts"
 import { useLanguage } from "@/components/providers/language-provider"
+import { ImagePaths } from "@/lib/image-paths"
 import { 
   Award, 
   Users, 
@@ -51,7 +52,7 @@ export function EquipoClient() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 to-secondary/20 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-all duration-500"></div>
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-soft">
-                  <Image src="/images/equipo/doctora.jpg" alt="Dra. Celina Suárez" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <Image src={ImagePaths.equipo.draCelina} alt="Dra. Celina Suárez" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
               </div>
               

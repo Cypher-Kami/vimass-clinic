@@ -123,6 +123,7 @@ export const translations = {
     
     // Footer
     footer: {
+      description: 'Medicina preventiva y regenerativa para tu mejor versión. Descubre el equilibrio perfecto entre bienestar y belleza.',
       legal: 'Legal',
       privacy: 'Privacidad',
       cookies: 'Cookies',
@@ -157,6 +158,8 @@ export const translations = {
         messageLabel: 'Mensaje',
         messagePlaceholder: '¿Cómo podemos ayudarte?',
         submitButton: 'Enviar mensaje',
+        clinicGalleryTitle: 'Nuestras Instalaciones',
+        clinicGalleryDescription: 'Espacios diseñados para tu comodidad y bienestar durante tu visita',
         scheduleText: 'Lunes a Viernes: 9:00 - 19:00\nSábado: 9:00 - 14:00'
       },
       
@@ -196,6 +199,7 @@ export const translations = {
         subtitle: 'Descubre las transformaciones que logramos con nuestros tratamientos personalizados',
         beforeLabel: 'Antes',
         afterLabel: 'Después',
+        resultLabel: 'Resultado',
         description: 'Cada resultado refleja nuestro compromiso con la excelencia y la estética natural. Nuestros pacientes experimentan mejoras significativas manteniendo su esencia única.',
         resultInfo: 'Todos los resultados mostrados son reales y han sido logrados con los tratamientos que ofrecemos en nuestra clínica.'
       },
@@ -356,6 +360,7 @@ export const translations = {
     
     // Footer
     footer: {
+      description: 'Preventive and regenerative medicine for your best version. Discover the perfect balance between wellness and beauty.',
       legal: 'Legal',
       privacy: 'Privacy',
       cookies: 'Cookies',
@@ -390,6 +395,8 @@ export const translations = {
         messageLabel: 'Message',
         messagePlaceholder: 'How can we help you?',
         submitButton: 'Send message',
+        clinicGalleryTitle: 'Our Facilities',
+        clinicGalleryDescription: 'Spaces designed for your comfort and well-being during your visit',
         scheduleText: 'Monday to Friday: 9:00 - 19:00\nSaturday: 9:00 - 14:00'
       },
       
@@ -429,6 +436,7 @@ export const translations = {
         subtitle: 'Discover the transformations we achieve with our personalized treatments',
         beforeLabel: 'Before',
         afterLabel: 'After',
+        resultLabel: 'Result',
         description: 'Each result reflects our commitment to excellence and natural aesthetics. Our patients experience significant improvements while maintaining their unique essence.',
         resultInfo: 'All results shown are real and have been achieved with the treatments we offer at our clinic.'
       },

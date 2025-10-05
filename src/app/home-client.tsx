@@ -16,6 +16,7 @@ import { WhatsAppFloat } from "@/components/layout/whatsapp-float"
 import { Toaster } from "sonner"
 import { Sparkles, Star, UserCheck, CheckCircle, MapPin, Phone, Clock, MessageCircle, Stethoscope, User, Heart, Send, Calendar, Mail } from "lucide-react"
 import { useLanguage } from "@/components/providers/language-provider"
+import { ImagePaths } from "@/lib/image-paths"
 
 interface HomeClientProps {
   clinica: {
@@ -125,7 +126,7 @@ export function HomeClient({ clinica, reseñas, estrella, destacados }: HomeClie
         <Section title={t('home.teamTitle')}>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-soft">
-              <Image src="/images/equipo/doctora.jpg" alt="Dra. Celina Suárez" fill className="object-cover" />
+              <Image src={ImagePaths.equipo.draCelina} alt="Dra. Celina Suárez" fill className="object-cover" />
             </div>
             <div className="space-y-6">
               <div>

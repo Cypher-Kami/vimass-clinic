@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -8,6 +9,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ChevronDown, Menu } from "lucide-react"
 import { useLanguage } from "@/components/providers/language-provider"
 import { LanguageToggle } from "@/components/common/language-toggle"
+import { ImagePaths } from "@/lib/image-paths"
 
 export function MainNav() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
@@ -27,8 +29,15 @@ export function MainNav() {
     <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="font-title text-xl text-foreground hover:text-accent transition-all duration-300 transform hover:scale-105">
-          Clínica
+        <Link href="/" className="flex items-center space-x-2">
+          <Image
+            src={ImagePaths.logo.white}
+            alt="VIMASS Clinic"
+            width={180}
+            height={72}
+            className="h-12 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}

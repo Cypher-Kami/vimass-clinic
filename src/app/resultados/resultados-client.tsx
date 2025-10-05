@@ -9,14 +9,12 @@ import { WhatsAppFloat } from "@/components/layout/whatsapp-float"
 import { Toaster } from "sonner"
 import { titleFont, bodyFont } from "@/app/fonts"
 import { useLanguage } from "@/components/providers/language-provider"
+import { ImagePaths } from "@/lib/image-paths"
 
 export function ResultadosClient() {
   const { t } = useLanguage()
   
-  const items = [
-    { before: "/images/resultados/1-before.jpg", after: "/images/resultados/1-after.jpg" },
-    { before: "/images/resultados/2-before.jpg", after: "/images/resultados/2-after.jpg" }
-  ]
+  const resultados = ImagePaths.resultados
   
   return (
     <div className={`${titleFont.variable} ${bodyFont.variable} antialiased`}>
@@ -43,23 +41,23 @@ export function ResultadosClient() {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-6">
-              {items.map((x,i)=>(
-              <div key={i} className="grid grid-cols-2 gap-2 rounded-2xl overflow-hidden shadow-lg">
-                <div className="relative">
-                  <Image src={x.before} alt={t('pages.resultados.beforeLabel')} width={600} height={600} className="w-full h-auto"/>
-                  <div className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    {t('pages.resultados.beforeLabel')}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {resultados.map((imagen, i) => (
+                <div key={i} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="relative aspect-square">
+                    <Image 
+                      src={imagen} 
+                      alt={`${t('pages.resultados.resultLabel')} ${i + 1}`} 
+                      fill 
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="text-sm font-medium">{t('pages.resultados.resultLabel')} {i + 1}</p>
+                    </div>
                   </div>
                 </div>
-                <div className="relative">
-                  <Image src={x.after} alt={t('pages.resultados.afterLabel')} width={600} height={600} className="w-full h-auto"/>
-                  <div className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    {t('pages.resultados.afterLabel')}
-                  </div>
-                </div>
-              </div>
-            ))}
+              ))}
             </div>
             
             <div className="text-center mt-12">
