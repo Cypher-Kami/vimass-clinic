@@ -245,14 +245,15 @@ export default function HomePage() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Ubicación de VIMASS Clinic"
-                className="grayscale hover:grayscale-0 transition-all duration-300"
+                className="transition-all duration-300"
               />
             </div>
           </div>
         </Section>
 
         {/* Formulario de contacto */}
-        <Section title="Agenda tu cita">
+        <section className="container py-16">
+          <h2 className="font-title text-3xl md:text-4xl mb-6 text-center">Agenda tu cita</h2>
           <div className="max-w-xl mx-auto">
             <div className="rounded-2xl border border-border p-8 bg-card shadow-soft">
               <div className="text-center mb-8">
@@ -293,7 +294,7 @@ export default function HomePage() {
               </form>
             </div>
           </div>
-        </Section>
+        </section>
 
       </main>
       <Footer />
