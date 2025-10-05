@@ -105,7 +105,8 @@ export const translations = {
       contact: {
         phone: 'Teléfono',
         whatsapp: 'WhatsApp',
-        whatsappText: 'Escríbenos',
+        whatsappText: '¡Escríbenos!',
+        whatsappAction: 'Contactar por WhatsApp',
         email: 'Email',
         schedule: 'Horarios'
       }
@@ -144,6 +145,7 @@ export const translations = {
         locationTitle: 'Ubicación',
         scheduleTitle: 'Horarios',
         whatsappTitle: 'WhatsApp',
+        whatsappAction: 'Contactar por WhatsApp',
         contactFormTitle: 'Formulario de Contacto',
         contactFormDescription: 'Envíanos un mensaje y te contactaremos a la brevedad',
         nameLabel: 'Nombre completo',
@@ -336,7 +338,8 @@ export const translations = {
       contact: {
         phone: 'Phone',
         whatsapp: 'WhatsApp',
-        whatsappText: 'Message us',
+        whatsappText: 'Message us!',
+        whatsappAction: 'Contact via WhatsApp',
         email: 'Email',
         schedule: 'Schedule'
       }
@@ -375,6 +378,7 @@ export const translations = {
         locationTitle: 'Location',
         scheduleTitle: 'Schedule',
         whatsappTitle: 'WhatsApp',
+        whatsappAction: 'Contact via WhatsApp',
         contactFormTitle: 'Contact Form',
         contactFormDescription: 'Send us a message and we will get back to you as soon as possible',
         nameLabel: 'Full name',

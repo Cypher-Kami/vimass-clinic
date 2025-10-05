@@ -12,6 +12,7 @@ import { ReserveDialog } from "@/components/common/reserve-dialog"
 import { MainNav } from "@/components/layout/main-nav"
 import { Footer } from "@/components/layout/footer"
 import { CTAFloat } from "@/components/layout/cta-float"
+import { WhatsAppFloat } from "@/components/layout/whatsapp-float"
 import { Toaster } from "sonner"
 import { Sparkles, Star, UserCheck, CheckCircle, MapPin, Phone, Clock, MessageCircle, Stethoscope, User, Heart, Send, Calendar, Mail } from "lucide-react"
 import { useLanguage } from "@/components/providers/language-provider"
@@ -400,6 +401,7 @@ export function HomeClient({ clinica, reseñas, estrella, destacados }: HomeClie
       </main>
       <Footer clinica={clinica} />
       <CTAFloat />
+      <WhatsAppFloat clinica={clinica} />
       <Toaster />
     </>
   )

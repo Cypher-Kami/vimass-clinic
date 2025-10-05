@@ -4,6 +4,7 @@ import { ReserveDialog } from "@/components/common/reserve-dialog"
 import { MainNav } from "@/components/layout/main-nav"
 import { Footer } from "@/components/layout/footer"
 import { CTAFloat } from "@/components/layout/cta-float"
+import { WhatsAppFloat } from "@/components/layout/whatsapp-float"
 import { Section } from "@/components/common/section"
 import { Toaster } from "sonner"
 import { titleFont, bodyFont } from "@/app/fonts"
@@ -269,6 +270,7 @@ export function ContactoClient({ clinica }: ContactoClientProps) {
       </main>
       <Footer />
       <CTAFloat />
+      <WhatsAppFloat clinica={clinica} />
       <Toaster />
     </div>
   )
