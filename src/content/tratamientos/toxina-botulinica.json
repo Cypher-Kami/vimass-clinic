@@ -1,0 +1,15 @@
+{
+  "slug": "toxina-botulinica",
+  "titulo": "Toxina Botulínica",
+  "extracto": "Reducción de arrugas de expresión de forma natural.",
+  "bullets": ["Tratamiento no invasivo", "Resultados progresivos", "Sin tiempo de baja"],
+  "faq": [
+    { "q": "¿Cuándo se ven los resultados?", "a": "Entre 3-7 días comienzan a verse los efectos." },
+    { "q": "¿Duración del tratamiento?", "a": "4-6 meses aproximadamente." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/toxina/hero.jpg",
+    "before": "/images/tratamientos/toxina/before.jpg",
+    "after": "/images/tratamientos/toxina/after.jpg"
+  }
+}

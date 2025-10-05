@@ -1,0 +1,15 @@
+{
+  "slug": "labios",
+  "titulo": "Labios naturales",
+  "extracto": "Aumento de labios sutil y armónico.",
+  "bullets": ["Evaluación médica previa", "Hialurónico de alta calidad", "Resultado inmediato"],
+  "faq": [
+    { "q": "¿Duele?", "a": "Mínimas molestias; crema anestésica si es necesario." },
+    { "q": "¿Duración?", "a": "9–12 meses según metabolismo." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/labios/hero.jpg",
+    "before": "/images/tratamientos/labios/before.jpg",
+    "after": "/images/tratamientos/labios/after.jpg"
+  }
+}

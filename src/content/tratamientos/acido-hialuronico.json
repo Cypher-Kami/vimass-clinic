@@ -1,0 +1,15 @@
+{
+  "slug": "acido-hialuronico",
+  "titulo": "Ácido Hialurónico",
+  "extracto": "Relleno de arrugas y volumen facial.",
+  "bullets": ["Hidratación profunda", "Resultados inmediatos", "Producto reabsorbible"],
+  "faq": [
+    { "q": "¿Es seguro?", "a": "Totalmente biocompatible y reabsorbible." },
+    { "q": "¿Cuánto dura?", "a": "Entre 8-15 meses según la zona tratada." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/acido/hero.jpg",
+    "before": "/images/tratamientos/acido/before.jpg",
+    "after": "/images/tratamientos/acido/after.jpg"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "clinica": {
+    "nombre": "Clínica Estética Ejemplo",
+    "telefono": "+34 600 000 000",
+    "whatsapp": "+34 600 000 000",
+    "email": "info@clinicaejemplo.com",
+    "direccion": "Calle Belleza 12, Madrid",
+    "horario": "L-V 10:00–20:00"
+  },
+  "hero": {
+    "headline": "Resultados sutiles.",
+    "subline": "Medicina estética de precisión.",
+    "cta": "Reservar valoración",
+    "tratamiento_estrella_slug": "labios"
+  },
+  "tratamientos_destacados": ["labios", "toxina-botulinica", "acido-hialuronico"],
+  "reseñas": [
+    { "nombre": "Carla", "texto": "Trato impecable y resultados naturales.", "rating": 5 },
+    { "nombre": "Nuria", "texto": "Muy profesionales, volveré sin duda.", "rating": 5 },
+    { "nombre": "Ana",   "texto": "Me explicaron todo con claridad.", "rating": 5 }
+  ],
+  "sedes": [
+    { "ciudad": "Madrid", "direccion": "Calle Belleza 12", "maps": "https://maps.google.com?q=..."}
+  ],
+  "legal": {
+    "privacidad": "Texto de política de privacidad...",
+    "cookies": "Texto de política de cookies..."
+  }
+}
