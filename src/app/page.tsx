@@ -4,6 +4,7 @@ import { KineticHeadline } from "@/components/common/kinetic-headline"
 import { Section } from "@/components/common/section"
 import { TreatmentSlider } from "@/components/common/treatment-slider"
 import { Reviews } from "@/components/common/reviews"
+import { StatsSection } from "@/components/common/stats-section"
 import { ReserveDialog } from "@/components/common/reserve-dialog"
 import { getSite, getTratamientos, getTratamiento } from "@/lib/content"
 import { MainNav } from "@/components/layout/main-nav"
@@ -198,6 +199,9 @@ export default function HomePage() {
         <Section title="Lo que dicen nuestros pacientes">
           <Reviews items={site.reseñas} />
         </Section>
+
+        {/* Estadísticas con contadores animados */}
+        <StatsSection />
 
         {/* ¿Dónde encontrarnos? */}
         <Section title="¿Dónde encontrarnos?">
