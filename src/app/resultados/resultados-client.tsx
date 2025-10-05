@@ -97,14 +97,51 @@ export function ResultadosClient() {
               }}
               carousel={{
                 finite: false,
-                preload: 2
+                preload: 2,
+                padding: "16px",
+                spacing: "30%",
+                imageFit: "contain"
               }}
               controller={{
                 closeOnBackdropClick: true,
                 closeOnPullDown: true,
                 closeOnPullUp: false
               }}
+              render={{
+                iconPrev: () => (
+                  <div className="flex items-center justify-center w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-200">
+                    <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </div>
+                ),
+                iconNext: () => (
+                  <div className="flex items-center justify-center w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-200">
+                    <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                ),
+                iconClose: () => (
+                  <div className="flex items-center justify-center w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-200">
+                    <svg className="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </div>
+                )
+              }}
+              styles={{
+                container: { backgroundColor: "rgba(0, 0, 0, 0.9)" },
+                toolbar: { background: "transparent" }
+              }}
             />
+            
+            {/* Contador de imágenes cuando el lightbox está abierto */}
+            {lightboxOpen && (
+              <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-medium z-50 pointer-events-none">
+                {lightboxIndex + 1} / {resultados.length}
+              </div>
+            )}
             
             <div className="text-center mt-12">
               <p className="text-sm text-muted-foreground">

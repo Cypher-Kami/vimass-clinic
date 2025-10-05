@@ -14,28 +14,28 @@ export function StatsSection() {
       number: 3500,
       suffix: "+",
       label: t('stats.patients'),
-      description: "En programas personalizados"
+      description: t('stats.patientsDescription')
     },
     {
       icon: Award,
       number: 20,
       suffix: "+",
       label: t('stats.experience'),
-      description: "En medicina integrativa"
+      description: t('stats.experienceDescription')
     },
     {
       icon: Clock,
       number: 15000,
       suffix: "+",
       label: t('stats.treatments'),
-      description: "Procedimientos exitosos"
+      description: t('stats.treatmentsDescription')
     },
     {
       icon: Heart,
       number: 98,
       suffix: "%",
       label: t('stats.satisfaction'),
-      description: "Recomendarían nuestra clínica"
+      description: t('stats.satisfactionDescription')
     }
   ]
 
@@ -44,11 +44,10 @@ export function StatsSection() {
       <div className="bg-gradient-to-r from-secondary/20 to-accent/10 rounded-3xl p-8 md:p-12">
         <div className="text-center mb-12">
           <h2 className="font-title text-3xl md:text-4xl mb-4">
-            Resultados que hablan por sí solos
+            {t('stats.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Nuestra experiencia y dedicación se reflejan en cada número. 
-            Miles de pacientes han transformado su confianza con nosotros.
+            {t('stats.subtitle')}
           </p>
         </div>
         

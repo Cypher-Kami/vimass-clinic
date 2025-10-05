@@ -208,8 +208,8 @@ export function HomeClient({ clinica, reseñas, estrella, destacados }: HomeClie
               <div className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="aspect-[4/3]">
                   <Image 
-                    src={ImagePaths.resultados[1]} 
-                    alt="Resultado 2 - Antes y Después" 
+                    src={ImagePaths.resultados[2]} 
+                    alt="Resultado 3 - Antes y Después" 
                     fill 
                     className="object-cover transition-transform duration-500 group-hover:scale-105" 
                   />
@@ -224,7 +224,7 @@ export function HomeClient({ clinica, reseñas, estrella, destacados }: HomeClie
 
         {/* Reseñas */}
         <Section title={t('home.reviewsTitle')}>
-          <Reviews items={reseñas} />
+          <Reviews />
         </Section>
 
         {/* Estadísticas con contadores animados */}
