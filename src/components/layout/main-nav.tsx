@@ -1,62 +1,51 @@
 "use client"
+
 import Link from "next/link"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, ChevronDown } from "lucide-react"
-import { useState, useRef, useCallback } from "react"
-
-const links = [
-  { href: "/", label: "Inicio" },
-  { href: "/equipo", label: "Equipo" },
-  { href: "/resultados", label: "Resultados" },
-  { href: "/contacto", label: "Contacto" },
-]
+import { ChevronDown, Menu } from "lucide-react"
 
 const treatmentLinks = [
-  { href: "/tratamientos", label: "Todos los tratamientos" },
-  { href: "/tratamientos/labios", label: "Labios" },
-  { href: "/tratamientos/toxina-botulinica", label: "Toxina Botulínica" },
-  { href: "/tratamientos/acido-hialuronico", label: "Ácido Hialurónico" },
+  { href: "/tratamientos/botox", label: "Botox" },
+  { href: "/tratamientos/fillers", label: "Rellenos Dérmicos" },
+  { href: "/tratamientos/hilos", label: "Hilos Tensores" },
+  { href: "/tratamientos/laser", label: "Tratamientos Láser" },
+  { href: "/tratamientos/peeling", label: "Peeling Químico" },
+  { href: "/tratamientos/plasma", label: "Plasma Rico en Plaquetas" },
 ]
 
 export function MainNav() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
-
-  const handleMouseEnter = useCallback(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-    }
-    setDropdownOpen(true)
-  }, [])
-
-  const handleMouseLeave = useCallback(() => {
-    timeoutRef.current = setTimeout(() => {
-      setDropdownOpen(false)
-    }, 150) // 150ms delay antes de cerrar
-  }, [])
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-border">
-      <div className="container h-16 flex items-center justify-between">
-        <Link href="/" className="font-title text-xl text-foreground">Clínica</Link>
-        
+    <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
+      <div className="container flex h-16 items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="font-title text-xl text-foreground hover:text-accent transition-all duration-300 transform hover:scale-105">
+          Clínica
+        </Link>
+
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6 items-center">
-          <Link href="/" className="text-foreground hover:opacity-80 transition-opacity">Inicio</Link>
+        <div className="hidden md:flex items-center gap-8">
+          <Link href="/" className="relative text-foreground hover:text-accent transition-all duration-300 group">
+            <span>Inicio</span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+          </Link>
           
-          {/* Dropdown de Tratamientos con hover mejorado */}
+          {/* Dropdown Tratamientos */}
           <div 
             className="relative"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
           >
             <Link
               href="/tratamientos"
-              className="flex items-center gap-1 text-foreground hover:opacity-80 transition-opacity py-2"
+              className="flex items-center gap-1 text-foreground hover:text-accent transition-all duration-300 group relative"
             >
-              Tratamientos
-              <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
+              <span>Tratamientos</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+              <ChevronDown className={`h-4 w-4 transition-all duration-200 ${dropdownOpen ? 'rotate-180 text-accent' : ''}`} />
             </Link>
             
             {dropdownOpen && (
@@ -66,7 +55,7 @@ export function MainNav() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="block px-4 py-3 text-sm text-foreground hover:bg-accent/10 transition-colors"
+                      className="block px-4 py-3 text-sm text-foreground hover:text-accent transition-all duration-200 rounded-lg"
                     >
                       {link.label}
                     </Link>
@@ -76,29 +65,35 @@ export function MainNav() {
             )}
           </div>
 
-          <Link href="/equipo" className="text-foreground hover:opacity-80 transition-opacity">Equipo</Link>
-          <Link href="/resultados" className="text-foreground hover:opacity-80 transition-opacity">Resultados</Link>
-          <Link href="/contacto" className="text-foreground hover:opacity-80 transition-opacity">Contacto</Link>
-        </nav>
-
-        {/* Desktop CTA Button */}
-        <div className="hidden md:block">
-          <Button asChild className="rounded-2xl bg-foreground text-background hover:opacity-90 transition-opacity">
+          <Link href="/equipo" className="relative text-foreground hover:text-accent transition-all duration-300 group">
+            <span>Equipo</span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          <Link href="/resultados" className="relative text-foreground hover:text-accent transition-all duration-300 group">
+            <span>Resultados</span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          <Link href="/contacto" className="relative text-foreground hover:text-accent transition-all duration-300 group">
+            <span>Contacto</span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          
+          <Button asChild className="rounded-2xl bg-foreground text-background hover:bg-accent hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
             <Link href="/contacto">Reservar</Link>
           </Button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Navigation */}
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" className="rounded-xl">
+              <Button variant="outline" className="rounded-xl hover:border-accent hover:text-accent transition-all duration-300">
                 <Menu className="h-4 w-4" />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-72">
               <div className="flex flex-col gap-4 mt-8">
-                <Link href="/" className="text-foreground hover:opacity-80 transition-opacity">
+                <Link href="/" className="text-foreground hover:text-accent transition-all duration-300 py-2">
                   Inicio
                 </Link>
                 
@@ -110,7 +105,7 @@ export function MainNav() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        className="block text-sm text-muted-foreground hover:text-accent transition-all duration-300 py-1"
                       >
                         {link.label}
                       </Link>
@@ -118,17 +113,17 @@ export function MainNav() {
                   </div>
                 </div>
 
-                <Link href="/equipo" className="text-foreground hover:opacity-80 transition-opacity">
+                <Link href="/equipo" className="text-foreground hover:text-accent transition-all duration-300 py-2">
                   Equipo
                 </Link>
-                <Link href="/resultados" className="text-foreground hover:opacity-80 transition-opacity">
+                <Link href="/resultados" className="text-foreground hover:text-accent transition-all duration-300 py-2">
                   Resultados
                 </Link>
-                <Link href="/contacto" className="text-foreground hover:opacity-80 transition-opacity">
+                <Link href="/contacto" className="text-foreground hover:text-accent transition-all duration-300 py-2">
                   Contacto
                 </Link>
                 
-                <Button asChild className="rounded-2xl mt-2">
+                <Button asChild className="rounded-2xl mt-2 bg-foreground text-background hover:bg-accent transition-all duration-300">
                   <Link href="/contacto">Reservar</Link>
                 </Button>
               </div>
@@ -136,6 +131,6 @@ export function MainNav() {
           </Sheet>
         </div>
       </div>
-    </header>
+    </nav>
   )
 }
