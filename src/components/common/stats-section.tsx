@@ -3,41 +3,44 @@
 import { AnimatedCounter } from "./animated-counter"
 import { Section } from "./section"
 import { Users, Award, Clock, Heart } from "lucide-react"
-
-const stats = [
-  {
-    icon: Users,
-    number: 3500,
-    suffix: "+",
-    label: "Pacientes atendidos",
-    description: "En programas personalizados"
-  },
-  {
-    icon: Award,
-    number: 20,
-    suffix: "+",
-    label: "Años de experiencia",
-    description: "En medicina integrativa"
-  },
-  {
-    icon: Clock,
-    number: 4,
-    suffix: "",
-    label: "Centros de prestigio",
-    description: "SHA, Teknon, Planas, Vimass"
-  },
-  {
-    icon: Heart,
-    number: 98,
-    suffix: "%",
-    label: "Satisfacción del cliente",
-    description: "Recomiendan nuestros servicios"
-  }
-]
+import { useLanguage } from "@/components/providers/language-provider"
 
 export function StatsSection() {
+  const { t } = useLanguage()
+  
+  const stats = [
+    {
+      icon: Users,
+      number: 3500,
+      suffix: "+",
+      label: t('stats.patients'),
+      description: "En programas personalizados"
+    },
+    {
+      icon: Award,
+      number: 20,
+      suffix: "+",
+      label: t('stats.experience'),
+      description: "En medicina integrativa"
+    },
+    {
+      icon: Clock,
+      number: 15000,
+      suffix: "+",
+      label: t('stats.treatments'),
+      description: "Procedimientos exitosos"
+    },
+    {
+      icon: Heart,
+      number: 98,
+      suffix: "%",
+      label: t('stats.satisfaction'),
+      description: "Recomendarían nuestra clínica"
+    }
+  ]
+
   return (
-    <Section>
+    <Section title={t('stats.title')}>
       <div className="bg-gradient-to-r from-secondary/20 to-accent/10 rounded-3xl p-8 md:p-12">
         <div className="text-center mb-12">
           <h2 className="font-title text-3xl md:text-4xl mb-4">
