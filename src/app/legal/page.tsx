@@ -11,7 +11,7 @@ export default function LegalPage() {
     <div className={`${titleFont.variable} ${bodyFont.variable} antialiased`}>
       <MainNav />
       <main className="min-h-screen">
-        <div className="container py-14 space-y-12">
+        <div className="container pt-20 pb-14 space-y-12">
           <section>
             <h1 className="font-title text-4xl md:text-5xl mb-4">Privacidad</h1>
             <p className="opacity-80 whitespace-pre-line">{site.legal.privacidad}</p>

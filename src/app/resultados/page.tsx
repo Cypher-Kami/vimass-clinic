@@ -15,9 +15,10 @@ export default function ResultadosPage() {
     <div className={`${titleFont.variable} ${bodyFont.variable} antialiased`}>
       <MainNav />
       <main className="min-h-screen">
-        <Section title="Resultados">
-          <div className="grid md:grid-cols-2 gap-6">
-            {items.map((x,i)=>(
+        <div className="container pt-20">
+          <Section title="Resultados">
+            <div className="grid md:grid-cols-2 gap-6">
+              {items.map((x,i)=>(
               <div key={i} className="grid grid-cols-2 gap-2 rounded-2xl overflow-hidden">
                 <Image src={x.before} alt="Antes" width={600} height={600} className="w-full h-auto"/>
                 <Image src={x.after} alt="Después" width={600} height={600} className="w-full h-auto"/>
@@ -25,6 +26,7 @@ export default function ResultadosPage() {
             ))}
           </div>
         </Section>
+        </div>
       </main>
       <Footer />
       <CTAFloat />

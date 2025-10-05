@@ -13,11 +13,13 @@ export default function TratamientosPage() {
     <div className={`${titleFont.variable} ${bodyFont.variable} antialiased`}>
       <MainNav />
       <main className="min-h-screen">
-        <Section title="Tratamientos">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {t.map(item => <TreatmentCard key={item.slug} t={item} />)}
-          </div>
-        </Section>
+        <div className="container pt-20">
+          <Section title="Tratamientos">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {t.map(item => <TreatmentCard key={item.slug} t={item} />)}
+            </div>
+          </Section>
+        </div>
       </main>
       <Footer />
       <CTAFloat />

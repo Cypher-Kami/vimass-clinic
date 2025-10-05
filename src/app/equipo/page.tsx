@@ -25,7 +25,7 @@ export default function EquipoPage() {
       <MainNav />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <div className="container pt-24 pb-12">
+        <div className="container pt-28 pb-12">
           <div className="max-w-4xl">
             <div className="relative mb-6">
               <h1 className="font-title text-4xl md:text-6xl relative z-10">Equipo</h1>

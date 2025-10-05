@@ -1,0 +1,16 @@
+{
+  "slug": "medicina-integrativa",
+  "titulo": "Medicina Integrativa",
+  "extracto": "Enfoque holístico que combina medicina convencional con terapias complementarias.",
+  "bullets": ["Diagnóstico integral", "Terapias de biorregulación", "Medicina personalizada basada en evidencia"],
+  "faq": [
+    { "q": "¿Qué es la medicina integrativa?", "a": "Combina lo mejor de la medicina convencional con terapias complementarias validadas científicamente." },
+    { "q": "¿Para qué condiciones es efectiva?", "a": "Especialmente útil en enfermedades autoinmunes, fatiga crónica, desequilibrios hormonales y optimización del bienestar." },
+    { "q": "¿Incluye medicina convencional?", "a": "Sí, integramos diagnósticos médicos tradicionales con enfoques innovadores de medicina funcional." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/medicina-integrativa/hero.jpg",
+    "before": "/images/tratamientos/medicina-integrativa/before.jpg",
+    "after": "/images/tratamientos/medicina-integrativa/after.jpg"
+  }
+}

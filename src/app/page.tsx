@@ -13,7 +13,7 @@ import { Footer } from "@/components/layout/footer"
 import { CTAFloat } from "@/components/layout/cta-float"
 import { Toaster } from "sonner"
 import { titleFont, bodyFont } from "@/app/fonts"
-import { Sparkles, Star, UserCheck, CheckCircle, MapPin, Phone, Clock, MessageCircle, Stethoscope } from "lucide-react"
+import { Sparkles, Star, UserCheck, CheckCircle, MapPin, Phone, Clock, MessageCircle, Stethoscope, User, Heart, Send, Calendar, Mail } from "lucide-react"
 
 export default function HomePage() {
   const site = getSite()
@@ -26,7 +26,7 @@ export default function HomePage() {
       <main className="min-h-screen">
         
         {/* HEADER PRINCIPAL */}
-        <div className="container py-12 md:py-20 text-center">
+        <div className="container pt-20 pb-12 md:pt-28 md:pb-20 text-center">
           <div className="max-w-4xl mx-auto">
             <KineticHeadline text="Medicina estética de precisión" />
             <p className="mt-6 text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -212,52 +212,92 @@ export default function HomePage() {
 
         {/* ¿Dónde encontrarnos? */}
         <Section title="¿Dónde encontrarnos?">
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-accent" />
-                  <span className="font-medium">Dirección:</span>
-                  <span className="text-muted-foreground">{site.clinica.direccion}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-accent" />
-                  <span className="font-medium">Teléfono:</span>
-                  <a href={`tel:${site.clinica.telefono}`} className="text-accent hover:underline">
-                    {site.clinica.telefono}
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-accent" />
-                  <span className="font-medium">Horario:</span>
-                  <span className="text-muted-foreground">{site.clinica.horario}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MessageCircle className="w-5 h-5 text-accent" />
-                  <span className="font-medium">WhatsApp:</span>
-                  <a 
-                    href={`https://wa.me/${site.clinica.whatsapp.replace(/\D/g,"")}`} 
-                    target="_blank" 
-                    className="text-accent hover:underline"
-                  >
-                    Contacto directo
-                  </a>
+          {/* Contact Info Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Phone className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold mb-2">Teléfono</h3>
+              <a 
+                href={`tel:${site.clinica.telefono}`}
+                className="text-muted-foreground hover:text-accent transition-colors duration-200"
+              >
+                {site.clinica.telefono}
+              </a>
+            </div>
+            
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <MessageCircle className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold mb-2">WhatsApp</h3>
+              <a 
+                href={`https://wa.me/${site.clinica.whatsapp.replace(/\D/g,"")}`}
+                target="_blank"
+                className="text-muted-foreground hover:text-accent transition-colors duration-200"
+              >
+                Escríbenos
+              </a>
+            </div>
+            
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Mail className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold mb-2">Email</h3>
+              <a 
+                href={`mailto:${site.clinica.email}`}
+                className="text-muted-foreground hover:text-accent transition-colors duration-200"
+              >
+                {site.clinica.email}
+              </a>
+            </div>
+            
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Clock className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold mb-2">Horarios</h3>
+              <p className="text-muted-foreground">{site.clinica.horario}</p>
+            </div>
+          </div>
+
+          {/* Map Section */}
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <MapPin className="w-6 h-6 text-accent" />
+                <h3 className="font-title text-2xl">Nuestra ubicación</h3>
+              </div>
+              <p className="text-muted-foreground">
+                En el corazón de Barcelona, fácil acceso en transporte público
+              </p>
+            </div>
+            
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-r from-accent/20 to-secondary/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-all duration-500"></div>
+              <div className="relative rounded-2xl overflow-hidden shadow-lg border border-accent/20 h-96">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.0156491081596!2d2.1634043!3d41.3912145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f8b7f8f7f7%3A0x1234567890abcdef!2sPasseig%20de%20Gr%C3%A0cia%2C%20Barcelona%2C%20Spain!5e0!3m2!1sen!2ses!4v1234567890123"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="transition-all duration-300 group-hover:scale-105"
+                ></iframe>
+                
+                {/* Map overlay with location info */}
+                <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm p-3 rounded-xl border border-accent/20 shadow-lg">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                    <span className="font-medium text-sm">Vimass Clinic</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">{site.clinica.direccion}</p>
                 </div>
               </div>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-soft bg-secondary/20 h-96">
-              {/* Google Maps Iframe */}
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.987654321!2d-74.006!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDBfNDInNDYuMSJOIDc0X0EwMCcyMS42IlY!5e0!3m2!1sen!2sus!4v1234567890123"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación de VIMASS Clinic"
-                className="transition-all duration-300"
-              />
             </div>
           </div>
         </Section>
@@ -265,44 +305,87 @@ export default function HomePage() {
         {/* Formulario de contacto */}
         <section className="container py-16">
           <h2 className="font-title text-3xl md:text-4xl mb-6 text-center">Agenda tu cita</h2>
-          <div className="max-w-xl mx-auto">
+          <div className="max-w-2xl mx-auto">
             <div className="rounded-2xl border border-border p-8 bg-card shadow-soft">
               <div className="text-center mb-8">
-                <h3 className="font-title text-2xl mb-2">Formulario de contacto</h3>
+                <h3 className="font-title text-2xl mb-2">Comienza tu transformación</h3>
                 <p className="text-muted-foreground">
-                  Déjanos tus datos y nos pondremos en contacto contigo para agendar tu consulta.
+                  Complete el formulario y nos pondremos en contacto contigo para programar tu consulta personalizada.
                 </p>
               </div>
               
               <form className="space-y-6">
-                <div>
-                  <input 
-                    type="text" 
-                    placeholder="Nombre completo" 
-                    className="w-full px-4 py-3 border border-border rounded-2xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" 
-                  />
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium flex items-center gap-2">
+                      <User className="w-4 h-4 text-accent" />
+                      Nombre completo
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200"
+                      placeholder="Tu nombre"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium flex items-center gap-2">
+                      <Phone className="w-4 h-4 text-accent" />
+                      Teléfono/WhatsApp
+                    </label>
+                    <input
+                      type="tel"
+                      className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200"
+                      placeholder="Tu teléfono"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <input 
-                    type="tel" 
-                    placeholder="Teléfono/WhatsApp" 
-                    className="w-full px-4 py-3 border border-border rounded-2xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" 
-                  />
+                
+                <div className="space-y-2">
+                  <label className="text-sm font-medium flex items-center gap-2">
+                    <Heart className="w-4 h-4 text-accent" />
+                    Tratamiento de interés
+                  </label>
+                  <select className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200">
+                    <option>Medicina Funcional</option>
+                    <option>Protocolos Antiaging</option>
+                    <option>Medicina Integrativa</option>
+                    <option>Consulta General</option>
+                    <option>Otro (especificar en mensaje)</option>
+                  </select>
                 </div>
-                <div>
-                  <textarea 
-                    placeholder="Mensaje" 
+                
+                <div className="space-y-2">
+                  <label className="text-sm font-medium flex items-center gap-2">
+                    <MessageCircle className="w-4 h-4 text-accent" />
+                    Mensaje
+                  </label>
+                  <textarea
                     rows={4}
-                    className="w-full px-4 py-3 border border-border rounded-2xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none" 
-                  />
+                    className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 resize-none"
+                    placeholder="Cuéntanos cómo podemos ayudarte..."
+                  ></textarea>
                 </div>
-                <button 
+                
+                <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-accent text-foreground rounded-2xl hover:bg-accent/80 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-accent text-foreground rounded-xl hover:bg-accent/80 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  Enviar
+                  <Send className="w-5 h-5" />
+                  Enviar mensaje
                 </button>
               </form>
+              
+              <div className="mt-8 p-6 bg-accent/5 rounded-xl border border-accent/20">
+                <h4 className="font-semibold mb-2 flex items-center gap-2">
+                  <Calendar className="w-5 h-5 text-accent" />
+                  ¿Prefieres llamarnos?
+                </h4>
+                <p className="text-muted-foreground mb-4 text-sm">
+                  También puedes reservar tu cita directamente por teléfono o WhatsApp
+                </p>
+                <ReserveDialog />
+              </div>
             </div>
           </div>
         </section>

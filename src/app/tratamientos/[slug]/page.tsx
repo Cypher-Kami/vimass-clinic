@@ -22,7 +22,7 @@ export default async function TratamientoPage({ params }: { params: Promise<{ sl
     <div className={`${titleFont.variable} ${bodyFont.variable} antialiased`}>
       <MainNav />
       <main className="min-h-screen">
-        <div className="container py-14 grid md:grid-cols-2 gap-8 items-center">
+        <div className="container pt-20 pb-14 grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="font-title text-4xl md:text-5xl">{data.titulo}</h1>
             <p className="mt-4 opacity-80">{data.extracto}</p>

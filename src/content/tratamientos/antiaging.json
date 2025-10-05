@@ -1,0 +1,16 @@
+{
+  "slug": "antiaging",
+  "titulo": "Protocolos Antiaging",
+  "extracto": "Medicina regenerativa y protocolos de longevidad para un envejecimiento saludable.",
+  "bullets": ["Evaluación integral del envejecimiento", "Terapias regenerativas avanzadas", "Protocolos de longevidad personalizados"],
+  "faq": [
+    { "q": "¿Qué incluyen los protocolos antiaging?", "a": "Evaluación hormonal, análisis de marcadores de envejecimiento, suplementación ortomolecular y terapias regenerativas." },
+    { "q": "¿A qué edad se recomienda?", "a": "La prevención puede iniciarse desde los 30 años, pero nunca es tarde para comenzar un protocolo de longevidad." },
+    { "q": "¿Cuándo se ven resultados?", "a": "Los primeros efectos se notan en 4-6 semanas, con resultados óptimos a los 3-6 meses." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/antiaging/hero.jpg",
+    "before": "/images/tratamientos/antiaging/before.jpg",
+    "after": "/images/tratamientos/antiaging/after.jpg"
+  }
+}

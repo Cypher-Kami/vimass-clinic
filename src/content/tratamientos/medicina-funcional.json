@@ -1,0 +1,16 @@
+{
+  "slug": "medicina-funcional",
+  "titulo": "Medicina Funcional",
+  "extracto": "Enfoque personalizado que busca las causas raíz de los desequilibrios de salud.",
+  "bullets": ["Análisis de biomarcadores avanzados", "Protocolos personalizados", "Seguimiento integral"],
+  "faq": [
+    { "q": "¿Qué es la medicina funcional?", "a": "Es un enfoque que busca identificar y tratar las causas subyacentes de las enfermedades, no solo los síntomas." },
+    { "q": "¿Cómo se diferencia?", "a": "Utiliza análisis detallados de biomarcadores y crea protocolos completamente personalizados para cada paciente." },
+    { "q": "¿Cuánto dura el tratamiento?", "a": "Depende de cada caso, pero generalmente vemos mejoras significativas en 3-6 meses." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/medicina-funcional/hero.jpg",
+    "before": "/images/tratamientos/medicina-funcional/before.jpg",
+    "after": "/images/tratamientos/medicina-funcional/after.jpg"
+  }
+}
