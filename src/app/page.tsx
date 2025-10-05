@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { KineticHeadline } from "@/components/common/kinetic-headline"
 import { Section } from "@/components/common/section"
+import { AnimatedCard } from "@/components/common/animated-card"
 import { TreatmentSlider } from "@/components/common/treatment-slider"
 import { Reviews } from "@/components/common/reviews"
 import { StatsSection } from "@/components/common/stats-section"
@@ -51,37 +52,43 @@ export default function HomePage() {
             <div className="grid md:grid-cols-3 gap-8 text-center">
               
               {/* Tu mejor versión */}
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto">
-                  <Sparkles className="w-8 h-8 text-white" />
+              <AnimatedCard delay={0.1}>
+                <div className="space-y-4">
+                  <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto">
+                    <Sparkles className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="font-title text-2xl">Tu mejor versión</h3>
+                  <p className="text-muted-foreground">
+                    Realzamos tu belleza natural con técnicas avanzadas y un enfoque personalizado para cada paciente.
+                  </p>
                 </div>
-                <h3 className="font-title text-2xl">Tu mejor versión</h3>
-                <p className="text-muted-foreground">
-                  Realzamos tu belleza natural con técnicas avanzadas y un enfoque personalizado para cada paciente.
-                </p>
-              </div>
+              </AnimatedCard>
 
               {/* Tratamiento estrella */}
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto">
-                  <Star className="w-8 h-8 text-white" />
+              <AnimatedCard delay={0.3}>
+                <div className="space-y-4">
+                  <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto">
+                    <Star className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="font-title text-2xl">Tratamiento estrella</h3>
+                  <p className="text-muted-foreground">
+                    {estrella.titulo} - {estrella.extracto} Resultados naturales y duraderos.
+                  </p>
                 </div>
-                <h3 className="font-title text-2xl">Tratamiento estrella</h3>
-                <p className="text-muted-foreground">
-                  {estrella.titulo} - {estrella.extracto} Resultados naturales y duraderos.
-                </p>
-              </div>
+              </AnimatedCard>
 
               {/* Dra. Celina */}
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto">
-                  <Stethoscope className="w-8 h-8 text-white" />
+              <AnimatedCard delay={0.5}>
+                <div className="space-y-4">
+                  <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto">
+                    <Stethoscope className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="font-title text-2xl">Dra. Celina</h3>
+                  <p className="text-muted-foreground">
+                    Especialista en medicina estética con más de 10 años de experiencia y formación internacional.
+                  </p>
                 </div>
-                <h3 className="font-title text-2xl">Dra. Celina</h3>
-                <p className="text-muted-foreground">
-                  Especialista en medicina estética con más de 10 años de experiencia y formación internacional.
-                </p>
-              </div>
+              </AnimatedCard>
 
             </div>
           </div>
