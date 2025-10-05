@@ -131,7 +131,14 @@ export const translations = {
         whatsappText: '¡Escríbenos!',
         whatsappAction: 'Contactar por WhatsApp',
         email: 'Email',
+        address: 'Dirección',
         schedule: 'Horarios'
+      },
+      
+      // Mapa
+      map: {
+        title: 'Visítanos',
+        description: 'Encuentra nuestra clínica fácilmente. Estamos ubicados en el corazón de Barcelona con excelente acceso.'
       }
     },
     
@@ -396,10 +403,17 @@ export const translations = {
       contact: {
         phone: 'Phone',
         whatsapp: 'WhatsApp',
-        whatsappText: 'Message us!',
+        whatsappText: 'Write to us!',
         whatsappAction: 'Contact via WhatsApp',
         email: 'Email',
+        address: 'Address',
         schedule: 'Schedule'
+      },
+      
+      // Map
+      map: {
+        title: 'Visit Us',
+        description: 'Find our clinic easily. We are located in the heart of Barcelona with excellent access.'
       }
     },
     

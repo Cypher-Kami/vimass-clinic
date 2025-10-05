@@ -230,106 +230,16 @@ export function HomeClient({ clinica, reseñas, estrella, destacados }: HomeClie
         {/* Estadísticas con contadores animados */}
         <StatsSection />
 
-        {/* ¿Dónde encontrarnos? */}
-        <Section title={t('home.locationTitle')}>
-          {/* Contact Info Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Phone className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="font-semibold mb-2">{t('home.contact.phone')}</h3>
-              <a 
-                href={`tel:${clinica.telefono}`}
-                className="text-muted-foreground hover:text-accent transition-colors duration-200"
-              >
-                {clinica.telefono}
-              </a>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <MessageCircle className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="font-semibold mb-2">{t('home.contact.whatsapp')}</h3>
-              <a 
-                href={`https://wa.me/${clinica.whatsapp.replace(/\D/g,"")}`}
-                target="_blank"
-                className="text-muted-foreground hover:text-accent transition-colors duration-200"
-              >
-                {t('home.contact.whatsappText')}
-              </a>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Mail className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="font-semibold mb-2">{t('home.contact.email')}</h3>
-              <a 
-                href={`mailto:${clinica.email}`}
-                className="text-muted-foreground hover:text-accent transition-colors duration-200"
-              >
-                {clinica.email}
-              </a>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Clock className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="font-semibold mb-2">{t('home.contact.schedule')}</h3>
-              <p className="text-muted-foreground">{clinica.horario}</p>
-            </div>
-          </div>
-
-          {/* Map Section */}
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <MapPin className="w-6 h-6 text-accent" />
-                <h3 className="font-title text-2xl">{t('home.locationSubtitle')}</h3>
-              </div>
-              <p className="text-muted-foreground">
-                {t('home.locationDescription')}
-              </p>
-            </div>
-            
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-accent/20 to-secondary/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-all duration-500"></div>
-              <div className="relative rounded-2xl overflow-hidden shadow-lg border border-accent/20 h-96">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.0156491081596!2d2.1634043!3d41.3912145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f8b7f8f7f7%3A0x1234567890abcdef!2sPasseig%20de%20Gr%C3%A0cia%2C%20Barcelona%2C%20Spain!5e0!3m2!1sen!2ses!4v1234567890123"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="transition-all duration-300 group-hover:scale-105"
-                ></iframe>
-                
-                {/* Map overlay with location info */}
-                <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm p-3 rounded-xl border border-accent/20 shadow-lg">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
-                    <span className="font-medium text-sm">Vimass Clinic</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground mt-1">{clinica.direccion}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Section>
-
         {/* Formulario de contacto */}
         <section className="container py-16">
-          <h2 className="font-title text-3xl md:text-4xl mb-6 text-center">{t('home.contactTitle')}</h2>
-          <div className="max-w-2xl mx-auto">
-            <div className="rounded-2xl border border-border p-8 bg-card shadow-soft">
-              <div className="text-center mb-8">
+          <h2 className="font-title text-3xl md:text-4xl mb-12 text-center">{t('home.contactTitle')}</h2>
+          
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div className="space-y-8">
+              <div>
                 <h3 className="font-title text-2xl mb-2">{t('home.contactSubtitle')}</h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground mb-8">
                   {t('home.contactDescription')}
                 </p>
               </div>
@@ -396,7 +306,7 @@ export function HomeClient({ clinica, reseñas, estrella, destacados }: HomeClie
                 </button>
               </form>
               
-              <div className="mt-8 p-6 bg-accent/5 rounded-xl border border-accent/20">
+              <div className="p-6 bg-accent/5 rounded-xl border border-accent/20">
                 <h4 className="font-semibold mb-2 flex items-center gap-2">
                   <Calendar className="w-5 h-5 text-accent" />
                   {t('home.form.callPreference')}
@@ -405,6 +315,51 @@ export function HomeClient({ clinica, reseñas, estrella, destacados }: HomeClie
                   {t('home.form.callDescription')}
                 </p>
                 <ReserveDialog />
+              </div>
+            </div>
+
+            {/* Map Section */}
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-title text-2xl mb-4">{t('home.map.title')}</h3>
+                <p className="text-muted-foreground mb-6">
+                  {t('home.map.description')}
+                </p>
+              </div>
+              
+              <div className="relative rounded-xl overflow-hidden shadow-lg border border-border">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.8747329861047!2d2.1387387764316687!3d41.38794597128139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f6b0e8c5df%3A0x5c8f7e8d7f9a5b3c!2sVIMASS%20CLINIC!5e0!3m2!1sen!2ses!4v1698765432109!5m2!1sen!2ses"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-[400px] rounded-xl"
+                />
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex items-center gap-3 p-4 bg-card rounded-xl border border-border">
+                  <div className="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-accent" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-sm">{t('home.contact.address')}</p>
+                    <p className="text-xs text-muted-foreground">{clinica.direccion}</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-3 p-4 bg-card rounded-xl border border-border">
+                  <div className="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-accent" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-sm">{t('home.contact.schedule')}</p>
+                    <p className="text-xs text-muted-foreground">{clinica.horario}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
