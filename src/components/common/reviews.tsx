@@ -114,7 +114,7 @@ export function Reviews() {
                 
                 {/* Review Text */}
                 <blockquote className="text-sm text-muted-foreground leading-relaxed mb-4 overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>
-                  "{review.text}"
+                  &ldquo;{review.text}&rdquo;
                 </blockquote>
                 
                 {/* Author Info */}

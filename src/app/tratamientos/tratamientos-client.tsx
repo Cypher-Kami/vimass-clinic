@@ -7,11 +7,20 @@ import { Footer } from "@/components/layout/footer"
 import { CTAFloat } from "@/components/layout/cta-float"
 import { WhatsAppFloat } from "@/components/layout/whatsapp-float"
 import { Toaster } from "sonner"
-import { titleFont, bodyFont } from "@/app/fonts"
+import { titleFont, bodyFont } from "../fonts"
 import { useLanguage } from "@/components/providers/language-provider"
+import type { Tratamiento } from "@/lib/types"
 
 interface TratamientosClientProps {
-  treatments: any[]
+  clinica: {
+    nombre: string
+    telefono: string
+    whatsapp: string
+    email: string
+    direccion: string
+    horario: string
+  }
+  treatments: Tratamiento[]
 }
 
 export function TratamientosClient({ treatments }: TratamientosClientProps) {

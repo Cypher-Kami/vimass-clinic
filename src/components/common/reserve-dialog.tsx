@@ -17,7 +17,7 @@ const FormSchema = z.object({
 export function ReserveDialog() {
   const form = useForm<{ nombre: string; telefono: string; mensaje?: string }>({ resolver: zodResolver(FormSchema) })
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: { nombre: string; telefono: string; mensaje?: string }) => {
     try {
       const res = await fetch("/api/contact", { method: "POST", body: JSON.stringify(data) })
       if (!res.ok) throw new Error("Error")

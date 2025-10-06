@@ -554,6 +554,7 @@ export const translations = {
 
 export function getTranslation(language: Language, key: string): string {
   const keys = key.split('.')
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let value: any = translations[language]
   
   for (const k of keys) {
@@ -561,7 +562,8 @@ export function getTranslation(language: Language, key: string): string {
       value = value[k]
     } else {
       // Fallback to Spanish if key not found
-      value = translations.es
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      value = translations.es as any
       for (const fallbackKey of keys) {
         if (value && typeof value === 'object' && fallbackKey in value) {
           value = value[fallbackKey]

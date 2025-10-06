@@ -137,7 +137,7 @@ export function EquipoClient() {
                     <div className="absolute left-0 top-0 w-1 h-full bg-accent rounded-full"></div>
                     <blockquote className="pl-6 py-4 bg-accent/5 rounded-r-xl border border-accent/20">
                       <p className="italic text-foreground font-medium mb-2">
-                        "{t('pages.equipo.draCelinaPhilosophyText')}"
+                        &ldquo;{t('pages.equipo.draCelinaPhilosophyText')}&rdquo;
                       </p>
                       <cite className="text-accent text-sm font-medium">— {t('pages.equipo.draCelinaTitle')}</cite>
                     </blockquote>

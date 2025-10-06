@@ -14,25 +14,26 @@ import { Footer } from "@/components/layout/footer"
 import { CTAFloat } from "@/components/layout/cta-float"
 import { WhatsAppFloat } from "@/components/layout/whatsapp-float"
 import { Toaster } from "sonner"
-import { Sparkles, Star, UserCheck, CheckCircle, MapPin, Phone, Clock, MessageCircle, Stethoscope, User, Heart, Send, Calendar, Mail } from "lucide-react"
+import { Sparkles, Star, CheckCircle, MapPin, Phone, Clock, MessageCircle, Stethoscope, User, Heart, Send, Calendar } from "lucide-react"
 import { useLanguage } from "@/components/providers/language-provider"
 import { ImagePaths } from "@/lib/image-paths"
+import type { Tratamiento } from "@/lib/types"
 
 interface HomeClientProps {
   clinica: {
     nombre: string
-    direccion: string
     telefono: string
     whatsapp: string
     email: string
+    direccion: string
     horario: string
   }
-  reseñas: any[]
-  destacados: any[]
-  estrella: any
+  reseñas: Array<{ name: string; text: string; role: string }>
+  destacados: Tratamiento[]
+  estrella: Tratamiento
 }
 
-export function HomeClient({ clinica, reseñas, estrella, destacados }: HomeClientProps) {
+export function HomeClient({ clinica, destacados, estrella }: HomeClientProps) {
   const { t } = useLanguage()
 
   return (

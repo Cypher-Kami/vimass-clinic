@@ -50,7 +50,7 @@ export default function ContactForm() {
       } else {
         throw new Error('Error al enviar el mensaje')
       }
-    } catch (error) {
+    } catch {
       toast.error('Error al enviar el mensaje. Inténtalo de nuevo.')
     } finally {
       setIsSubmitting(false)

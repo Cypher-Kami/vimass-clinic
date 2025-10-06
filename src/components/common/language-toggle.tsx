@@ -1,7 +1,7 @@
 "use client"
 
+import React from 'react'
 import { useLanguage } from '@/components/providers/language-provider'
-import { Language } from '@/lib/language'
 
 export function LanguageToggle() {
   const { language, setLanguage } = useLanguage()
