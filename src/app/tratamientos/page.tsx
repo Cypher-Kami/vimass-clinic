@@ -1,8 +1,9 @@
-import { getTratamientos } from "@/lib/content"
+import { getSite, getTratamientos } from "@/lib/content"
 import { TratamientosClient } from "./tratamientos-client"
 
 export default function TratamientosPage() {
+  const site = getSite()
   const treatments = getTratamientos()
   
-  return <TratamientosClient treatments={treatments} />
+  return <TratamientosClient clinica={site.clinica} treatments={treatments} />
 }

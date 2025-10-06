@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "sonner"
+import { useLanguage } from "@/components/providers/language-provider"
 
 const FormSchema = z.object({
   nombre: z.string().min(2),
@@ -15,6 +16,7 @@ const FormSchema = z.object({
 })
 
 export function ReserveDialog() {
+  const { t } = useLanguage()
   const form = useForm<{ nombre: string; telefono: string; mensaje?: string }>({ resolver: zodResolver(FormSchema) })
 
   const onSubmit = async (data: { nombre: string; telefono: string; mensaje?: string }) => {
@@ -31,20 +33,20 @@ export function ReserveDialog() {
     <Dialog>
       <DialogTrigger asChild>
         <Button className="inline-flex items-center justify-center px-8 py-4 bg-accent text-foreground rounded-2xl hover:bg-accent/80 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 h-14 w-full sm:w-auto">
-          Reservar valoración
+          {t('cta.reserve')}
         </Button>
       </DialogTrigger>
       <DialogContent className="rounded-2xl">
-        <DialogHeader><DialogTitle>Reserva rápida</DialogTitle></DialogHeader>
+        <DialogHeader><DialogTitle>{t('dialog.quickReserve')}</DialogTitle></DialogHeader>
         <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
-          <Input placeholder="Nombre completo" {...form.register("nombre")} />
-          <Input placeholder="Teléfono/WhatsApp" {...form.register("telefono")} />
-          <Textarea placeholder="Mensaje (opcional)" {...form.register("mensaje")} />
+          <Input placeholder={t('dialog.namePlaceholder')} {...form.register("nombre")} />
+          <Input placeholder={t('dialog.phonePlaceholder')} {...form.register("telefono")} />
+          <Textarea placeholder={t('dialog.messagePlaceholder')} {...form.register("mensaje")} />
           <Button 
             type="submit" 
             className="w-full px-8 py-4 bg-accent text-foreground rounded-2xl hover:bg-accent/80 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
-            Enviar
+            {t('dialog.submit')}
           </Button>
         </form>
       </DialogContent>

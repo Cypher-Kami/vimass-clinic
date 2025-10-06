@@ -17,7 +17,7 @@ import { Toaster } from "sonner"
 import { Sparkles, Star, CheckCircle, MapPin, Phone, Clock, MessageCircle, Stethoscope, User, Heart, Send, Calendar } from "lucide-react"
 import { useLanguage } from "@/components/providers/language-provider"
 import { ImagePaths } from "@/lib/image-paths"
-import type { Tratamiento } from "@/lib/types"
+import type { Tratamiento, Review } from "@/lib/types"
 
 interface HomeClientProps {
   clinica: {
@@ -28,13 +28,17 @@ interface HomeClientProps {
     direccion: string
     horario: string
   }
-  reseñas: Array<{ name: string; text: string; role: string }>
+  reseñas: Review[]
   destacados: Tratamiento[]
   estrella: Tratamiento
 }
 
-export function HomeClient({ clinica, destacados, estrella }: HomeClientProps) {
+export function HomeClient({ clinica, reseñas, destacados, estrella }: HomeClientProps) {
   const { t } = useLanguage()
+  
+  // Reviews are handled internally by the Reviews component
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _reseñas = reseñas;
 
   return (
     <>

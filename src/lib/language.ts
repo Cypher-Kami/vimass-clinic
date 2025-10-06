@@ -165,9 +165,18 @@ export const translations = {
       contact: 'Contacto'
     },
     
-    // CTA flotante
+            // CTA flotante
     cta: {
       reserve: 'Reservar valoración'
+    },
+    
+    // Diálogo de reserva
+    dialog: {
+      quickReserve: 'Reserva rápida',
+      namePlaceholder: 'Nombre completo',
+      phonePlaceholder: 'Teléfono/WhatsApp',
+      messagePlaceholder: 'Mensaje (opcional)',
+      submit: 'Enviar'
     },
     
     // Páginas
@@ -195,7 +204,10 @@ export const translations = {
         submitButton: 'Enviar mensaje',
         clinicGalleryTitle: 'Nuestras Instalaciones',
         clinicGalleryDescription: 'Espacios diseñados para tu comodidad y bienestar durante tu visita',
-        scheduleText: 'Lunes a Viernes: 9:00 - 19:00\nSábado: 9:00 - 14:00'
+        scheduleText: 'Lunes a Viernes: 9:00 - 19:00\nSábado: 9:00 - 14:00',
+        facilityReception: 'Recepción',
+        facilityTreatmentRoom: 'Sala de Tratamientos',
+        facilityConsultingRoom: 'Consultorio'
       },
       
       // Página de equipo
@@ -445,6 +457,15 @@ export const translations = {
       reserve: 'Book consultation'
     },
     
+    // Reserve dialog
+    dialog: {
+      quickReserve: 'Quick booking',
+      namePlaceholder: 'Full name',
+      phonePlaceholder: 'Phone/WhatsApp',
+      messagePlaceholder: 'Message (optional)',
+      submit: 'Send'
+    },
+    
     // Pages
     pages: {
       // Contact page
@@ -470,7 +491,10 @@ export const translations = {
         submitButton: 'Send message',
         clinicGalleryTitle: 'Our Facilities',
         clinicGalleryDescription: 'Spaces designed for your comfort and well-being during your visit',
-        scheduleText: 'Monday to Friday: 9:00 - 19:00\nSaturday: 9:00 - 14:00'
+        scheduleText: 'Monday to Friday: 9:00 - 19:00\nSaturday: 9:00 - 14:00',
+        facilityReception: 'Reception',
+        facilityTreatmentRoom: 'Treatment Room',
+        facilityConsultingRoom: 'Consulting Room'
       },
       
       // Team page

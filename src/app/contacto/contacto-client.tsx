@@ -225,7 +225,7 @@ export function ContactoClient({ clinica }: ContactoClientProps) {
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-3 left-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <p className="text-sm font-medium">Recepción</p>
+                      <p className="text-sm font-medium">{t('pages.contacto.facilityReception')}</p>
                     </div>
                   </div>
                   
@@ -240,7 +240,7 @@ export function ContactoClient({ clinica }: ContactoClientProps) {
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-3 left-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <p className="text-sm font-medium">Sala de Tratamientos</p>
+                      <p className="text-sm font-medium">{t('pages.contacto.facilityTreatmentRoom')}</p>
                     </div>
                   </div>
                   
@@ -255,7 +255,7 @@ export function ContactoClient({ clinica }: ContactoClientProps) {
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-3 left-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <p className="text-sm font-medium">Consultorio</p>
+                      <p className="text-sm font-medium">{t('pages.contacto.facilityConsultingRoom')}</p>
                     </div>
                   </div>
                 </div>
