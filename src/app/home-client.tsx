@@ -185,33 +185,24 @@ export function HomeClient({ clinica, reseñas, destacados }: HomeClientProps) {
                 </Link>
               </div>
             </div>
-            <div className="space-y-4">
-              <div className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="relative aspect-[4/3]">
-                  <Image 
-                    src={ImagePaths.resultados[0]} 
-                    alt="Resultado 1 - Antes y Después" 
-                    fill 
-                    className="object-cover transition-transform duration-500 group-hover:scale-105" 
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority
-                  />
-                </div>
-                <div className="absolute bottom-3 left-3 bg-black/70 text-white px-3 py-1 rounded text-sm">
-                  {t('home.beforeAfterLabel')}
-                </div>
-              </div>
-              
+            <div className="relative">
               <div className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="relative aspect-[4/3]">
                   <Image 
                     src={ImagePaths.resultados[2]} 
-                    alt="Resultado 3 - Antes y Después" 
+                    alt="Resultado - Antes y Después" 
                     fill 
                     className="object-cover transition-transform duration-500 group-hover:scale-105" 
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     priority
                   />
+                  {/* Blur overlay for eyes privacy - two bars with separation in center */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    {/* Left bar - from start to center */}
+                    <div className="absolute top-[27%] left-[2%] w-[45%] h-12 bg-white/30 backdrop-blur-lg rounded-full"></div>
+                    {/* Right bar - from center to end */}
+                    <div className="absolute top-[27%] right-[2%] w-[45%] h-12 bg-white/30 backdrop-blur-lg rounded-full"></div>
+                  </div>
                 </div>
                 <div className="absolute bottom-3 left-3 bg-black/70 text-white px-3 py-1 rounded text-sm">
                   {t('home.beforeAfterLabel')}
