@@ -96,11 +96,6 @@ export function HomeClient({ clinica, reseñas, destacados, estrella }: HomeClie
           </div>
         </div>
 
-        {/* Slider de tratamientos destacados */}
-                <Section title={t('home.reviewsTitle')}>
-          <TreatmentSlider treatments={destacados} />
-        </Section>
-
         {/* CTA Ver todos los tratamientos */}
         <div className="container text-center py-8">
           <Link 

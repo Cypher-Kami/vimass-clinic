@@ -1,13 +1,12 @@
 'use client'
 
 import { useState, useEffect } from "react"
-import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react"
+import { Star, Quote } from "lucide-react"
 import { useLanguage } from "@/components/providers/language-provider"
 
 export function Reviews() {
   const { language } = useLanguage()
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   
   // Obtener reviews directamente de las traducciones
   const reviews = language === 'es' 
@@ -56,34 +55,17 @@ export function Reviews() {
         }
       ]
   
-  // Auto-play functionality
+    // Auto-play functionality
   useEffect(() => {
-    if (!isAutoPlaying || reviews.length <= 3) return
-    
-    const maxIndex = Math.ceil(reviews.length / 3) - 1
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => prev >= maxIndex ? 0 : prev + 1)
-    }, 6000) // Cambia cada 6 segundos para dar más tiempo a leer
-    
+      setCurrentIndex((prev) => {
+        const maxSlides = reviews.length - 2 // Show 3 cards, so max starting position is length - 2
+        return prev >= maxSlides ? 0 : prev + 1
+      })
+    }, 6000) // Change slide every 6 seconds
+
     return () => clearInterval(interval)
-  }, [isAutoPlaying, reviews.length])
-  
-  const maxIndex = Math.ceil(reviews.length / 3) - 1
-  
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => prev <= 0 ? maxIndex : prev - 1)
-    setIsAutoPlaying(false)
-  }
-  
-  const goToNext = () => {
-    setCurrentIndex((prev) => prev >= maxIndex ? 0 : prev + 1)
-    setIsAutoPlaying(false)
-  }
-  
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-    setIsAutoPlaying(false)
-  }
+  }, [reviews.length])
   
   if (reviews.length === 0) return null
   
@@ -92,80 +74,55 @@ export function Reviews() {
       {/* Slider Container */}
       <div className="relative overflow-hidden">
         <div 
-          className="flex gap-6 transition-transform duration-700 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * (100 / Math.min(reviews.length, 3))}%)` }}
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 33.333}%)` }}
         >
           {reviews.map((review, index) => (
-            <div key={index} className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0">
-              <div className="bg-white rounded-2xl border border-border p-6 shadow-soft hover:shadow-lg transition-all duration-300 h-full">
+            <div key={index} className="w-1/3 flex-shrink-0 px-2">
+              <div className="bg-white rounded-xl border border-border p-4 shadow-soft hover:shadow-lg transition-all duration-300 h-full mx-2">
                 {/* Quote Icon */}
-                <div className="flex justify-center mb-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                    <Quote className="w-6 h-6 text-accent" />
+                <div className="flex justify-center mb-3">
+                  <div className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center">
+                    <Quote className="w-4 h-4 text-accent" />
                   </div>
                 </div>
                 
                 {/* Stars */}
-                <div className="flex justify-center gap-1 mb-4">
+                <div className="flex justify-center gap-1 mb-3">
                   {Array.from({ length: 5 }).map((_, starIndex) => (
-                    <Star key={starIndex} size={16} className="fill-accent text-accent" />
+                    <Star key={starIndex} size={12} className="fill-accent text-accent" />
                   ))}
                 </div>
                 
                 {/* Review Text */}
-                <blockquote className="text-sm text-muted-foreground leading-relaxed mb-4 overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>
+                <blockquote className="text-xs text-muted-foreground leading-relaxed mb-3 overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' }}>
                   &ldquo;{review.text}&rdquo;
                 </blockquote>
                 
                 {/* Author Info */}
-                <div className="text-center pt-4 border-t border-border">
-                  <div className="font-semibold text-foreground">{review.name}</div>
+                <div className="text-center pt-3 border-t border-border">
+                  <div className="font-semibold text-foreground text-sm">{review.name}</div>
                   <div className="text-xs text-accent font-medium mt-1">{review.role}</div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        
-        {/* Navigation Arrows */}
-        {reviews.length > 3 && (
-          <>
-            <button
-              onClick={goToPrevious}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 z-10"
-              aria-label="Review anterior"
-            >
-              <ChevronLeft className="w-5 h-5 text-gray-700" />
-            </button>
-            
-            <button
-              onClick={goToNext}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 z-10"
-              aria-label="Review siguiente"
-            >
-              <ChevronRight className="w-5 h-5 text-gray-700" />
-            </button>
-          </>
-        )}
       </div>
       
-      {/* Dots Indicator */}
-      {reviews.length > 3 && (
-        <div className="flex justify-center gap-2 mt-6">
-          {Array.from({ length: Math.ceil(reviews.length / 3) }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                index === currentIndex 
-                  ? 'bg-accent scale-125' 
-                  : 'bg-gray-300 hover:bg-gray-400'
-              }`}
-              aria-label={`Ir al grupo ${index + 1}`}
-            />
-          ))}
-        </div>
-      )}
+      {/* Progress Indicator */}
+      <div className="flex justify-center gap-2 mt-4">
+        {Array.from({ length: reviews.length - 2 }).map((_, index) => (
+          <div
+            key={index}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex 
+                ? 'bg-accent scale-125' 
+                : 'bg-gray-300'
+            }`}
+          />
+        ))}
+      </div>
     </div>
   )
 }

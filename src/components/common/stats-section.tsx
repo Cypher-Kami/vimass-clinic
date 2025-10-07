@@ -43,9 +43,6 @@ export function StatsSection() {
     <Section title={t('stats.title')}>
       <div className="bg-gradient-to-r from-secondary/20 to-accent/10 rounded-3xl p-8 md:p-12">
         <div className="text-center mb-12">
-          <h2 className="font-title text-3xl md:text-4xl mb-4">
-            {t('stats.title')}
-          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {t('stats.subtitle')}
           </p>
