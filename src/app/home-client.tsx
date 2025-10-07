@@ -287,7 +287,7 @@ export function HomeClient({ clinica, reseñas, destacados }: HomeClientProps) {
                   </div>
                   <div>
                     <p className="font-medium text-sm">{t('home.contact.schedule')}</p>
-                    <p className="text-xs text-muted-foreground">{clinica.horario}</p>
+                    <p className="text-xs text-muted-foreground">{t('pages.contacto.scheduleText')}</p>
                   </div>
                 </div>
               </div>

@@ -588,7 +588,7 @@ export const translations = {
         submitButton: 'Enviar mensaje',
         clinicGalleryTitle: 'Nuestras Instalaciones',
         clinicGalleryDescription: 'Espacios diseñados para tu comodidad y bienestar durante tu visita',
-        scheduleText: 'Lunes a Viernes: 9:00 - 19:00\nSábado: 9:00 - 14:00',
+        scheduleText: 'L-V: 10:00 - 20:00',
         facilityReception: 'Recepción',
         facilityTreatmentRoom: 'Sala de Tratamientos',
         facilityConsultingRoom: 'Consultorio'
@@ -1297,7 +1297,7 @@ export const translations = {
         submitButton: 'Send message',
         clinicGalleryTitle: 'Our Facilities',
         clinicGalleryDescription: 'Spaces designed for your comfort and well-being during your visit',
-        scheduleText: 'Monday to Friday: 9:00 - 19:00\nSaturday: 9:00 - 14:00',
+        scheduleText: 'M-F: 10:00 - 20:00',
         facilityReception: 'Reception',
         facilityTreatmentRoom: 'Treatment Room',
         facilityConsultingRoom: 'Consulting Room'

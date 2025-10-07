@@ -27,7 +27,7 @@ export function Footer({ clinica }: FooterProps) {
     telefono: "+34 622 324 581",
     whatsapp: "+34 622 324 581",
     email: "info@drcelinasuarez.com",
-    horario: "L-V: 9:00-19:00"
+    horario: "M-F: 9:00-19:00"
   }
 
   const clinicaData = clinica || defaultClinica
@@ -51,7 +51,7 @@ export function Footer({ clinica }: FooterProps) {
           </div>
           <div className="flex items-center gap-2 text-sm">
             <Clock className="w-4 h-4 text-amber-700" />
-            <span>{clinicaData.horario}</span>
+            <span>{t('pages.contacto.scheduleText')}</span>
           </div>
         </div>
         <div className="space-y-3">

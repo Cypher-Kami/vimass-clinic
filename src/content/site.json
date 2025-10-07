@@ -1,11 +1,11 @@
 {
   "clinica": {
     "nombre": "Vimass Clinic",
-    "telefono": "+34 722 48 00 26",
-    "whatsapp": "+34 722 48 00 26",
+    "telefono": "+34 622 324 581",
+    "whatsapp": "+34 622 324 581",
     "email": "info@vimass.es",
     "direccion": "Passeig de Gràcia, Barcelona",
-    "horario": "L-V 10:00–20:00"
+    "horario": "M-F 10:00–20:00"
   },
   "hero": {
     "headline": "Medicina de precisión.",

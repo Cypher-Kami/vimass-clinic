@@ -181,7 +181,7 @@ export function EquipoClient() {
                     <Clock className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="font-semibold mb-2">{t('pages.contacto.scheduleTitle')}</h4>
-                  <p className="text-muted-foreground">L-V 10:00–20:00</p>
+                  <p className="text-muted-foreground">{t('pages.contacto.scheduleText')}</p>
                 </div>
               </div>
             </div>

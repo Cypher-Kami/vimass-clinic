@@ -105,7 +105,7 @@ export function ContactoClient({ clinica }: ContactoClientProps) {
                 <Clock className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-semibold mb-2">{t('pages.contacto.scheduleTitle')}</h3>
-              <p className="text-muted-foreground">{clinica.horario}</p>
+              <p className="text-muted-foreground">{t('pages.contacto.scheduleText')}</p>
             </div>
           </div>
         </Section>
