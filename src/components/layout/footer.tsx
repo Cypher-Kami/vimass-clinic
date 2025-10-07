@@ -24,9 +24,9 @@ export function Footer({ clinica }: FooterProps) {
   const defaultClinica = {
     nombre: "VIMASS Clinic",
     direccion: "Passeig de Gràcia, 85, Barcelona",
-    telefono: "+34 93 000 0000",
-    whatsapp: "+34 600 000 000",
-    email: "info@vimassclinic.com",
+    telefono: "+34 622 324 581",
+    whatsapp: "+34 622 324 581",
+    email: "info@drcelinasuarez.com",
     horario: "L-V: 9:00-19:00"
   }
 

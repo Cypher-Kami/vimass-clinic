@@ -26,7 +26,7 @@ export function WhatsAppFloat({ clinica }: WhatsAppFloatProps) {
   
   // Datos por defecto si no se proporcionan
   const clinicaData = clinica || {
-    whatsapp: "+34 722 48 00 26"
+    whatsapp: "+34 622 324 581"
   }
 
   const handleWhatsAppClick = () => {

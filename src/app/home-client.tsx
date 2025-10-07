@@ -9,6 +9,7 @@ import { TreatmentSlider } from "@/components/common/treatment-slider"
 import { Reviews } from "@/components/common/reviews"
 import { StatsSection } from "@/components/common/stats-section"
 import { ReserveDialog } from "@/components/common/reserve-dialog"
+import ContactForm from "@/components/common/contact-form"
 import { MainNav } from "@/components/layout/main-nav"
 import { Footer } from "@/components/layout/footer"
 import { CTAFloat } from "@/components/layout/cta-float"
@@ -236,67 +237,7 @@ export function HomeClient({ clinica, reseñas, destacados, estrella }: HomeClie
                 </p>
               </div>
               
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium flex items-center gap-2">
-                      <User className="w-4 h-4 text-accent" />
-                      {t('home.form.nameLabel')}
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200"
-                      placeholder={t('home.form.namePlaceholder')}
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium flex items-center gap-2">
-                      <Phone className="w-4 h-4 text-accent" />
-                      {t('home.form.phoneLabel')}
-                    </label>
-                    <input
-                      type="tel"
-                      className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200"
-                      placeholder={t('home.form.phonePlaceholder')}
-                    />
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-sm font-medium flex items-center gap-2">
-                    <Heart className="w-4 h-4 text-accent" />
-                    {t('home.form.treatmentLabel')}
-                  </label>
-                  <select className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200">
-                    <option>{t('home.form.treatmentOptions.functional')}</option>
-                    <option>{t('home.form.treatmentOptions.antiaging')}</option>
-                    <option>{t('home.form.treatmentOptions.integrative')}</option>
-                    <option>{t('home.form.treatmentOptions.general')}</option>
-                    <option>{t('home.form.treatmentOptions.other')}</option>
-                  </select>
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-sm font-medium flex items-center gap-2">
-                    <MessageCircle className="w-4 h-4 text-accent" />
-                    {t('home.form.messageLabel')}
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 resize-none"
-                    placeholder={t('home.form.messagePlaceholder')}
-                  ></textarea>
-                </div>
-                
-                <button
-                  type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-accent text-foreground rounded-xl hover:bg-accent/80 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  <Send className="w-5 h-5" />
-                  {t('home.form.submitButton')}
-                </button>
-              </form>
+              <ContactForm />
               
               <div className="p-6 bg-accent/5 rounded-xl border border-accent/20">
                 <h4 className="font-semibold mb-2 flex items-center gap-2">
