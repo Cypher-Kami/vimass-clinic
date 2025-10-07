@@ -90,6 +90,310 @@ export const translations = {
         vascularMetabolico: 'Vascular / Metabólico',
         integrativa: 'Integrativa'
       },
+
+      // Objetivos de tratamiento
+      objectives: {
+        melasmaDiscromias: {
+          title: 'Melasma y Discromías (manchas)',
+          description: 'Tratamientos para las manchas con tecnología láser y activos regeneradores y despigmentantes que unifican el tono y devuelven la luminosidad a tu piel y la oxigenación del tejido.'
+        },
+        estrias: {
+          title: 'Estrías',
+          description: 'Tratamientos para mejorar la calidad de las estrías activando la oxigenación local, estimulando la producción de colágeno y elastina y regeneración profunda de la piel desde el interior.'
+        },
+        varices: {
+          title: 'Várices',
+          description: 'Tratamientos para aliviar y mejorar el aspecto de las varices, revitalizando tus piernas con tratamientos no invasivos que estimulan la circulación y reducen la pigmentación y también método mínimamente invasivo.'
+        },
+        remodelacionCorporal: {
+          title: 'Remodelación corporal (celulitis, flacidez, grasa localizada)',
+          description: 'Tratamientos para redefinir tu silueta, mejorando la firmeza, textura y tonicidad de la piel de forma natural, estimulando el tejido desde el interior.'
+        },
+        lineasExpresion: {
+          title: 'Líneas de expresión',
+          description: 'Tratamientos para atenuar las arrugas, con técnicas que suavizan la expresión sin alterar tu naturalidad. Resultados visibles, elegantes y progresivos.'
+        },
+        armoniaFacial: {
+          title: 'Armonía facial natural',
+          description: 'Tratamientos para realzar la armonía facial respetando tu esencia, equilibrando volúmenes y resaltando tus rasgos con elegancia y naturalidad.'
+        },
+        rejuvenecimientoPiel: {
+          title: 'Rejuvenecimiento de la piel (flacidez, arrugas, manchas)',
+          description: 'Tratamientos para rejuvenecer tu piel con tecnologías y activos que restauran la firmeza, el brillo, el viso, la luminosidad, la textura y la calidad de la piel.'
+        },
+        acne: {
+          title: 'Acné',
+          description: 'Tratamientos para el acné desde la raíz, con un enfoque integral que equilibra la piel y reduce marcas y brotes, para una apariencia uniforme y saludable, elevando la autoestima.'
+        },
+        rosaceaCuperosis: {
+          title: 'Rosácea y Cuperosis',
+          description: 'Tratamientos para calmar la piel sensible y reducir la inflamación y la rojez con tratamientos específicos que mejoran la barrera cutánea.'
+        },
+        saludCapilar: {
+          title: 'Salud capilar (alopecia, caída, brillo)',
+          description: 'Tratamientos para fortalecer el cabello desde la raíz, mejorando su oxigenación, microcirculación sanguínea, densidad, brillo y resistencia con terapias regenerativas.'
+        },
+        controlPeso: {
+          title: 'Control de peso',
+          description: 'Programa desarrollado para ayudar a alcanzar tu peso ideal de forma saludable, con acompañamiento profesional y tratamientos corporales que estimulan el metabolismo a la quema de grasa localizada, mejoría de la silueta corporal, calidad de la piel.'
+        }
+      },
+
+      // Contenido detallado de tratamientos
+      treatmentContent: {
+        acidohialuronico: {
+          title: 'Ácido Hialurónico',
+          excerpt: 'Relleno de arrugas y volumen facial.',
+          bullets: ['Hidratación profunda', 'Resultados inmediatos', 'Producto reabsorbible'],
+          faq: [
+            { q: '¿Es seguro?', a: 'Totalmente biocompatible y reabsorbible.' },
+            { q: '¿Cuánto dura?', a: 'Entre 8-15 meses según la zona tratada.' }
+          ]
+        },
+        antiaging: {
+          title: 'Protocolos Antiaging',
+          excerpt: 'Programas integrales para retrasar el envejecimiento y optimizar la salud.',
+          bullets: ['Enfoque integral', 'Medicina personalizada', 'Prevención activa'],
+          faq: [
+            { q: '¿Qué incluye un protocolo antiaging?', a: 'Evaluación completa, suplementación, tratamientos y seguimiento.' },
+            { q: '¿A qué edad se recomienda?', a: 'Ideal a partir de los 30 años como prevención.' }
+          ]
+        },
+        bioestimuladores: {
+          title: 'Bioestimuladores',
+          excerpt: 'Estimulación de colágeno propio para rejuvenecimiento natural y duradero.',
+          bullets: ['Estimula colágeno propio', 'Resultados naturales', 'Efecto progresivo'],
+          faq: [
+            { q: '¿Qué son los bioestimuladores?', a: 'Sustancias que estimulan la producción natural de colágeno.' },
+            { q: '¿Cuánto duran los efectos?', a: 'Los resultados pueden durar hasta 2 años.' }
+          ]
+        },
+        bioimpedancia: {
+          title: 'Bioimpedancia',
+          excerpt: 'Análisis de composición corporal para evaluación metabólica completa.',
+          bullets: ['Medición precisa', 'Análisis detallado', 'Seguimiento objetivo'],
+          faq: [
+            { q: '¿Qué mide la bioimpedancia?', a: 'Masa muscular, grasa corporal, agua y metabolismo basal.' },
+            { q: '¿Es doloroso?', a: 'No, es completamente indoloro y no invasivo.' }
+          ]
+        },
+        carboxiterapia: {
+          title: 'Carboxiterapia',
+          excerpt: 'Terapia con CO2 médico para mejorar circulación y oxigenación.',
+          bullets: ['Mejora circulación', 'Efecto lifting', 'Reduce celulitis'],
+          faq: [
+            { q: '¿Cómo funciona?', a: 'El CO2 mejora la oxigenación y estimula la microcirculación.' },
+            { q: '¿Cuántas sesiones necesito?', a: 'Entre 6-10 sesiones según el objetivo.' }
+          ]
+        },
+        escleroterapia: {
+          title: 'Escleroterapia',
+          excerpt: 'Tratamiento para varices y capilares mediante inyección esclerosante.',
+          bullets: ['Elimina varices', 'Mínimamente invasivo', 'Recuperación rápida'],
+          faq: [
+            { q: '¿Es efectivo?', a: 'Muy efectivo para varices pequeñas y medianas.' },
+            { q: '¿Hay efectos secundarios?', a: 'Mínimos, puede haber ligera inflamación temporal.' }
+          ]
+        },
+        exosomos: {
+          title: 'Exosomos',
+          excerpt: 'Terapia regenerativa avanzada con exosomos para rejuvenecimiento celular.',
+          bullets: ['Medicina regenerativa', 'Rejuvenecimiento celular', 'Tecnología avanzada'],
+          faq: [
+            { q: '¿Qué son los exosomos?', a: 'Vesículas extracelulares que contienen factores de crecimiento.' },
+            { q: '¿Es un tratamiento seguro?', a: 'Completamente seguro, de origen natural.' }
+          ]
+        },
+        harmonylaser: {
+          title: 'Harmony Láser',
+          excerpt: 'Tecnología láser avanzada para tratamiento de manchas y rejuvenecimiento.',
+          bullets: ['Tecnología avanzada', 'Resultados precisos', 'Mínimo downtime'],
+          faq: [
+            { q: '¿Para qué se usa?', a: 'Manchas, melasma, rejuvenecimiento y lesiones vasculares.' },
+            { q: '¿Duele?', a: 'Molestia mínima, tolerable sin anestesia.' }
+          ]
+        },
+        hidratacionprofunda: {
+          title: 'Hidratación Profunda',
+          excerpt: 'Tratamientos intensivos para restaurar la hidratación y luminosidad de la piel.',
+          bullets: ['Hidratación intensa', 'Restaura luminosidad', 'Efecto inmediato'],
+          faq: [
+            { q: '¿Cuánto dura el efecto?', a: 'Los resultados se mantienen entre 4-6 meses.' },
+            { q: '¿Para qué tipo de piel?', a: 'Ideal para piel deshidratada y apagada.' }
+          ]
+        },
+        higienefacial: {
+          title: 'Higiene Facial',
+          excerpt: 'Limpieza profunda y purificación para una piel saludable y radiante.',
+          bullets: ['Limpieza profunda', 'Purifica poros', 'Piel radiante'],
+          faq: [
+            { q: '¿Con qué frecuencia?', a: 'Recomendado cada 4-6 semanas.' },
+            { q: '¿Es para todo tipo de piel?', a: 'Sí, adaptamos el tratamiento según el tipo de piel.' }
+          ]
+        },
+        hilospdo: {
+          title: 'Hilos PDO',
+          excerpt: 'Hilos reabsorbibles para lifting facial y estimulación de colágeno.',
+          bullets: ['Lifting inmediato', 'Estimula colágeno', 'Reabsorbibles'],
+          faq: [
+            { q: '¿Cuánto dura el efecto?', a: 'Entre 12-18 meses, con efecto progresivo.' },
+            { q: '¿Es doloroso?', a: 'Molestia mínima con anestesia local.' }
+          ]
+        },
+        hilostensores: {
+          title: 'Hilos Tensores',
+          excerpt: 'Lifting facial no quirúrgico con hilos de última generación.',
+          bullets: ['Lifting sin cirugía', 'Resultados inmediatos', 'Recuperación rápida'],
+          faq: [
+            { q: '¿Qué zonas se pueden tratar?', a: 'Rostro, cuello y escote principalmente.' },
+            { q: '¿Cuándo se ven los resultados?', a: 'Inmediatos, mejorando progresivamente.' }
+          ]
+        },
+        labios: {
+          title: 'Aumento de Labios',
+          excerpt: 'Realce y definición de labios para un resultado natural y armonioso.',
+          bullets: ['Resultado natural', 'Efecto inmediato', 'Totalmente reversible'],
+          faq: [
+            { q: '¿Se ve natural?', a: 'Sí, buscamos siempre un resultado armónico y natural.' },
+            { q: '¿Cuánto dura?', a: 'Entre 6-12 meses según el producto utilizado.' }
+          ]
+        },
+        medicinafuncional: {
+          title: 'Medicina Funcional',
+          excerpt: 'Enfoque integral para optimizar la salud y prevenir enfermedades.',
+          bullets: ['Enfoque preventivo', 'Medicina personalizada', 'Análisis completo'],
+          faq: [
+            { q: '¿Qué incluye?', a: 'Análisis completos, plan nutricional y suplementación.' },
+            { q: '¿Para quién?', a: 'Ideal para personas que buscan optimizar su salud.' }
+          ]
+        },
+        medicinaintegrativa: {
+          title: 'Medicina Integrativa',
+          excerpt: 'Combinación de medicina convencional y terapias complementarias.',
+          bullets: ['Enfoque holístico', 'Medicina personalizada', 'Tratamiento integral'],
+          faq: [
+            { q: '¿Qué combina?', a: 'Medicina convencional con terapias naturales y preventivas.' },
+            { q: '¿Es seguro?', a: 'Completamente seguro, basado en evidencia científica.' }
+          ]
+        },
+        mesoterapia: {
+          title: 'Mesoterapia',
+          excerpt: 'Microinyecciones de principios activos para rejuvenecimiento y reparación.',
+          bullets: ['Principios activos directos', 'Rejuvenecimiento', 'Mínimamente invasivo'],
+          faq: [
+            { q: '¿Qué productos se usan?', a: 'Vitaminas, minerales, aminoácidos y péptidos.' },
+            { q: '¿Cuántas sesiones?', a: 'Entre 3-6 sesiones según el objetivo.' }
+          ]
+        },
+        microneedling: {
+          title: 'Microneedling',
+          excerpt: 'Estimulación de colágeno mediante microperforaciones controladas.',
+          bullets: ['Estimula colágeno', 'Mejora textura', 'Mínimo downtime'],
+          faq: [
+            { q: '¿Para qué sirve?', a: 'Mejora textura, cicatrices, poros y firmeza.' },
+            { q: '¿Es doloroso?', a: 'Molestia mínima, se aplica anestesia tópica.' }
+          ]
+        },
+        neuromodulador: {
+          title: 'Neuromodulador',
+          excerpt: 'Relajación muscular para prevenir y tratar arrugas de expresión.',
+          bullets: ['Previene arrugas', 'Efecto natural', 'Mínimamente invasivo'],
+          faq: [
+            { q: '¿Duele la aplicación?', a: 'Molestia mínima, no requiere anestesia.' },
+            { q: '¿Cuándo se ven los resultados?', a: 'Entre 3-7 días tras la aplicación.' }
+          ]
+        },
+        ondaschoque: {
+          title: 'Ondas de Choque',
+          excerpt: 'Tecnología de ondas para celulitis, flacidez y remodelación corporal.',
+          bullets: ['Reduce celulitis', 'Reafirma tejidos', 'No invasivo'],
+          faq: [
+            { q: '¿Cómo funciona?', a: 'Las ondas estimulan la circulación y el drenaje linfático.' },
+            { q: '¿Cuántas sesiones?', a: 'Entre 6-12 sesiones según el objetivo.' }
+          ]
+        },
+        peeling: {
+          title: 'Peeling Químico',
+          excerpt: 'Exfoliación controlada para renovación celular y mejora de la textura.',
+          bullets: ['Renovación celular', 'Mejora textura', 'Unifica tono'],
+          faq: [
+            { q: '¿Qué tipos hay?', a: 'Superficial, medio y profundo según necesidades.' },
+            { q: '¿Hay descamación?', a: 'Puede haber descamación leve los primeros días.' }
+          ]
+        },
+        polinucleotidos: {
+          title: 'Polinucleótidos',
+          excerpt: 'Terapia regenerativa para reparación y rejuvenecimiento de tejidos.',
+          bullets: ['Reparación celular', 'Hidratación profunda', 'Mejora elasticidad'],
+          faq: [
+            { q: '¿Cómo actúan los polinucleótidos?', a: 'Estimulan la reparación y regeneración del ADN celular.' },
+            { q: '¿Para qué zonas es efectivo?', a: 'Especialmente efectivo en contorno de ojos y cuello.' }
+          ]
+        },
+        presoterapia: {
+          title: 'Presoterapia',
+          excerpt: 'Drenaje linfático mediante presión controlada para eliminar toxinas.',
+          bullets: ['Drenaje linfático', 'Elimina toxinas', 'Mejora circulación'],
+          faq: [
+            { q: '¿Para qué sirve?', a: 'Retención de líquidos, celulitis y mejora circulatoria.' },
+            { q: '¿Es relajante?', a: 'Muy relajante, muchos pacientes se duermen.' }
+          ]
+        },
+        prp: {
+          title: 'PRP',
+          excerpt: 'Plasma Rico en Plaquetas para regeneración natural con sangre propia.',
+          bullets: ['100% natural', 'Estimula regeneración', 'Sin efectos adversos'],
+          faq: [
+            { q: '¿Cómo se obtiene el PRP?', a: 'Se extrae de tu propia sangre mediante centrifugado.' },
+            { q: '¿Para qué sirve?', a: 'Rejuvenecimiento facial, capilar y regeneración de tejidos.' }
+          ]
+        },
+        radiofrecuencia: {
+          title: 'Radiofrecuencia',
+          excerpt: 'Tecnología para reafirmación y estimulación de colágeno mediante calor.',
+          bullets: ['Reafirma tejidos', 'Estimula colágeno', 'Sin downtime'],
+          faq: [
+            { q: '¿Se siente calor?', a: 'Sí, una sensación de calor agradable y controlada.' },
+            { q: '¿Cuántas sesiones?', a: 'Entre 4-8 sesiones según el área a tratar.' }
+          ]
+        },
+        terapialed: {
+          title: 'Terapia LED',
+          excerpt: 'Fototerapia con luz LED para rejuvenecimiento y reparación celular.',
+          bullets: ['Estimula células', 'Anti-inflamatorio', 'Sin efectos secundarios'],
+          faq: [
+            { q: '¿Cómo funciona?', a: 'La luz LED estimula la actividad celular y la producción de colágeno.' },
+            { q: '¿Es seguro?', a: 'Completamente seguro, sin contraindicaciones.' }
+          ]
+        },
+        toxinabotulinica: {
+          title: 'Toxina Botulínica',
+          excerpt: 'Tratamiento para arrugas dinámicas y exceso de sudoración.',
+          bullets: ['Elimina arrugas dinámicas', 'Efecto natural', 'Resultados duraderos'],
+          faq: [
+            { q: '¿Cuánto dura el efecto?', a: 'Entre 4-6 meses según la zona tratada.' },
+            { q: '¿Se ve natural?', a: 'Sí, permite expresiones naturales.' }
+          ]
+        },
+        ultrasonido: {
+          title: 'Ultrasonido',
+          excerpt: 'Tecnología ultrasónica para reafirmación profunda y lifting no invasivo.',
+          bullets: ['Lifting profundo', 'No invasivo', 'Resultados duraderos'],
+          faq: [
+            { q: '¿Cómo funciona?', a: 'El ultrasonido focalizado estimula las capas profundas de la piel.' },
+            { q: '¿Cuándo se ven resultados?', a: 'Gradualmente durante 2-3 meses.' }
+          ]
+        },
+        vitaminasnctf: {
+          title: 'Vitaminas (NCTF)',
+          excerpt: 'Revitalización celular con complejo vitamínico de última generación.',
+          bullets: ['Revitaliza células', 'Hidrata profundamente', 'Efecto luminoso'],
+          faq: [
+            { q: '¿Qué contiene NCTF?', a: 'Vitaminas, minerales, aminoácidos y coenzimas.' },
+            { q: '¿Con qué frecuencia?', a: 'Inicialmente 3 sesiones, luego mantenimiento.' }
+          ]
+        }
+      },
       
       // Equipo
       teamTitle: 'Detrás de VIMASS Clinic',
@@ -307,6 +611,13 @@ export const translations = {
         title: 'Tratamientos',
         subtitle: 'Descubre nuestra amplia gama de tratamientos de medicina preventiva y regenerativa',
         description: 'Cada tratamiento está diseñado para ofrecer resultados naturales y duraderos, respetando siempre tu esencia única.',
+        tabs: {
+          byType: 'Por Tipo de Tratamiento',
+          byProblem: 'Por Problema Específico',
+          problemsSubtitle: 'Encuentra la solución perfecta para tus necesidades específicas',
+          recommendedTreatments: 'Tratamientos recomendados:',
+          personalizedConsult: 'Consulta personalizada'
+        },
         categories: {
           aesthetic: 'Medicina Estética',
           functional: 'Medicina Funcional',
@@ -332,7 +643,9 @@ export const translations = {
       previous: 'Anterior',
       loading: 'Cargando...',
       error: 'Error',
-      success: 'Éxito'
+      success: 'Éxito',
+      beforeAfter: 'Antes y después',
+      faq: 'Preguntas frecuentes'
     }
   },
   
@@ -424,6 +737,310 @@ export const translations = {
         facialDermo: 'Facial / Dermo',
         vascularMetabolico: 'Vascular / Metabolic',
         integrativa: 'Integrative'
+      },
+
+      // Treatment objectives
+      objectives: {
+        melasmaDiscromias: {
+          title: 'Melasma and Dyschromia (dark spots)',
+          description: 'Treatments for dark spots with laser technology and regenerative and depigmenting actives that unify tone and restore luminosity to your skin and tissue oxygenation.'
+        },
+        estrias: {
+          title: 'Stretch Marks',
+          description: 'Treatments to improve stretch mark quality by activating local oxygenation, stimulating collagen and elastin production and deep skin regeneration from within.'
+        },
+        varices: {
+          title: 'Varicose Veins',
+          description: 'Treatments to relieve and improve the appearance of varicose veins, revitalizing your legs with non-invasive treatments that stimulate circulation and reduce pigmentation and also minimally invasive methods.'
+        },
+        remodelacionCorporal: {
+          title: 'Body Remodeling (cellulite, sagging, localized fat)',
+          description: 'Treatments to redefine your silhouette, improving firmness, texture and skin tone naturally, stimulating tissue from within.'
+        },
+        lineasExpresion: {
+          title: 'Expression Lines',
+          description: 'Treatments to soften wrinkles, with techniques that smooth expression without altering your naturalness. Visible, elegant and progressive results.'
+        },
+        armoniaFacial: {
+          title: 'Natural Facial Harmony',
+          description: 'Treatments to enhance facial harmony respecting your essence, balancing volumes and highlighting your features with elegance and naturalness.'
+        },
+        rejuvenecimientoPiel: {
+          title: 'Skin Rejuvenation (sagging, wrinkles, spots)',
+          description: 'Treatments to rejuvenate your skin with technologies and actives that restore firmness, brightness, glow, luminosity, texture and skin quality.'
+        },
+        acne: {
+          title: 'Acne',
+          description: 'Acne treatments from the root, with a comprehensive approach that balances the skin and reduces marks and breakouts, for a uniform and healthy appearance, boosting self-esteem.'
+        },
+        rosaceaCuperosis: {
+          title: 'Rosacea and Couperose',
+          description: 'Treatments to calm sensitive skin and reduce inflammation and redness with specific treatments that improve the skin barrier.'
+        },
+        saludCapilar: {
+          title: 'Hair Health (alopecia, hair loss, shine)',
+          description: 'Treatments to strengthen hair from the root, improving oxygenation, blood microcirculation, density, shine and resistance with regenerative therapies.'
+        },
+        controlPeso: {
+          title: 'Weight Control',
+          description: 'Program developed to help achieve your ideal weight in a healthy way, with professional accompaniment and body treatments that stimulate metabolism for localized fat burning, body silhouette improvement, skin quality.'
+        }
+      },
+
+      // Treatment detailed content
+      treatmentContent: {
+        acidohialuronico: {
+          title: 'Hyaluronic Acid',
+          excerpt: 'Wrinkle filling and facial volume enhancement.',
+          bullets: ['Deep hydration', 'Immediate results', 'Reabsorbable product'],
+          faq: [
+            { q: 'Is it safe?', a: 'Completely biocompatible and reabsorbable.' },
+            { q: 'How long does it last?', a: 'Between 8-15 months depending on the treated area.' }
+          ]
+        },
+        antiaging: {
+          title: 'Anti-aging Protocols',
+          excerpt: 'Comprehensive programs to delay aging and optimize health.',
+          bullets: ['Comprehensive approach', 'Personalized medicine', 'Active prevention'],
+          faq: [
+            { q: 'What does an anti-aging protocol include?', a: 'Complete evaluation, supplementation, treatments and follow-up.' },
+            { q: 'At what age is it recommended?', a: 'Ideal from age 30 as prevention.' }
+          ]
+        },
+        bioestimuladores: {
+          title: 'Biostimulators',
+          excerpt: 'Own collagen stimulation for natural and long-lasting rejuvenation.',
+          bullets: ['Stimulates own collagen', 'Natural results', 'Progressive effect'],
+          faq: [
+            { q: 'What are biostimulators?', a: 'Substances that stimulate natural collagen production.' },
+            { q: 'How long do the effects last?', a: 'Results can last up to 2 years.' }
+          ]
+        },
+        bioimpedancia: {
+          title: 'Bioimpedance',
+          excerpt: 'Body composition analysis for complete metabolic evaluation.',
+          bullets: ['Precise measurement', 'Detailed analysis', 'Objective monitoring'],
+          faq: [
+            { q: 'What does bioimpedance measure?', a: 'Muscle mass, body fat, water and basal metabolism.' },
+            { q: 'Is it painful?', a: 'No, it is completely painless and non-invasive.' }
+          ]
+        },
+        carboxiterapia: {
+          title: 'Carboxytherapy',
+          excerpt: 'Medical CO2 therapy to improve circulation and oxygenation.',
+          bullets: ['Improves circulation', 'Lifting effect', 'Reduces cellulite'],
+          faq: [
+            { q: 'How does it work?', a: 'CO2 improves oxygenation and stimulates microcirculation.' },
+            { q: 'How many sessions do I need?', a: 'Between 6-10 sessions depending on the objective.' }
+          ]
+        },
+        escleroterapia: {
+          title: 'Sclerotherapy',
+          excerpt: 'Treatment for varicose veins and capillaries through sclerosing injection.',
+          bullets: ['Eliminates varicose veins', 'Minimally invasive', 'Quick recovery'],
+          faq: [
+            { q: 'Is it effective?', a: 'Very effective for small and medium varicose veins.' },
+            { q: 'Are there side effects?', a: 'Minimal, there may be slight temporary inflammation.' }
+          ]
+        },
+        exosomos: {
+          title: 'Exosomes',
+          excerpt: 'Advanced regenerative therapy with exosomes for cellular rejuvenation.',
+          bullets: ['Regenerative medicine', 'Cellular rejuvenation', 'Advanced technology'],
+          faq: [
+            { q: 'What are exosomes?', a: 'Extracellular vesicles containing growth factors.' },
+            { q: 'Is it a safe treatment?', a: 'Completely safe, of natural origin.' }
+          ]
+        },
+        harmonylaser: {
+          title: 'Harmony Laser',
+          excerpt: 'Advanced laser technology for spot treatment and rejuvenation.',
+          bullets: ['Advanced technology', 'Precise results', 'Minimal downtime'],
+          faq: [
+            { q: 'What is it used for?', a: 'Spots, melasma, rejuvenation and vascular lesions.' },
+            { q: 'Does it hurt?', a: 'Minimal discomfort, tolerable without anesthesia.' }
+          ]
+        },
+        hidratacionprofunda: {
+          title: 'Deep Hydration',
+          excerpt: 'Intensive treatments to restore skin hydration and luminosity.',
+          bullets: ['Intense hydration', 'Restores luminosity', 'Immediate effect'],
+          faq: [
+            { q: 'How long does the effect last?', a: 'Results are maintained between 4-6 months.' },
+            { q: 'For what type of skin?', a: 'Ideal for dehydrated and dull skin.' }
+          ]
+        },
+        higienefacial: {
+          title: 'Deep Facial Cleansing',
+          excerpt: 'Deep cleansing and purification for healthy and radiant skin.',
+          bullets: ['Deep cleansing', 'Purifies pores', 'Radiant skin'],
+          faq: [
+            { q: 'How often?', a: 'Recommended every 4-6 weeks.' },
+            { q: 'Is it for all skin types?', a: 'Yes, we adapt the treatment according to skin type.' }
+          ]
+        },
+        hilospdo: {
+          title: 'PDO Threads',
+          excerpt: 'Reabsorbable threads for facial lifting and collagen stimulation.',
+          bullets: ['Immediate lifting', 'Stimulates collagen', 'Reabsorbable'],
+          faq: [
+            { q: 'How long does the effect last?', a: 'Between 12-18 months, with progressive effect.' },
+            { q: 'Is it painful?', a: 'Minimal discomfort with local anesthesia.' }
+          ]
+        },
+        hilostensores: {
+          title: 'Thread Lifts',
+          excerpt: 'Non-surgical facial lifting with latest generation threads.',
+          bullets: ['Lifting without surgery', 'Immediate results', 'Quick recovery'],
+          faq: [
+            { q: 'What areas can be treated?', a: 'Face, neck and décolletage mainly.' },
+            { q: 'When are results visible?', a: 'Immediate, improving progressively.' }
+          ]
+        },
+        labios: {
+          title: 'Lip Enhancement',
+          excerpt: 'Lip enhancement and definition for a natural and harmonious result.',
+          bullets: ['Natural result', 'Immediate effect', 'Fully reversible'],
+          faq: [
+            { q: 'Does it look natural?', a: 'Yes, we always seek a harmonious and natural result.' },
+            { q: 'How long does it last?', a: 'Between 6-12 months depending on the product used.' }
+          ]
+        },
+        medicinafuncional: {
+          title: 'Functional Medicine',
+          excerpt: 'Comprehensive approach to optimize health and prevent diseases.',
+          bullets: ['Preventive approach', 'Personalized medicine', 'Complete analysis'],
+          faq: [
+            { q: 'What does it include?', a: 'Complete analysis, nutritional plan and supplementation.' },
+            { q: 'For whom?', a: 'Ideal for people seeking to optimize their health.' }
+          ]
+        },
+        medicinaintegrativa: {
+          title: 'Integrative Medicine',
+          excerpt: 'Combination of conventional medicine and complementary therapies.',
+          bullets: ['Holistic approach', 'Personalized medicine', 'Comprehensive treatment'],
+          faq: [
+            { q: 'What does it combine?', a: 'Conventional medicine with natural and preventive therapies.' },
+            { q: 'Is it safe?', a: 'Completely safe, based on scientific evidence.' }
+          ]
+        },
+        mesoterapia: {
+          title: 'Mesotherapy',
+          excerpt: 'Microinjections of active ingredients for rejuvenation and repair.',
+          bullets: ['Direct active ingredients', 'Rejuvenation', 'Minimally invasive'],
+          faq: [
+            { q: 'What products are used?', a: 'Vitamins, minerals, amino acids and peptides.' },
+            { q: 'How many sessions?', a: 'Between 3-6 sessions depending on the objective.' }
+          ]
+        },
+        microneedling: {
+          title: 'Microneedling',
+          excerpt: 'Collagen stimulation through controlled microperforations.',
+          bullets: ['Stimulates collagen', 'Improves texture', 'Minimal downtime'],
+          faq: [
+            { q: 'What is it for?', a: 'Improves texture, scars, pores and firmness.' },
+            { q: 'Is it painful?', a: 'Minimal discomfort, topical anesthesia is applied.' }
+          ]
+        },
+        neuromodulador: {
+          title: 'Neuromodulator',
+          excerpt: 'Muscle relaxation to prevent and treat expression wrinkles.',
+          bullets: ['Prevents wrinkles', 'Natural effect', 'Minimally invasive'],
+          faq: [
+            { q: 'Does the application hurt?', a: 'Minimal discomfort, no anesthesia required.' },
+            { q: 'When are results visible?', a: 'Between 3-7 days after application.' }
+          ]
+        },
+        ondaschoque: {
+          title: 'Shock Waves',
+          excerpt: 'Wave technology for cellulite, sagging and body remodeling.',
+          bullets: ['Reduces cellulite', 'Firms tissues', 'Non-invasive'],
+          faq: [
+            { q: 'How does it work?', a: 'Waves stimulate circulation and lymphatic drainage.' },
+            { q: 'How many sessions?', a: 'Between 6-12 sessions depending on the objective.' }
+          ]
+        },
+        peeling: {
+          title: 'Chemical Peel',
+          excerpt: 'Controlled exfoliation for cellular renewal and texture improvement.',
+          bullets: ['Cellular renewal', 'Improves texture', 'Unifies tone'],
+          faq: [
+            { q: 'What types are there?', a: 'Superficial, medium and deep according to needs.' },
+            { q: 'Is there peeling?', a: 'There may be slight peeling in the first days.' }
+          ]
+        },
+        polinucleotidos: {
+          title: 'Polynucleotides',
+          excerpt: 'Regenerative therapy for tissue repair and rejuvenation.',
+          bullets: ['Cellular repair', 'Deep hydration', 'Improves elasticity'],
+          faq: [
+            { q: 'How do polynucleotides work?', a: 'They stimulate cellular DNA repair and regeneration.' },
+            { q: 'For which areas is it effective?', a: 'Especially effective around eyes and neck.' }
+          ]
+        },
+        presoterapia: {
+          title: 'Pressotherapy',
+          excerpt: 'Lymphatic drainage through controlled pressure to eliminate toxins.',
+          bullets: ['Lymphatic drainage', 'Eliminates toxins', 'Improves circulation'],
+          faq: [
+            { q: 'What is it for?', a: 'Fluid retention, cellulite and circulatory improvement.' },
+            { q: 'Is it relaxing?', a: 'Very relaxing, many patients fall asleep.' }
+          ]
+        },
+        prp: {
+          title: 'PRP',
+          excerpt: 'Platelet Rich Plasma for natural regeneration with your own blood.',
+          bullets: ['100% natural', 'Stimulates regeneration', 'No adverse effects'],
+          faq: [
+            { q: 'How is PRP obtained?', a: 'Extracted from your own blood through centrifugation.' },
+            { q: 'What is it used for?', a: 'Facial, hair rejuvenation and tissue regeneration.' }
+          ]
+        },
+        radiofrecuencia: {
+          title: 'Radiofrequency',
+          excerpt: 'Technology for firming and collagen stimulation through heat.',
+          bullets: ['Firms tissues', 'Stimulates collagen', 'No downtime'],
+          faq: [
+            { q: 'Do you feel heat?', a: 'Yes, a pleasant and controlled heat sensation.' },
+            { q: 'How many sessions?', a: 'Between 4-8 sessions depending on the area to treat.' }
+          ]
+        },
+        terapialed: {
+          title: 'LED Therapy',
+          excerpt: 'LED light phototherapy for rejuvenation and cellular repair.',
+          bullets: ['Stimulates cells', 'Anti-inflammatory', 'No side effects'],
+          faq: [
+            { q: 'How does it work?', a: 'LED light stimulates cellular activity and collagen production.' },
+            { q: 'Is it safe?', a: 'Completely safe, no contraindications.' }
+          ]
+        },
+        toxinabotulinica: {
+          title: 'Botulinum Toxin',
+          excerpt: 'Treatment for dynamic wrinkles and excessive sweating.',
+          bullets: ['Eliminates dynamic wrinkles', 'Natural effect', 'Long-lasting results'],
+          faq: [
+            { q: 'How long does the effect last?', a: 'Between 4-6 months depending on the treated area.' },
+            { q: 'Does it look natural?', a: 'Yes, it allows natural expressions.' }
+          ]
+        },
+        ultrasonido: {
+          title: 'Ultrasound',
+          excerpt: 'Ultrasonic technology for deep firming and non-invasive lifting.',
+          bullets: ['Deep lifting', 'Non-invasive', 'Long-lasting results'],
+          faq: [
+            { q: 'How does it work?', a: 'Focused ultrasound stimulates deep skin layers.' },
+            { q: 'When are results visible?', a: 'Gradually over 2-3 months.' }
+          ]
+        },
+        vitaminasnctf: {
+          title: 'Vitamins (NCTF)',
+          excerpt: 'Cellular revitalization with latest generation vitamin complex.',
+          bullets: ['Revitalizes cells', 'Deeply hydrates', 'Luminous effect'],
+          faq: [
+            { q: 'What does NCTF contain?', a: 'Vitamins, minerals, amino acids and coenzymes.' },
+            { q: 'How often?', a: 'Initially 3 sessions, then maintenance.' }
+          ]
+        }
       },
       
       // Team
@@ -642,6 +1259,13 @@ export const translations = {
         title: 'Treatments',
         subtitle: 'Discover our comprehensive range of preventive and regenerative medicine treatments',
         description: 'Each treatment is designed to offer natural and long-lasting results, always respecting your unique essence.',
+        tabs: {
+          byType: 'By Treatment Type',
+          byProblem: 'By Specific Problem',
+          problemsSubtitle: 'Find the perfect solution for your specific needs',
+          recommendedTreatments: 'Recommended treatments:',
+          personalizedConsult: 'Personalized consultation'
+        },
         categories: {
           aesthetic: 'Aesthetic Medicine',
           functional: 'Functional Medicine',
@@ -667,7 +1291,9 @@ export const translations = {
       previous: 'Previous',
       loading: 'Loading...',
       error: 'Error',
-      success: 'Success'
+      success: 'Success',
+      beforeAfter: 'Before and After',
+      faq: 'Frequently Asked Questions'
     }
   }
 }
