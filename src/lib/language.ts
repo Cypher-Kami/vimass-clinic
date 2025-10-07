@@ -481,6 +481,7 @@ export const translations = {
         phoneLabel: 'Teléfono/WhatsApp',
         phonePlaceholder: 'Tu teléfono',
         treatmentLabel: 'Tratamiento de interés',
+        treatmentPlaceholder: '¿En qué tratamiento estás interesado?',
         treatmentOptions: {
           functional: 'Medicina Funcional',
           antiaging: 'Protocolos Antiaging',
@@ -492,7 +493,14 @@ export const translations = {
         messagePlaceholder: 'Cuéntanos cómo podemos ayudarte...',
         submitButton: 'Enviar mensaje',
         callPreference: '¿Prefieres llamarnos?',
-        callDescription: 'También puedes reservar tu cita directamente por teléfono o WhatsApp'
+        callDescription: 'También puedes reservar tu cita directamente por teléfono o WhatsApp',
+        privacy: 'Al enviar este formulario, aceptas nuestras',
+        errors: {
+          nameRequired: 'El nombre debe tener al menos 2 caracteres',
+          phoneRequired: 'El teléfono debe tener al menos 10 dígitos',
+          emailInvalid: 'Email inválido',
+          messageRequired: 'El mensaje debe tener al menos 10 caracteres'
+        }
       },
       
       // Información de contacto
@@ -1182,6 +1190,7 @@ export const translations = {
         phoneLabel: 'Phone/WhatsApp',
         phonePlaceholder: 'Your phone',
         treatmentLabel: 'Treatment of interest',
+        treatmentPlaceholder: 'Which treatment are you interested in?',
         treatmentOptions: {
           functional: 'Functional Medicine',
           antiaging: 'Anti-aging Protocols',
@@ -1193,7 +1202,14 @@ export const translations = {
         messagePlaceholder: 'Tell us how we can help you...',
         submitButton: 'Send message',
         callPreference: 'Prefer to call us?',
-        callDescription: 'You can also book your appointment directly by phone or WhatsApp'
+        callDescription: 'You can also book your appointment directly by phone or WhatsApp',
+        privacy: 'By submitting this form, you accept our',
+        errors: {
+          nameRequired: 'Name must be at least 2 characters',
+          phoneRequired: 'Phone must be at least 10 digits',
+          emailInvalid: 'Invalid email',
+          messageRequired: 'Message must be at least 10 characters'
+        }
       },
       
       // Contact info
