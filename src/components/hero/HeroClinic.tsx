@@ -39,7 +39,7 @@ export default function HeroClinic() {
   }, [prefersReduced])
 
   return (
-    <section className="relative h-[80vh] min-h-[560px] overflow-hidden bg-black">
+    <section className="relative h-[calc(100vh)] min-h-[640px] overflow-hidden bg-black">
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
