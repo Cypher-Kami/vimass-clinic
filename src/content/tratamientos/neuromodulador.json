@@ -1,0 +1,15 @@
+{
+  "slug": "neuromodulador",
+  "titulo": "Neuromodulador (tercio superior, bruxismo, platisma, hiperhidrosis)",
+  "extracto": "Toxina botulínica para arrugas, bruxismo, sudoración excesiva y más.",
+  "bullets": ["Múltiples aplicaciones", "Resultados naturales", "Procedimiento rápido"],
+  "faq": [
+    { "q": "¿Para qué se usa?", "a": "Arrugas faciales, bruxismo, sudoración excesiva y bandas del cuello." },
+    { "q": "¿Cuándo se ven los resultados?", "a": "Entre 3-7 días, efecto completo en 2 semanas." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/neuromodulador/hero.jpg",
+    "before": "/images/tratamientos/neuromodulador/before.jpg",
+    "after": "/images/tratamientos/neuromodulador/after.jpg"
+  }
+}

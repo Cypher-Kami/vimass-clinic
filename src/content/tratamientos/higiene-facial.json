@@ -1,0 +1,15 @@
+{
+  "slug": "higiene-facial",
+  "titulo": "Higiene Facial Profunda",
+  "extracto": "Limpieza facial profunda para eliminar impurezas y preparar la piel.",
+  "bullets": ["Elimina impurezas", "Desobstruye poros", "Prepara la piel"],
+  "faq": [
+    { "q": "¿Con qué frecuencia?", "a": "Se recomienda cada 4-6 semanas." },
+    { "q": "¿Puedo maquillarme después?", "a": "Se recomienda esperar 24 horas." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/higiene-facial/hero.jpg",
+    "before": "/images/tratamientos/higiene-facial/before.jpg",
+    "after": "/images/tratamientos/higiene-facial/after.jpg"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "carboxiterapia",
+  "titulo": "Carboxiterapia",
+  "extracto": "Infiltración de CO2 médico para oxigenación y mejora vascular.",
+  "bullets": ["Mejora oxigenación", "Estimula circulación", "Reduce celulitis"],
+  "faq": [
+    { "q": "¿Cómo funciona?", "a": "El CO2 mejora la oxigenación y estimula la microcirculación." },
+    { "q": "¿Es doloroso?", "a": "Sensación de pinchazo mínimo, muy tolerable." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/carboxiterapia/hero.jpg",
+    "before": "/images/tratamientos/carboxiterapia/before.jpg",
+    "after": "/images/tratamientos/carboxiterapia/after.jpg"
+  }
+}

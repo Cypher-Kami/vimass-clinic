@@ -1,0 +1,15 @@
+{
+  "slug": "hilos-pdo",
+  "titulo": "Hilos PDO",
+  "extracto": "Hilos de polidioxanona para reafirmación y estimulación de colágeno.",
+  "bullets": ["100% reabsorbibles", "Estimula colágeno", "Mínimamente invasivo"],
+  "faq": [
+    { "q": "¿Qué diferencia hay con otros hilos?", "a": "Los hilos PDO son especialmente biocompatibles y estimulan más colágeno." },
+    { "q": "¿Tiempo de recuperación?", "a": "Recuperación muy rápida, 2-3 días." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/hilos-pdo/hero.jpg",
+    "before": "/images/tratamientos/hilos-pdo/before.jpg",
+    "after": "/images/tratamientos/hilos-pdo/after.jpg"
+  }
+}

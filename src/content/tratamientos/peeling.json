@@ -1,0 +1,15 @@
+{
+  "slug": "peeling",
+  "titulo": "Peeling",
+  "extracto": "Exfoliación química controlada para renovación de la piel.",
+  "bullets": ["Renovación celular", "Mejora textura", "Reduce manchas"],
+  "faq": [
+    { "q": "¿Qué tipos de peeling realizan?", "a": "Superficial, medio y profundo según las necesidades." },
+    { "q": "¿Tiempo de recuperación?", "a": "Varía según el tipo, de 3-14 días." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/peeling/hero.jpg",
+    "before": "/images/tratamientos/peeling/before.jpg",
+    "after": "/images/tratamientos/peeling/after.jpg"
+  }
+}

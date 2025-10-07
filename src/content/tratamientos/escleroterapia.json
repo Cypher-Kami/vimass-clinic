@@ -1,0 +1,15 @@
+{
+  "slug": "escleroterapia",
+  "titulo": "Escleroterapia",
+  "extracto": "Tratamiento para eliminar arañitas vasculares y pequeñas varices.",
+  "bullets": ["Elimina arañitas", "Trata varices pequeñas", "Procedimiento ambulatorio"],
+  "faq": [
+    { "q": "¿En qué consiste?", "a": "Inyección de solución esclerosante que cierra los vasos." },
+    { "q": "¿Cuántas sesiones necesito?", "a": "Generalmente 2-4 sesiones según la extensión." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/escleroterapia/hero.jpg",
+    "before": "/images/tratamientos/escleroterapia/before.jpg",
+    "after": "/images/tratamientos/escleroterapia/after.jpg"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "prp",
+  "titulo": "PRP",
+  "extracto": "Plasma Rico en Plaquetas para regeneración natural con sangre propia.",
+  "bullets": ["100% natural", "Estimula regeneración", "Sin efectos adversos"],
+  "faq": [
+    { "q": "¿Cómo se obtiene el PRP?", "a": "Se extrae de tu propia sangre mediante centrifugado." },
+    { "q": "¿Para qué sirve?", "a": "Rejuvenecimiento facial, capilar y regeneración de tejidos." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/prp/hero.jpg",
+    "before": "/images/tratamientos/prp/before.jpg",
+    "after": "/images/tratamientos/prp/after.jpg"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "vitaminas-nctf",
+  "titulo": "Vitaminas (NCTF)",
+  "extracto": "Cóctel de vitaminas y nutrientes para revitalización facial profunda.",
+  "bullets": ["53 ingredientes activos", "Hidratación intensa", "Luminosidad inmediata"],
+  "faq": [
+    { "q": "¿Qué contiene NCTF?", "a": "Vitaminas, aminoácidos, minerales y ácido hialurónico." },
+    { "q": "¿Cuándo se ven los resultados?", "a": "Luminosidad inmediata, mejora progresiva en semanas." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/vitaminas-nctf/hero.jpg",
+    "before": "/images/tratamientos/vitaminas-nctf/before.jpg",
+    "after": "/images/tratamientos/vitaminas-nctf/after.jpg"
+  }
+}

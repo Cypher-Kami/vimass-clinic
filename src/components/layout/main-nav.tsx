@@ -17,16 +17,38 @@ export function MainNav() {
   const { t } = useLanguage()
 
   const treatmentLinks = [
-    { href: "/tratamientos/botox", label: t('home.treatments.botox') },
-    { href: "/tratamientos/fillers", label: t('home.treatments.fillers') },
-    { href: "/tratamientos/hilos", label: t('home.treatments.threads') },
-    { href: "/tratamientos/laser", label: t('home.treatments.laser') },
+    { href: "/tratamientos/acido-hialuronico", label: t('home.treatments.acidoHialuronico') },
+    { href: "/tratamientos/antiaging", label: t('home.treatments.antiaging') },
+    { href: "/tratamientos/bioestimuladores", label: t('home.treatments.bioestimuladores') },
+    { href: "/tratamientos/bioimpedancia", label: t('home.treatments.bioimpedancia') },
+    { href: "/tratamientos/carboxiterapia", label: t('home.treatments.carboxiterapia') },
+    { href: "/tratamientos/escleroterapia", label: t('home.treatments.escleroterapia') },
+    { href: "/tratamientos/exosomos", label: t('home.treatments.exosomos') },
+    { href: "/tratamientos/harmony-laser", label: t('home.treatments.harmonyLaser') },
+    { href: "/tratamientos/hidratacion-profunda", label: t('home.treatments.hidratacionProfunda') },
+    { href: "/tratamientos/higiene-facial", label: t('home.treatments.higieneFacial') },
+    { href: "/tratamientos/hilos-pdo", label: t('home.treatments.hilosPdo') },
+    { href: "/tratamientos/hilos-tensores", label: t('home.treatments.hilosTensores') },
+    { href: "/tratamientos/labios", label: t('home.treatments.labios') },
+    { href: "/tratamientos/medicina-funcional", label: t('home.treatments.medicinaFuncional') },
+    { href: "/tratamientos/medicina-integrativa", label: t('home.treatments.medicinaIntegrativa') },
+    { href: "/tratamientos/mesoterapia", label: t('home.treatments.mesoterapia') },
+    { href: "/tratamientos/microneedling", label: t('home.treatments.microneedling') },
+    { href: "/tratamientos/neuromodulador", label: t('home.treatments.neuromodulador') },
+    { href: "/tratamientos/ondas-choque", label: t('home.treatments.ondasChoque') },
     { href: "/tratamientos/peeling", label: t('home.treatments.peeling') },
-    { href: "/tratamientos/plasma", label: t('home.treatments.plasma') },
+    { href: "/tratamientos/polinucleotidos", label: t('home.treatments.polinucleotidos') },
+    { href: "/tratamientos/presoterapia", label: t('home.treatments.presoterapia') },
+    { href: "/tratamientos/prp", label: t('home.treatments.prp') },
+    { href: "/tratamientos/radiofrecuencia", label: t('home.treatments.radiofrecuencia') },
+    { href: "/tratamientos/terapia-led", label: t('home.treatments.terapiaLed') },
+    { href: "/tratamientos/toxina-botulinica", label: t('home.treatments.toxinaBotulinica') },
+    { href: "/tratamientos/ultrasonido", label: t('home.treatments.ultrasonido') },
+    { href: "/tratamientos/vitaminas-nctf", label: t('home.treatments.vitaminasNctf') }
   ]
 
   return (
-    <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
+    <nav className="fixed top-0 w-full bg-background z-50 border-b border-border">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
@@ -71,17 +93,23 @@ export function MainNav() {
             </Link>
             
             {dropdownOpen && (
-              <div className="absolute top-full w-56 bg-background border border-border shadow-lg animate-in fade-in-0 zoom-in-95">
-                <div className="p-2">
-                  {treatmentLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block px-4 py-3 text-sm text-foreground hover:text-accent transition-all duration-200 rounded-lg"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+              <div className="absolute top-full left-0 w-96 bg-background border border-border shadow-lg animate-in fade-in-0 zoom-in-95 rounded-lg">
+                <div className="p-4">
+                  <div className="grid grid-cols-2 gap-1">
+                    {treatmentLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`block px-3 py-2 text-sm transition-all duration-200 rounded-md ${
+                          pathname === link.href 
+                            ? 'text-accent bg-accent/5' 
+                            : 'text-foreground hover:text-accent hover:bg-accent/5'
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}

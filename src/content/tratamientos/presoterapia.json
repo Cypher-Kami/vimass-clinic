@@ -1,0 +1,15 @@
+{
+  "slug": "presoterapia",
+  "titulo": "Presoterapia",
+  "extracto": "Drenaje linfático mediante compresión controlada para reducir retención.",
+  "bullets": ["Mejora circulación", "Reduce retención", "Efecto relajante"],
+  "faq": [
+    { "q": "¿Cuántas sesiones necesito?", "a": "8-10 sesiones para resultados óptimos." },
+    { "q": "¿Es doloroso?", "a": "No, es una sensación de masaje suave y relajante." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/presoterapia/hero.jpg",
+    "before": "/images/tratamientos/presoterapia/before.jpg",
+    "after": "/images/tratamientos/presoterapia/after.jpg"
+  }
+}

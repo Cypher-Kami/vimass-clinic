@@ -1,0 +1,15 @@
+{
+  "slug": "bioimpedancia",
+  "titulo": "Programa de adelgazamiento (Bioimpedancia)",
+  "extracto": "Análisis corporal preciso para programas de pérdida de peso personalizados.",
+  "bullets": ["Medición exacta de composición corporal", "Seguimiento personalizado", "Resultados científicamente validados"],
+  "faq": [
+    { "q": "¿Qué mide la bioimpedancia?", "a": "Porcentaje de grasa, masa muscular, agua corporal y metabolismo basal." },
+    { "q": "¿Es doloroso?", "a": "No, es un análisis completamente indoloro y no invasivo." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/bioimpedancia/hero.jpg",
+    "before": "/images/tratamientos/bioimpedancia/before.jpg",
+    "after": "/images/tratamientos/bioimpedancia/after.jpg"
+  }
+}

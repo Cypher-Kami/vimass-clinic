@@ -18,7 +18,15 @@ export const ImagePaths = {
     tratamientos: '/images/hero/hero-tratamientos.jpg',
     equipo: '/images/hero/hero-equipo.jpg',
     contacto: '/images/hero/hero-contacto.jpg',
-    resultados: '/images/hero/hero-resultados.jpg'
+    resultados: '/images/hero/hero-resultados.jpg',
+    // Videos para el hero animado
+    videos: {
+      slide1: '/images/hero/hero-video-1.mp4',
+      slide2: '/images/hero/hero-video-2.mp4',
+      slide3: '/images/hero/hero-video-3.mp4',
+      slide4: '/images/hero/hero-video-4.mp4',
+      slide5: '/images/hero/hero-video-5.mp4'
+    }
   },
 
   // Imágenes del equipo médico

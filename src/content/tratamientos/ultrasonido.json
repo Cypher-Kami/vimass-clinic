@@ -1,0 +1,15 @@
+{
+  "slug": "ultrasonido",
+  "titulo": "Ultrasonido facial y corporal",
+  "extracto": "Tecnología ultrasónica para reafirmación y rejuvenecimiento no invasivo.",
+  "bullets": ["Estimula colágeno", "Reafirma la piel", "Sin tiempo de recuperación"],
+  "faq": [
+    { "q": "¿Cuántas sesiones necesito?", "a": "Entre 4-6 sesiones para resultados óptimos." },
+    { "q": "¿Se ven resultados inmediatos?", "a": "Los resultados mejoran progresivamente durante 2-3 meses." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/ultrasonido/hero.jpg",
+    "before": "/images/tratamientos/ultrasonido/before.jpg",
+    "after": "/images/tratamientos/ultrasonido/after.jpg"
+  }
+}

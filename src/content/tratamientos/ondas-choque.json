@@ -1,0 +1,15 @@
+{
+  "slug": "ondas-choque",
+  "titulo": "Ondas de choque",
+  "extracto": "Tecnología acústica para tratamiento de celulitis y reafirmación.",
+  "bullets": ["Reduce celulitis", "Reafirma tejidos", "Mejora circulación"],
+  "faq": [
+    { "q": "¿Para qué zonas es efectivo?", "a": "Especialmente efectivo en muslos, glúteos y abdomen." },
+    { "q": "¿Cuándo se ven resultados?", "a": "Mejora progresiva desde la 3ª sesión." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/ondas-choque/hero.jpg",
+    "before": "/images/tratamientos/ondas-choque/before.jpg",
+    "after": "/images/tratamientos/ondas-choque/after.jpg"
+  }
+}

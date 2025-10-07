@@ -1,0 +1,15 @@
+{
+  "slug": "exosomos",
+  "titulo": "Exosomos",
+  "extracto": "Terapia regenerativa avanzada con exosomos para rejuvenecimiento celular.",
+  "bullets": ["Medicina regenerativa", "Rejuvenecimiento celular", "Tecnología avanzada"],
+  "faq": [
+    { "q": "¿Qué son los exosomos?", "a": "Vesículas extracelulares que contienen factores de crecimiento." },
+    { "q": "¿Es un tratamiento seguro?", "a": "Completamente seguro, de origen natural." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/exosomos/hero.jpg",
+    "before": "/images/tratamientos/exosomos/before.jpg",
+    "after": "/images/tratamientos/exosomos/after.jpg"
+  }
+}

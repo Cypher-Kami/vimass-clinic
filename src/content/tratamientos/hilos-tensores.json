@@ -1,0 +1,15 @@
+{
+  "slug": "hilos-tensores",
+  "titulo": "Hilos Tensores",
+  "extracto": "Lifting facial sin cirugía mediante hilos reabsorbibles.",
+  "bullets": ["Efecto lifting inmediato", "Estímulo de colágeno", "Sin cirugía"],
+  "faq": [
+    { "q": "¿Cuánto dura el efecto?", "a": "El lifting inmediato dura 12-18 meses." },
+    { "q": "¿Es doloroso?", "a": "Mínimas molestias con anestesia local." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/hilos-tensores/hero.jpg",
+    "before": "/images/tratamientos/hilos-tensores/before.jpg",
+    "after": "/images/tratamientos/hilos-tensores/after.jpg"
+  }
+}

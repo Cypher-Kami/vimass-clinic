@@ -1,0 +1,15 @@
+{
+  "slug": "bioestimuladores",
+  "titulo": "Bioestimuladores",
+  "extracto": "Estimulación de colágeno propio para rejuvenecimiento natural y duradero.",
+  "bullets": ["Estimula colágeno propio", "Resultados naturales", "Efecto progresivo"],
+  "faq": [
+    { "q": "¿Qué son los bioestimuladores?", "a": "Sustancias que estimulan la producción natural de colágeno." },
+    { "q": "¿Cuánto duran los efectos?", "a": "Los resultados pueden durar hasta 2 años." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/bioestimuladores/hero.jpg",
+    "before": "/images/tratamientos/bioestimuladores/before.jpg",
+    "after": "/images/tratamientos/bioestimuladores/after.jpg"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "harmony-laser",
+  "titulo": "Plataforma Harmony Láser (DYE, 570, Pixel, Clearlift, Erbium puro y fraccionado, Depilación)",
+  "extracto": "Plataforma láser multifuncional para diversos tratamientos estéticos.",
+  "bullets": ["Múltiples aplicaciones", "Tecnología avanzada", "Tratamientos personalizados"],
+  "faq": [
+    { "q": "¿Qué tratamientos incluye?", "a": "Manchas, arrugas, cicatrices, depilación y rejuvenecimiento." },
+    { "q": "¿Es doloroso?", "a": "Mínimas molestias, se usa anestesia tópica si es necesario." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/harmony-laser/hero.jpg",
+    "before": "/images/tratamientos/harmony-laser/before.jpg",
+    "after": "/images/tratamientos/harmony-laser/after.jpg"
+  }
+}

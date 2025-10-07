@@ -1,0 +1,15 @@
+{
+  "slug": "mesoterapia",
+  "titulo": "Mesoterapia facial, corporal, capilar",
+  "extracto": "Microinyecciones de nutrientes para revitalización y regeneración.",
+  "bullets": ["Nutrición celular directa", "Estimula regeneración", "Múltiples aplicaciones"],
+  "faq": [
+    { "q": "¿Para qué zonas es efectiva?", "a": "Rostro, cuerpo y cuero cabelludo según las necesidades." },
+    { "q": "¿Cuándo se ven los resultados?", "a": "Mejora progresiva desde la primera sesión." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/mesoterapia/hero.jpg",
+    "before": "/images/tratamientos/mesoterapia/before.jpg",
+    "after": "/images/tratamientos/mesoterapia/after.jpg"
+  }
+}

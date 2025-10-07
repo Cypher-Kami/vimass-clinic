@@ -1,0 +1,15 @@
+{
+  "slug": "hidratacion-profunda",
+  "titulo": "Hidratación Profunda",
+  "extracto": "Tratamiento intensivo para recuperar la hidratación y luminosidad.",
+  "bullets": ["Hidratación intensiva", "Restaura luminosidad", "Efecto inmediato"],
+  "faq": [
+    { "q": "¿Para qué tipo de piel?", "a": "Especialmente efectivo en pieles secas y deshidratadas." },
+    { "q": "¿Cuánto dura el efecto?", "a": "Hidratación profunda por 2-4 semanas." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/hidratacion-profunda/hero.jpg",
+    "before": "/images/tratamientos/hidratacion-profunda/before.jpg",
+    "after": "/images/tratamientos/hidratacion-profunda/after.jpg"
+  }
+}

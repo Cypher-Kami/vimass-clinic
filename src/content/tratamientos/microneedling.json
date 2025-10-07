@@ -1,0 +1,15 @@
+{
+  "slug": "microneedling",
+  "titulo": "Microneedling",
+  "extracto": "Microperforaciones controladas para estimular la regeneración natural.",
+  "bullets": ["Estimula colágeno", "Mejora textura", "Reduce cicatrices"],
+  "faq": [
+    { "q": "¿Es seguro?", "a": "Completamente seguro con agujas estériles desechables." },
+    { "q": "¿Hay molestias?", "a": "Leve sensación de pinchazo, muy tolerable." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/microneedling/hero.jpg",
+    "before": "/images/tratamientos/microneedling/before.jpg",
+    "after": "/images/tratamientos/microneedling/after.jpg"
+  }
+}

@@ -19,6 +19,15 @@ export const translations = {
       ctaReservar: 'Reservar valoración',
       ctaInfo: 'Más información',
       
+      // Hero slides
+      hero: {
+        slide1: 'Resultados sutiles, visibles para ti',
+        slide2: 'Medicina estética de precisión',
+        slide3: 'Natural es mejor',
+        slide4: 'Tu bienestar es nuestra prioridad',
+        slide5: 'Tecnología avanzada, toque humano'
+      },
+      
       // Secciones principales
       bestVersion: {
         title: 'Tu mejor versión',
@@ -45,7 +54,31 @@ export const translations = {
         plasma: 'Plasma Rico en Plaquetas',
         medicinaFuncional: 'Medicina Funcional',
         antiaging: 'Protocolos Antiaging',
-        medicinaIntegrativa: 'Medicina Integrativa'
+        medicinaIntegrativa: 'Medicina Integrativa',
+        acidoHialuronico: 'Ácido Hialurónico',
+        bioimpedancia: 'Bioimpedancia',
+        ultrasonido: 'Ultrasonido',
+        radiofrecuencia: 'Radiofrecuencia',
+        mesoterapia: 'Mesoterapia',
+        microneedling: 'Microneedling',
+        bioestimuladores: 'Bioestimuladores',
+        exosomos: 'Exosomos',
+        polinucleotidos: 'Polinucleótidos',
+        vitaminasNctf: 'Vitaminas (NCTF)',
+        hilosTensores: 'Hilos Tensores',
+        hilosPdo: 'Hilos PDO',
+        neuromodulador: 'Neuromodulador',
+        prp: 'PRP',
+        harmonyLaser: 'Harmony Láser',
+        higieneFacial: 'Higiene Facial',
+        hidratacionProfunda: 'Hidratación Profunda',
+        terapiaLed: 'Terapia LED',
+        presoterapia: 'Presoterapia',
+        ondasChoque: 'Ondas de choque',
+        carboxiterapia: 'Carboxiterapia',
+        escleroterapia: 'Escleroterapia',
+        labios: 'Aumento de Labios',
+        toxinaBotulinica: 'Toxina Botulínica'
       },
       
       // Equipo
@@ -306,6 +339,15 @@ export const translations = {
       ctaReservar: 'Book consultation',
       ctaInfo: 'More information',
       
+      // Hero slides
+      hero: {
+        slide1: 'Subtle results, visible to you',
+        slide2: 'Precision aesthetic medicine',
+        slide3: 'Natural is better',
+        slide4: 'Your wellness is our priority',
+        slide5: 'Advanced technology, human touch'
+      },
+      
       // Main sections
       bestVersion: {
         title: 'Your best version',
@@ -332,7 +374,31 @@ export const translations = {
         plasma: 'Platelet Rich Plasma',
         medicinaFuncional: 'Functional Medicine',
         antiaging: 'Anti-aging Protocols',
-        medicinaIntegrativa: 'Integrative Medicine'
+        medicinaIntegrativa: 'Integrative Medicine',
+        acidoHialuronico: 'Hyaluronic Acid',
+        bioimpedancia: 'Bioimpedance',
+        ultrasonido: 'Ultrasound',
+        radiofrecuencia: 'Radiofrequency',
+        mesoterapia: 'Mesotherapy',
+        microneedling: 'Microneedling',
+        bioestimuladores: 'Biostimulators',
+        exosomos: 'Exosomes',
+        polinucleotidos: 'Polynucleotides',
+        vitaminasNctf: 'Vitamins (NCTF)',
+        hilosTensores: 'Thread Lifts',
+        hilosPdo: 'PDO Threads',
+        neuromodulador: 'Neuromodulator',
+        prp: 'PRP',
+        harmonyLaser: 'Harmony Laser',
+        higieneFacial: 'Deep Facial Cleansing',
+        hidratacionProfunda: 'Deep Hydration',
+        terapiaLed: 'LED Therapy',
+        presoterapia: 'Pressotherapy',
+        ondasChoque: 'Shock Waves',
+        carboxiterapia: 'Carboxytherapy',
+        escleroterapia: 'Sclerotherapy',
+        labios: 'Lip Enhancement',
+        toxinaBotulinica: 'Botulinum Toxin'
       },
       
       // Team

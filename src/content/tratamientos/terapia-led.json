@@ -1,0 +1,15 @@
+{
+  "slug": "terapia-led",
+  "titulo": "Terapia LED",
+  "extracto": "Fototerapia con luz LED para estimular la regeneración celular.",
+  "bullets": ["Estimula cicatrización", "Reduce inflamación", "Mejora circulación"],
+  "faq": [
+    { "q": "¿Cómo funciona?", "a": "Diferentes longitudes de onda estimulan procesos celulares específicos." },
+    { "q": "¿Es seguro?", "a": "Completamente seguro, sin efectos secundarios." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/terapia-led/hero.jpg",
+    "before": "/images/tratamientos/terapia-led/before.jpg",
+    "after": "/images/tratamientos/terapia-led/after.jpg"
+  }
+}

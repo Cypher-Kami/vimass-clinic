@@ -1,0 +1,15 @@
+{
+  "slug": "radiofrecuencia",
+  "titulo": "Radiofrecuencia facial y corporal",
+  "extracto": "Calentamiento controlado de tejidos para reafirmación y contorno corporal.",
+  "bullets": ["Reduce flacidez", "Mejora textura de la piel", "Resultados progresivos"],
+  "faq": [
+    { "q": "¿Es doloroso?", "a": "Se siente calor agradable, completamente tolerable." },
+    { "q": "¿Cuánto duran los resultados?", "a": "Los efectos duran entre 12-18 meses." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/radiofrecuencia/hero.jpg",
+    "before": "/images/tratamientos/radiofrecuencia/before.jpg",
+    "after": "/images/tratamientos/radiofrecuencia/after.jpg"
+  }
+}

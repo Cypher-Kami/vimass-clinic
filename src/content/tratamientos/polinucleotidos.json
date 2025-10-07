@@ -1,0 +1,15 @@
+{
+  "slug": "polinucleotidos",
+  "titulo": "Polinucleótidos",
+  "extracto": "Terapia regenerativa para reparación y rejuvenecimiento de tejidos.",
+  "bullets": ["Reparación celular", "Hidratación profunda", "Mejora elasticidad"],
+  "faq": [
+    { "q": "¿Cómo actúan los polinucleótidos?", "a": "Estimulan la reparación y regeneración del ADN celular." },
+    { "q": "¿Para qué zonas es efectivo?", "a": "Especialmente efectivo en contorno de ojos y cuello." }
+  ],
+  "imagenes": {
+    "hero": "/images/tratamientos/polinucleotidos/hero.jpg",
+    "before": "/images/tratamientos/polinucleotidos/before.jpg",
+    "after": "/images/tratamientos/polinucleotidos/after.jpg"
+  }
+}

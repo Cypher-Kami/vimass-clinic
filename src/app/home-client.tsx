@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { KineticHeadline } from "@/components/common/kinetic-headline"
+import HeroClinic from "@/components/hero/HeroClinic"
 import { Section } from "@/components/common/section"
 import { AnimatedCard } from "@/components/common/animated-card"
 import { TreatmentSlider } from "@/components/common/treatment-slider"
@@ -45,26 +45,8 @@ export function HomeClient({ clinica, reseñas, destacados, estrella }: HomeClie
       <MainNav />
       <main className="min-h-screen">
         
-        {/* HEADER PRINCIPAL */}
-        <div className="container pt-20 pb-12 md:pt-28 md:pb-20 text-center">
-          <div className="max-w-4xl mx-auto">
-            <KineticHeadline text={t('home.headline')} />
-            <p className="mt-6 text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {t('home.description')}
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="inline-flex items-center justify-center px-8 py-4 bg-accent text-foreground rounded-2xl hover:bg-accent/80 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 h-14">
-                {t('home.ctaReservar')}
-              </button>
-              <Link 
-                href="/contacto" 
-                className="inline-flex items-center justify-center px-8 py-4 border border-accent text-accent rounded-2xl hover:bg-accent hover:text-foreground transition-all duration-300 font-medium text-lg h-14"
-              >
-                {t('home.ctaInfo')}
-              </Link>
-            </div>
-          </div>
-        </div>
+        {/* HERO ANIMADO */}
+        <HeroClinic />
 
         {/* TABS HORIZONTALES */}
         <div className="bg-secondary/30 py-8">
