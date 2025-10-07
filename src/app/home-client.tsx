@@ -34,7 +34,7 @@ interface HomeClientProps {
   estrella: Tratamiento
 }
 
-export function HomeClient({ clinica, reseñas, destacados, estrella }: HomeClientProps) {
+export function HomeClient({ clinica, reseñas, destacados }: HomeClientProps) {
   const { t } = useLanguage()
   
   // Reviews are handled internally by the Reviews component

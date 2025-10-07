@@ -23,7 +23,7 @@ function useAutoplay(delay = 8000) {
   const [paused, setPaused] = useState(false)
   return {
     setPaused,
-    plugin: (slider: any) => {
+    plugin: (slider: unknown) => {
       let timeout: ReturnType<typeof setTimeout>
       let mouseOver = false
       function clearNextTimeout() {
@@ -33,24 +33,27 @@ function useAutoplay(delay = 8000) {
         clearTimeout(timeout)
         if (mouseOver || paused) return
         timeout = setTimeout(() => {
-          slider.next()
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          ;(slider as any).next()
         }, delay)
       }
-      slider.on("created", () => {
-        slider.container.addEventListener("mouseover", () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const sliderAny = slider as any
+      sliderAny.on("created", () => {
+        sliderAny.container.addEventListener("mouseover", () => {
           mouseOver = true
           clearNextTimeout()
         })
-        slider.container.addEventListener("mouseout", () => {
+        sliderAny.container.addEventListener("mouseout", () => {
           mouseOver = false
           nextTimeout()
         })
         nextTimeout()
       })
-      slider.on("dragStarted", clearNextTimeout)
-      slider.on("animationEnded", nextTimeout)
-      slider.on("updated", nextTimeout)
-      slider.on("slideChanged", clearNextTimeout)
+      sliderAny.on("dragStarted", clearNextTimeout)
+      sliderAny.on("animationEnded", nextTimeout)
+      sliderAny.on("updated", nextTimeout)
+      sliderAny.on("slideChanged", clearNextTimeout)
     }
   }
 }
@@ -120,7 +123,12 @@ export default function CategoryImageCarousel() {
         <div ref={sliderRef} className="keen-slider">
           {slides.map(s => (
             <div key={s.id} className="keen-slider__slide">
-              <CardCategory title={s.title} href={s.href} img={s.img} />
+              <CardCategory 
+                title={s.title} 
+                desc={t(`home.categories.${s.id}.desc`) || ""}
+                href={s.href} 
+                img={s.img} 
+              />
             </div>
           ))}
         </div>
@@ -146,10 +154,12 @@ export default function CategoryImageCarousel() {
   )
 }
 
-function CardCategory({ title, href, img }: { title: string; href: string; img: string }) {
+function CardCategory({ title, desc, href, img }: { title: string; desc: string; href: string; img: string }) {
+  const { t } = useLanguage()
+  
   return (
     <Link href={href} className="block group">
-      <div className="relative aspect-[4/5] overflow-hidden shadow-soft border">
+      <div className="relative aspect-[3/5] overflow-hidden shadow-soft border">
         {/* Imagen */}
         <Image
           src={img}
@@ -159,10 +169,24 @@ function CardCategory({ title, href, img }: { title: string; href: string; img: 
           sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 25vw"
           priority={false}
         />
-        {/* Sutil overlay para legibilidad */}
+        {/* Overlay base */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
-        {/* Faja de título centrada */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 flex justify-center">
+        
+        {/* Overlay hover con contenido */}
+        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center">
+          <h3 className="text-white font-title text-xl mb-3">{title}</h3>
+          {desc && (
+            <p className="text-white/90 text-sm mb-4 leading-relaxed">
+              {desc}
+            </p>
+          )}
+          <button className="px-4 py-2 border border-white/80 bg-white/10 text-white rounded hover:bg-white/20 transition-colors text-sm">
+            {t('common.actions.viewTreatments')}
+          </button>
+        </div>
+        
+        {/* Faja de título (solo visible sin hover) */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 flex justify-center group-hover:opacity-0 transition-opacity duration-300">
           <div className="px-6 py-3 bg-accent text-white font-medium text-lg tracking-wide shadow-md text-center">
             {title}
           </div>

@@ -19,23 +19,26 @@ function useAutoplay(delay = 5000) {
   return {
     paused,
     setPaused,
-    plugin: (slider: any) => {
+    plugin: (slider: unknown) => {
       let timeout: ReturnType<typeof setTimeout>
       let mouseOver = false
       function clearNextTimeout() { clearTimeout(timeout) }
       function nextTimeout() {
         clearTimeout(timeout)
         if (mouseOver || paused) return
-        timeout = setTimeout(() => slider.next(), delay)
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        timeout = setTimeout(() => (slider as any).next(), delay)
       }
-      slider.on("created", () => {
-        slider.container.addEventListener("mouseover", () => { mouseOver = true; clearNextTimeout() })
-        slider.container.addEventListener("mouseout", () => { mouseOver = false; nextTimeout() })
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const sliderAny = slider as any
+      sliderAny.on("created", () => {
+        sliderAny.container.addEventListener("mouseover", () => { mouseOver = true; clearNextTimeout() })
+        sliderAny.container.addEventListener("mouseout", () => { mouseOver = false; nextTimeout() })
         nextTimeout()
       })
-      slider.on("dragStarted", clearNextTimeout)
-      slider.on("animationEnded", nextTimeout)
-      slider.on("updated", nextTimeout)
+      sliderAny.on("dragStarted", clearNextTimeout)
+      sliderAny.on("animationEnded", nextTimeout)
+      sliderAny.on("updated", nextTimeout)
     }
   }
 }
@@ -119,11 +122,12 @@ export default function CategoryFlipCarousel() {
   )
 }
 
-function Bullets({ count, instanceRef }: { count: number; instanceRef: any }) {
+function Bullets({ count, instanceRef }: { count: number; instanceRef: React.MutableRefObject<unknown> }) {
   const { t } = useLanguage()
   const [current, setCurrent] = useState(0)
   useEffect(() => {
-    const slider = instanceRef.current
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const slider = (instanceRef.current as any)
     if (!slider) return
     slider.on("slideChanged", () => setCurrent(slider.track.details.rel))
   }, [instanceRef])
@@ -133,7 +137,11 @@ function Bullets({ count, instanceRef }: { count: number; instanceRef: any }) {
         <button
           key={i}
           aria-label={`${t('common.navigation.goToSlide')} ${i + 1}`}
-          onClick={() => instanceRef.current?.moveToIdx(i)}
+          onClick={() => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const slider = (instanceRef.current as any)
+            if (slider) slider.moveToIdx(i)
+          }}
           className={`h-2.5 w-2.5 rounded-full ${i === current ? "bg-foreground" : "bg-foreground/30"}`}
         />
       ))}
