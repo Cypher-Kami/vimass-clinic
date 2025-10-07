@@ -205,12 +205,12 @@ export const translations = {
           ]
         },
         harmonylaser: {
-          title: 'Harmony Láser',
-          excerpt: 'Tecnología láser avanzada para tratamiento de manchas y rejuvenecimiento.',
-          bullets: ['Tecnología avanzada', 'Resultados precisos', 'Mínimo downtime'],
+          title: 'Plataforma Harmony Láser (DYE, 570, Pixel, Clearlift, Erbium puro y fraccionado, Depilación)',
+          excerpt: 'Plataforma láser multifuncional para diversos tratamientos estéticos.',
+          bullets: ['Múltiples aplicaciones', 'Tecnología avanzada', 'Tratamientos personalizados'],
           faq: [
-            { q: '¿Para qué se usa?', a: 'Manchas, melasma, rejuvenecimiento y lesiones vasculares.' },
-            { q: '¿Duele?', a: 'Molestia mínima, tolerable sin anestesia.' }
+            { q: '¿Qué tratamientos incluye?', a: 'Manchas, arrugas, cicatrices, depilación y rejuvenecimiento.' },
+            { q: '¿Es doloroso?', a: 'Mínimas molestias, se usa anestesia tópica si es necesario.' }
           ]
         },
         hidratacionprofunda: {
@@ -386,11 +386,11 @@ export const translations = {
         },
         vitaminasnctf: {
           title: 'Vitaminas (NCTF)',
-          excerpt: 'Revitalización celular con complejo vitamínico de última generación.',
-          bullets: ['Revitaliza células', 'Hidrata profundamente', 'Efecto luminoso'],
+          excerpt: 'Cóctel de vitaminas y nutrientes para revitalización facial profunda.',
+          bullets: ['53 ingredientes activos', 'Hidratación intensa', 'Luminosidad inmediata'],
           faq: [
-            { q: '¿Qué contiene NCTF?', a: 'Vitaminas, minerales, aminoácidos y coenzimas.' },
-            { q: '¿Con qué frecuencia?', a: 'Inicialmente 3 sesiones, luego mantenimiento.' }
+            { q: '¿Qué contiene NCTF?', a: 'Vitaminas, aminoácidos, minerales y ácido hialurónico.' },
+            { q: '¿Cuándo se ven los resultados?', a: 'Luminosidad inmediata, mejora progresiva en semanas.' }
           ]
         }
       },
@@ -853,12 +853,12 @@ export const translations = {
           ]
         },
         harmonylaser: {
-          title: 'Harmony Laser',
-          excerpt: 'Advanced laser technology for spot treatment and rejuvenation.',
-          bullets: ['Advanced technology', 'Precise results', 'Minimal downtime'],
+          title: 'Harmony Laser Platform (DYE, 570, Pixel, Clearlift, pure and fractional Erbium, Hair Removal)',
+          excerpt: 'Multifunctional laser platform for various aesthetic treatments.',
+          bullets: ['Multiple applications', 'Advanced technology', 'Personalized treatments'],
           faq: [
-            { q: 'What is it used for?', a: 'Spots, melasma, rejuvenation and vascular lesions.' },
-            { q: 'Does it hurt?', a: 'Minimal discomfort, tolerable without anesthesia.' }
+            { q: 'What treatments does it include?', a: 'Spots, wrinkles, scars, hair removal and rejuvenation.' },
+            { q: 'Is it painful?', a: 'Minimal discomfort, topical anesthesia used if necessary.' }
           ]
         },
         hidratacionprofunda: {
@@ -1034,11 +1034,11 @@ export const translations = {
         },
         vitaminasnctf: {
           title: 'Vitamins (NCTF)',
-          excerpt: 'Cellular revitalization with latest generation vitamin complex.',
-          bullets: ['Revitalizes cells', 'Deeply hydrates', 'Luminous effect'],
+          excerpt: 'Cocktail of vitamins and nutrients for deep facial revitalization.',
+          bullets: ['53 active ingredients', 'Intense hydration', 'Immediate luminosity'],
           faq: [
-            { q: 'What does NCTF contain?', a: 'Vitamins, minerals, amino acids and coenzymes.' },
-            { q: 'How often?', a: 'Initially 3 sessions, then maintenance.' }
+            { q: 'What does NCTF contain?', a: 'Vitamins, amino acids, minerals and hyaluronic acid.' },
+            { q: 'When are results visible?', a: 'Immediate luminosity, progressive improvement over weeks.' }
           ]
         }
       },
