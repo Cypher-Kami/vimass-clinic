@@ -3,6 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import HeroClinic from "@/components/hero/HeroClinic"
+import CategoryImageCarousel from "@/components/home/CategoryImageCarousel"
 import { Section } from "@/components/common/section"
 import { AnimatedCard } from "@/components/common/animated-card"
 import { Reviews } from "@/components/common/reviews"
@@ -76,7 +77,7 @@ export function HomeClient({ clinica, reseñas, destacados, estrella }: HomeClie
                   </div>
                   <h3 className="font-title text-2xl">{t('home.starTreatment.title')}</h3>
                   <p className="text-muted-foreground">
-                    {estrella.titulo} - {estrella.extracto} {t('home.starTreatment.description')}
+                    {t('home.starTreatment.description')}
                   </p>
                 </div>
               </AnimatedCard>
@@ -98,8 +99,11 @@ export function HomeClient({ clinica, reseñas, destacados, estrella }: HomeClie
           </div>
         </div>
 
+        {/* CATEGORÍAS (slider con imágenes) */}
+        <CategoryImageCarousel />
+
         {/* CTA Ver todos los tratamientos */}
-        <div className="container text-center py-8">
+        <div className="container text-center pt-2 pb-8">
           <Link 
             href="/tratamientos" 
             className="inline-flex items-center px-8 py-4 bg-accent text-foreground rounded-2xl hover:bg-accent/80 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"

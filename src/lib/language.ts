@@ -36,7 +36,7 @@ export const translations = {
       },
       starTreatment: {
         title: 'Tratamiento estrella',
-        description: 'Resultados naturales y duraderos.'
+        description: 'Medicina integrativa que combina enfoques holísticos con técnicas avanzadas para resultados naturales y duraderos.'
       },
       draCelina: 'Dra. Celina Suárez',
       draCelinaDesc: 'Más de 20 años transformando vidas a través de la medicina preventiva y regenerativa.',
@@ -44,6 +44,30 @@ export const translations = {
       // Tratamientos
       treatmentsTitle: 'Nuestros tratamientos',
       viewAllTreatments: 'Ver todos los tratamientos',
+      
+      // Categorías para el carrusel
+      categories: {
+        inyectables: {
+          title: 'Inyectables',
+          desc: 'Rellenos, neuromoduladores y bioestimuladores para armonizar sin excesos.'
+        },
+        aparatologia: {
+          title: 'Aparatología',
+          desc: 'Láser, radiofrecuencia, ultrasonido, LED y más para piel y cuerpo.'
+        },
+        facial_dermo: {
+          title: 'Facial / Dermo',
+          desc: 'Peelings, higienes, hidratación profunda, microneedling y mesoterapia.'
+        },
+        vascular_metabolico: {
+          title: 'Vascular / Metabólico',
+          desc: 'Carboxi, presoterapia y escleroterapia para circulación y bienestar.'
+        },
+        integrativa: {
+          title: 'Integrativa',
+          desc: 'Medicina funcional e integrativa para abordar la raíz.'
+        }
+      },
       
       // Tratamientos específicos
       treatments: {
@@ -645,7 +669,15 @@ export const translations = {
       error: 'Error',
       success: 'Éxito',
       beforeAfter: 'Antes y después',
-      faq: 'Preguntas frecuentes'
+      faq: 'Preguntas frecuentes',
+      navigation: {
+        previous: 'Anterior',
+        next: 'Siguiente',
+        goToSlide: 'Ir a la diapositiva'
+      },
+      actions: {
+        viewTreatments: 'Ver tratamientos'
+      }
     }
   },
   
@@ -684,7 +716,7 @@ export const translations = {
       },
       starTreatment: {
         title: 'Signature treatment',
-        description: 'Natural and lasting results.'
+        description: 'Integrative medicine that combines holistic approaches with advanced techniques for natural and lasting results.'
       },
       draCelina: 'Dr. Celina Suárez',
       draCelinaDesc: 'Over 20 years transforming lives through preventive and regenerative medicine.',
@@ -692,6 +724,30 @@ export const translations = {
       // Treatments
       treatmentsTitle: 'Our treatments',
       viewAllTreatments: 'View all treatments',
+      
+      // Categories for carousel
+      categories: {
+        inyectables: {
+          title: 'Injectables',
+          desc: 'Fillers, neuromodulators and biostimulators to harmonize without excess.'
+        },
+        aparatologia: {
+          title: 'Technology',
+          desc: 'Laser, radiofrequency, ultrasound, LED and more for skin and body.'
+        },
+        facial_dermo: {
+          title: 'Facial / Dermo',
+          desc: 'Peels, facials, deep hydration, microneedling and mesotherapy.'
+        },
+        vascular_metabolico: {
+          title: 'Vascular / Metabolic',
+          desc: 'Carboxy, pressotherapy and sclerotherapy for circulation and wellness.'
+        },
+        integrativa: {
+          title: 'Integrative',
+          desc: 'Functional and integrative medicine to address the root cause.'
+        }
+      },
       
       // Specific treatments
       treatments: {
@@ -1293,7 +1349,15 @@ export const translations = {
       error: 'Error',
       success: 'Success',
       beforeAfter: 'Before and After',
-      faq: 'Frequently Asked Questions'
+      faq: 'Frequently Asked Questions',
+      navigation: {
+        previous: 'Previous',
+        next: 'Next',
+        goToSlide: 'Go to slide'
+      },
+      actions: {
+        viewTreatments: 'View treatments'
+      }
     }
   }
 }
