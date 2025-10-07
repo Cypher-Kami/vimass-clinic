@@ -108,7 +108,13 @@ export function HomeClient({ clinica, reseñas, destacados, estrella }: HomeClie
         <Section title={t('home.teamTitle')}>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-soft">
-              <Image src={ImagePaths.equipo.draCelina} alt="Dra. Celina Suárez" fill className="object-cover" />
+              <Image 
+                src={ImagePaths.equipo.draCelina} 
+                alt="Dra. Celina Suárez" 
+                fill 
+                className="object-cover" 
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             </div>
             <div className="space-y-6">
               <div>
@@ -174,12 +180,14 @@ export function HomeClient({ clinica, reseñas, destacados, estrella }: HomeClie
             </div>
             <div className="space-y-4">
               <div className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="aspect-[4/3]">
+                <div className="relative aspect-[4/3]">
                   <Image 
                     src={ImagePaths.resultados[0]} 
                     alt="Resultado 1 - Antes y Después" 
                     fill 
                     className="object-cover transition-transform duration-500 group-hover:scale-105" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority
                   />
                 </div>
                 <div className="absolute bottom-3 left-3 bg-black/70 text-white px-3 py-1 rounded text-sm">
@@ -188,12 +196,14 @@ export function HomeClient({ clinica, reseñas, destacados, estrella }: HomeClie
               </div>
               
               <div className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="aspect-[4/3]">
+                <div className="relative aspect-[4/3]">
                   <Image 
                     src={ImagePaths.resultados[2]} 
                     alt="Resultado 3 - Antes y Después" 
                     fill 
                     className="object-cover transition-transform duration-500 group-hover:scale-105" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority
                   />
                 </div>
                 <div className="absolute bottom-3 left-3 bg-black/70 text-white px-3 py-1 rounded text-sm">

@@ -93,17 +93,17 @@ export function MainNav() {
             </Link>
             
             {dropdownOpen && (
-              <div className="absolute top-full left-0 w-96 bg-background border border-border shadow-lg animate-in fade-in-0 zoom-in-95 rounded-lg">
+              <div className="absolute top-full left-0 w-96 bg-background border border-border shadow-lg animate-in fade-in-0 zoom-in-95">
                 <div className="p-4">
                   <div className="grid grid-cols-2 gap-1">
                     {treatmentLinks.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
-                        className={`block px-3 py-2 text-sm transition-all duration-200 rounded-md ${
+                        className={`block px-3 py-2 text-sm transition-all duration-200 font-semibold ${
                           pathname === link.href 
-                            ? 'text-accent bg-accent/5' 
-                            : 'text-foreground hover:text-accent hover:bg-accent/5'
+                            ? 'text-foreground bg-accent' 
+                            : 'text-foreground hover:bg-accent'
                         }`}
                       >
                         {link.label}
