@@ -80,6 +80,15 @@ export const translations = {
         labios: 'Aumento de Labios',
         toxinaBotulinica: 'Toxina Botulínica'
       },
+
+      // Grupos de tratamientos
+      treatmentGroups: {
+        inyectables: 'Inyectables',
+        aparatologia: 'Aparatología',
+        facialDermo: 'Facial / Dermo',
+        vascularMetabolico: 'Vascular / Metabólico',
+        integrativa: 'Integrativa'
+      },
       
       // Equipo
       teamTitle: 'Detrás de VIMASS Clinic',
@@ -173,6 +182,11 @@ export const translations = {
         title: 'Visítanos',
         description: 'Encuentra nuestra clínica fácilmente. Estamos ubicados en el corazón de Barcelona con excelente acceso.'
       }
+    },
+
+    // Tratamientos
+    treatments: {
+      viewAll: 'Ver todos'
     },
     
     // Estadísticas
@@ -400,6 +414,15 @@ export const translations = {
         labios: 'Lip Enhancement',
         toxinaBotulinica: 'Botulinum Toxin'
       },
+
+      // Treatment groups
+      treatmentGroups: {
+        inyectables: 'Injectables',
+        aparatologia: 'Technology',
+        facialDermo: 'Facial / Dermo',
+        vascularMetabolico: 'Vascular / Metabolic',
+        integrativa: 'Integrative'
+      },
       
       // Team
       teamTitle: 'Behind VIMASS Clinic',
@@ -493,6 +516,11 @@ export const translations = {
         title: 'Visit Us',
         description: 'Find our clinic easily. We are located in the heart of Barcelona with excellent access.'
       }
+    },
+
+    // Treatments
+    treatments: {
+      viewAll: 'View all'
     },
     
     // Statistics  

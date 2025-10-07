@@ -6,46 +6,34 @@ import { useState } from "react"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { ChevronDown, Menu } from "lucide-react"
+import { ChevronDown, Menu, Syringe, Zap, Sparkles, Heart, Leaf } from "lucide-react"
 import { useLanguage } from "@/components/providers/language-provider"
 import { LanguageToggle } from "@/components/common/language-toggle"
 import { ImagePaths } from "@/lib/image-paths"
+import { TREATMENT_GROUPS } from "@/data/treatments"
 
 export function MainNav() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const pathname = usePathname()
   const { t } = useLanguage()
 
-  const treatmentLinks = [
-    { href: "/tratamientos/acido-hialuronico", label: t('home.treatments.acidoHialuronico') },
-    { href: "/tratamientos/antiaging", label: t('home.treatments.antiaging') },
-    { href: "/tratamientos/bioestimuladores", label: t('home.treatments.bioestimuladores') },
-    { href: "/tratamientos/bioimpedancia", label: t('home.treatments.bioimpedancia') },
-    { href: "/tratamientos/carboxiterapia", label: t('home.treatments.carboxiterapia') },
-    { href: "/tratamientos/escleroterapia", label: t('home.treatments.escleroterapia') },
-    { href: "/tratamientos/exosomos", label: t('home.treatments.exosomos') },
-    { href: "/tratamientos/harmony-laser", label: t('home.treatments.harmonyLaser') },
-    { href: "/tratamientos/hidratacion-profunda", label: t('home.treatments.hidratacionProfunda') },
-    { href: "/tratamientos/higiene-facial", label: t('home.treatments.higieneFacial') },
-    { href: "/tratamientos/hilos-pdo", label: t('home.treatments.hilosPdo') },
-    { href: "/tratamientos/hilos-tensores", label: t('home.treatments.hilosTensores') },
-    { href: "/tratamientos/labios", label: t('home.treatments.labios') },
-    { href: "/tratamientos/medicina-funcional", label: t('home.treatments.medicinaFuncional') },
-    { href: "/tratamientos/medicina-integrativa", label: t('home.treatments.medicinaIntegrativa') },
-    { href: "/tratamientos/mesoterapia", label: t('home.treatments.mesoterapia') },
-    { href: "/tratamientos/microneedling", label: t('home.treatments.microneedling') },
-    { href: "/tratamientos/neuromodulador", label: t('home.treatments.neuromodulador') },
-    { href: "/tratamientos/ondas-choque", label: t('home.treatments.ondasChoque') },
-    { href: "/tratamientos/peeling", label: t('home.treatments.peeling') },
-    { href: "/tratamientos/polinucleotidos", label: t('home.treatments.polinucleotidos') },
-    { href: "/tratamientos/presoterapia", label: t('home.treatments.presoterapia') },
-    { href: "/tratamientos/prp", label: t('home.treatments.prp') },
-    { href: "/tratamientos/radiofrecuencia", label: t('home.treatments.radiofrecuencia') },
-    { href: "/tratamientos/terapia-led", label: t('home.treatments.terapiaLed') },
-    { href: "/tratamientos/toxina-botulinica", label: t('home.treatments.toxinaBotulinica') },
-    { href: "/tratamientos/ultrasonido", label: t('home.treatments.ultrasonido') },
-    { href: "/tratamientos/vitaminas-nctf", label: t('home.treatments.vitaminasNctf') }
-  ]
+  // Iconos para cada categoría de tratamientos
+  const getCategoryIcon = (categoryId: string) => {
+    switch (categoryId) {
+      case 'inyectables':
+        return <Syringe className="w-4 h-4" />
+      case 'aparatologia':
+        return <Zap className="w-4 h-4" />
+      case 'facial_dermo':
+        return <Sparkles className="w-4 h-4" />
+      case 'vascular_metabolico':
+        return <Heart className="w-4 h-4" />
+      case 'integrativa':
+        return <Leaf className="w-4 h-4" />
+      default:
+        return null
+    }
+  }
 
   return (
     <nav className="fixed top-0 w-full bg-background z-50 border-b border-border">
@@ -79,8 +67,11 @@ export function MainNav() {
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            <Link
-              href="/tratamientos"
+            <button
+              type="button"
+              aria-expanded={dropdownOpen}
+              aria-haspopup="menu"
+              onClick={() => setDropdownOpen(v => !v)}
               className={`flex items-center gap-1 transition-all duration-300 group relative ${
                 pathname.startsWith('/tratamientos') ? 'text-accent' : 'text-foreground hover:text-accent'
               }`}
@@ -90,26 +81,43 @@ export function MainNav() {
                 pathname.startsWith('/tratamientos') ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></span>
               <ChevronDown className={`h-4 w-4 transition-all duration-200 ${dropdownOpen ? 'rotate-180 text-accent' : ''}`} />
-            </Link>
+            </button>
             
             {dropdownOpen && (
-              <div className="absolute top-full left-0 w-96 bg-background border border-border shadow-lg animate-in fade-in-0 zoom-in-95">
-                <div className="p-4">
-                  <div className="grid grid-cols-2 gap-1">
-                    {treatmentLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className={`block px-3 py-2 text-sm transition-all duration-200 font-semibold ${
-                          pathname === link.href 
-                            ? 'text-foreground bg-accent' 
-                            : 'text-foreground hover:bg-accent'
-                        }`}
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
+              <div
+                role="menu"
+                className="absolute top-full left-0 w-[720px] bg-background border border-border shadow-lg animate-in fade-in-0 zoom-in-95 p-4"
+              >
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {TREATMENT_GROUPS.map(group => (
+                    <div key={group.id}>
+                      <div className="flex items-center gap-2 text-sm font-semibold text-accent uppercase tracking-wide mb-3 pb-1 border-b border-accent/20">
+                        {getCategoryIcon(group.id)}
+                        {t(group.titleKey)}
+                      </div>
+                      <ul className="space-y-1">
+                        {group.items.map(item => (
+                          <li key={item.slug}>
+                            <Link
+                              href={item.href}
+                              className={`block px-3 py-2 text-sm transition-colors font-semibold ${
+                                pathname === item.href
+                                  ? 'text-foreground bg-accent'
+                                  : 'text-foreground hover:bg-accent'
+                              }`}
+                            >
+                              {t(item.labelKey)}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+                <div className="pt-3 text-right">
+                  <Link href="/tratamientos" className="text-sm underline underline-offset-4 hover:text-accent">
+                    {t('treatments.viewAll')}
+                  </Link>
                 </div>
               </div>
             )}
@@ -165,15 +173,25 @@ export function MainNav() {
                 {/* Tratamientos en móvil */}
                 <div className="space-y-2">
                   <span className="text-foreground font-medium">{t('nav.tratamientos')}</span>
-                  <div className="pl-4 space-y-2">
-                    {treatmentLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="block text-sm text-muted-foreground hover:text-accent transition-all duration-300 py-1"
-                      >
-                        {link.label}
-                      </Link>
+                  <div className="pl-4 space-y-3">
+                    {TREATMENT_GROUPS.map(group => (
+                      <div key={group.id} className="space-y-1">
+                        <div className="flex items-center gap-2 text-sm font-semibold text-accent uppercase tracking-wide">
+                          {getCategoryIcon(group.id)}
+                          {t(group.titleKey)}
+                        </div>
+                        <div className="pl-2 space-y-1">
+                          {group.items.map(item => (
+                            <Link
+                              key={item.slug}
+                              href={item.href}
+                              className="block text-sm text-muted-foreground hover:text-accent transition-all duration-300 py-1"
+                            >
+                              {t(item.labelKey)}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
