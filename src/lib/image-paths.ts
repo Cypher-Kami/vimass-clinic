@@ -9,7 +9,8 @@ export const ImagePaths = {
     main: '/images/logo/Vimass Logo Color.webp',
     white: '/images/logo/Logo VIMASS Clinic.webp',
     horizontal: '/images/logo/vimass-logo-horizontal.svg',
-    favicon: '/images/logo/vimass-favicon.ico'
+    favicon: '/images/logo/vimass-favicon.ico',
+    small: '/images/logo/cropped-LOGO-32x32.png'
   },
 
   // Imágenes hero para diferentes secciones

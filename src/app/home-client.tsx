@@ -5,7 +5,6 @@ import Link from "next/link"
 import HeroClinic from "@/components/hero/HeroClinic"
 import { Section } from "@/components/common/section"
 import { AnimatedCard } from "@/components/common/animated-card"
-import { TreatmentSlider } from "@/components/common/treatment-slider"
 import { Reviews } from "@/components/common/reviews"
 import { StatsSection } from "@/components/common/stats-section"
 import { ReserveDialog } from "@/components/common/reserve-dialog"
@@ -15,7 +14,7 @@ import { Footer } from "@/components/layout/footer"
 import { CTAFloat } from "@/components/layout/cta-float"
 import { WhatsAppFloat } from "@/components/layout/whatsapp-float"
 import { Toaster } from "sonner"
-import { Sparkles, Star, CheckCircle, MapPin, Phone, Clock, MessageCircle, Stethoscope, User, Heart, Send, Calendar } from "lucide-react"
+import { Sparkles, Star, CheckCircle, MapPin, Clock, Stethoscope, Calendar } from "lucide-react"
 import { useLanguage } from "@/components/providers/language-provider"
 import { ImagePaths } from "@/lib/image-paths"
 import type { Tratamiento, Review } from "@/lib/types"
@@ -40,6 +39,8 @@ export function HomeClient({ clinica, reseñas, destacados, estrella }: HomeClie
   // Reviews are handled internally by the Reviews component
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const _reseñas = reseñas;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _destacados = destacados;
 
   return (
     <>
@@ -113,6 +114,7 @@ export function HomeClient({ clinica, reseñas, destacados, estrella }: HomeClie
                 src={ImagePaths.equipo.draCelina} 
                 alt="Dra. Celina Suárez" 
                 fill 
+                priority
                 className="object-cover" 
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />

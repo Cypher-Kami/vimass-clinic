@@ -9,7 +9,8 @@ export const translations = {
       equipo: 'Equipo',
       resultados: 'Resultados',
       contacto: 'Contacto',
-      reservar: 'Reservar Cita'
+      reservar: 'Reservar Cita',
+      menu: 'Menú de navegación'
     },
     
     // Página de inicio
@@ -343,7 +344,8 @@ export const translations = {
       equipo: 'Team',
       resultados: 'Results',
       contacto: 'Contact',
-      reservar: 'Book Appointment'
+      reservar: 'Book Appointment',
+      menu: 'Navigation menu'
     },
     
     // Home page

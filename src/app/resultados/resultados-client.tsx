@@ -11,8 +11,7 @@ import { Toaster } from "sonner"
 import { titleFont, bodyFont } from "@/app/fonts"
 import { useLanguage } from "@/components/providers/language-provider"
 import { ImagePaths } from "@/lib/image-paths"
-import Lightbox from "yet-another-react-lightbox"
-import "yet-another-react-lightbox/styles.css"
+import { AccessibleLightbox } from "@/components/ui/accessible-lightbox"
 
 export function ResultadosClient() {
   const { t } = useLanguage()
@@ -87,13 +86,13 @@ export function ResultadosClient() {
             </div>
             
             {/* Lightbox */}
-            <Lightbox
+            <AccessibleLightbox
               open={lightboxOpen}
               close={() => setLightboxOpen(false)}
               index={lightboxIndex}
               slides={lightboxSlides}
               on={{
-                view: ({ index }) => setLightboxIndex(index)
+                view: ({ index }: { index: number }) => setLightboxIndex(index)
               }}
               carousel={{
                 finite: false,

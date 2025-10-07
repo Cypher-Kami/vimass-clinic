@@ -10,6 +10,7 @@ import { Toaster } from "sonner"
 import { titleFont, bodyFont } from "../fonts"
 import { useLanguage } from "@/components/providers/language-provider"
 import type { Tratamiento } from "@/lib/types"
+import type { TreatmentGroup } from "@/data/treatments"
 
 interface TratamientosClientProps {
   clinica: {
@@ -21,10 +22,16 @@ interface TratamientosClientProps {
     horario: string
   }
   treatments: Tratamiento[]
+  treatmentGroups: TreatmentGroup[]
 }
 
-export function TratamientosClient({ treatments }: TratamientosClientProps) {
+export function TratamientosClient({ clinica, treatments, treatmentGroups }: TratamientosClientProps) {
   const { t } = useLanguage()
+  
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _clinica = clinica;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _treatmentGroups = treatmentGroups;
   
   return (
     <div className={`${titleFont.variable} ${bodyFont.variable} antialiased`}>

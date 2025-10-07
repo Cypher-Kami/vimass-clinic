@@ -5,7 +5,7 @@ import Image from "next/image"
 import { useState } from "react"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { ChevronDown, Menu, Syringe, Zap, Sparkles, Heart, Leaf } from "lucide-react"
 import { useLanguage } from "@/components/providers/language-provider"
 import { LanguageToggle } from "@/components/common/language-toggle"
@@ -40,12 +40,22 @@ export function MainNav() {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
+          {/* Logo grande para desktop */}
           <Image
             src={ImagePaths.logo.white}
             alt="VIMASS Clinic"
             width={180}
             height={72}
-            className="h-12 w-auto"
+            className="hidden sm:block h-12 w-auto"
+            priority
+          />
+          {/* Logo pequeño para móvil */}
+          <Image
+            src={ImagePaths.logo.small}
+            alt="VIMASS Clinic"
+            width={32}
+            height={32}
+            className="block sm:hidden h-8 w-8"
             priority
           />
         </Link>
@@ -165,6 +175,9 @@ export function MainNav() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-72">
+              <SheetHeader>
+                <SheetTitle>{t('nav.menu')}</SheetTitle>
+              </SheetHeader>
               <div className="flex flex-col gap-4 mt-8">
                 <Link href="/" className="text-foreground hover:text-accent transition-all duration-300 py-2">
                   {t('nav.inicio')}
