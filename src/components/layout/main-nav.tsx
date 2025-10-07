@@ -174,11 +174,11 @@ export function MainNav() {
                 <Menu className="h-4 w-4" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-72">
+            <SheetContent side="right" className="w-72 overflow-y-auto">
               <SheetHeader>
                 <SheetTitle>{t('nav.menu')}</SheetTitle>
               </SheetHeader>
-              <div className="flex flex-col gap-4 mt-8">
+              <div className="flex flex-col gap-4 mt-8 pb-8 max-h-[calc(100vh-8rem)] overflow-y-auto">
                 <Link href="/" className="text-foreground hover:text-accent transition-all duration-300 py-2">
                   {t('nav.inicio')}
                 </Link>
