@@ -55,7 +55,6 @@ export function HomeClient({ clinica, reseñas, destacados }: HomeClientProps) {
   const _reseñas = reseñas;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const _destacados = destacados;
-
   return (
     <>
       <MainNav />

@@ -147,11 +147,12 @@ export const translations = {
 
       // Grupos de tratamientos
       treatmentGroups: {
-        inyectables: 'Inyectables',
-        aparatologia: 'Aparatología',
-        facialDermo: 'Facial / Dermo',
-        vascularMetabolico: 'Vascular / Metabólico',
-        integrativa: 'Integrativa'
+        rostroContorno: 'Rostro & Contorno',
+        calidadPiel: 'Calidad de Piel',
+        bioestimulacion: 'Bioestimulación',
+        tecnologia: 'Tecnología',
+        corporalVascular: 'Corporal & Vascular',
+        medicinaIntegrativa: 'Medicina Integrativa'
       },
 
       // Objetivos de tratamiento
@@ -895,11 +896,12 @@ export const translations = {
 
       // Treatment groups
       treatmentGroups: {
-        inyectables: 'Injectables',
-        aparatologia: 'Technology',
-        facialDermo: 'Facial / Dermo',
-        vascularMetabolico: 'Vascular / Metabolic',
-        integrativa: 'Integrative'
+        rostroContorno: 'Face & Contouring',
+        calidadPiel: 'Skin Quality',
+        bioestimulacion: 'Biostimulation',
+        tecnologia: 'Technology',
+        corporalVascular: 'Body & Vascular',
+        medicinaIntegrativa: 'Integrative Medicine'
       },
 
       // Treatment objectives

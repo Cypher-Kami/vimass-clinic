@@ -6,7 +6,7 @@ import { useState } from "react"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { ChevronDown, Menu, Syringe, Zap, Sparkles, Heart, Leaf } from "lucide-react"
+import { ChevronDown, Menu, Syringe, Zap, User, Droplets, Dna, Monitor, Activity, Leaf } from "lucide-react"
 import { useLanguage } from "@/components/providers/language-provider"
 import { LanguageToggle } from "@/components/common/language-toggle"
 import { ImagePaths } from "@/lib/image-paths"
@@ -20,15 +20,17 @@ export function MainNav() {
   // Iconos para cada categoría de tratamientos
   const getCategoryIcon = (categoryId: string) => {
     switch (categoryId) {
-      case 'inyectables':
-        return <Syringe className="w-4 h-4" />
-      case 'aparatologia':
-        return <Zap className="w-4 h-4" />
-      case 'facial_dermo':
-        return <Sparkles className="w-4 h-4" />
-      case 'vascular_metabolico':
-        return <Heart className="w-4 h-4" />
-      case 'integrativa':
+      case 'rostro_contorno':
+        return <User className="w-4 h-4" />
+      case 'calidad_piel':
+        return <Droplets className="w-4 h-4" />
+      case 'bioestimulacion':
+        return <Dna className="w-4 h-4" />
+      case 'tecnologia':
+        return <Monitor className="w-4 h-4" />
+      case 'corporal_vascular':
+        return <Activity className="w-4 h-4" />
+      case 'medicina_integrativa':
         return <Leaf className="w-4 h-4" />
       default:
         return null
