@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useMemo, useRef, useState } from "react"
+import { useMemo } from "react"
 import { Section } from "@/components/common/section"
 import { BeforeAfter } from "@/components/common/before-after"
 import { MainNav } from "@/components/layout/main-nav"
@@ -13,7 +13,7 @@ import { titleFont, bodyFont } from "@/app/fonts"
 import { useLanguage } from "@/components/providers/language-provider"
 import { translations } from "@/lib/language"
 import { Button } from "@/components/ui/button"
-import { Phone, MessageCircle, Clock, Syringe, Scissors, Sparkles, Info, ShieldCheck, Share2, ArrowRight, Home } from "lucide-react"
+import { Clock, CheckCircle } from "lucide-react"
 import { TREATMENT_GROUPS } from "@/data/treatments"
 import type { Tratamiento } from "@/lib/types"
 
@@ -35,102 +35,38 @@ function jsonLdMedicalProcedure({ name, description, url }: { name: string; desc
   }
 }
 
-function jsonLdFaq(faq: { q: string; a: string }[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faq.map(item => ({
-      "@type": "Question",
-      "name": item.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.a
-      }
-    }))
-  }
-}
-
-// ---- Component ----
 interface TratamientoClientProps {
   data: Tratamiento
+  slug: string
 }
 
-export function TratamientoClient({ data }: TratamientoClientProps) {
+export function TratamientoClient({ data, slug }: TratamientoClientProps) {
   const { t, language } = useLanguage()
-  const prefersReduced =
-    typeof window !== "undefined" &&
-    window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
-
-  // i18n content (fallback al contenido original)
+  
+  // Contenido en idioma actual
   const content = useMemo(() => {
-    const key = normalizedKey(data.slug)
-    const tr = translations[language]?.home?.treatmentContent?.[key]
-    return {
-      title: tr?.title ?? data.titulo,
-      excerpt: tr?.excerpt ?? data.extracto,
-      bullets: tr?.bullets ?? data.bullets ?? [],
-      faq: tr?.faq ?? data.faq ?? [],
+    const key = normalizedKey(slug)
+    const fallback = { title: data.titulo, excerpt: data.extracto, bullets: data.bullets || [], faq: data.faq || [] }
+    try {
+      return translations[language as "es" | "en"]?.home?.treatmentContent?.[key] || fallback
+    } catch {
+      return fallback
     }
-  }, [data, language])
+  }, [slug, language, data])
 
-  // breadcrumbs (simple)
-  const crumbs = [
-    { href: "/", label: t("nav.inicio") || "Inicio", icon: <Home className="w-4 h-4" /> },
-    { href: "/tratamientos", label: t("nav.tratamientos") || "Tratamientos" },
-    { href: `/tratamientos/${data.slug}`, label: content.title }
-  ]
-
-  // relacionados: del mismo grupo, excepto el actual
+  // Tratamientos relacionados
   const related = useMemo(() => {
-    const group = TREATMENT_GROUPS.find(g => g.items.some(i => i.slug === data.slug))
-    if (!group) return []
-    return group.items
-      .map(i => i.slug)
-      .filter(slug => slug !== data.slug)
-      .slice(0, 4) // 4 relacionados máx
-  }, [data.slug])
-
-  // quick nav sticky (anclas)
-  const sections = [
-    { id: "overview", label: t("common.overview") || "Visión general" },
-    { id: "indications", label: t("common.indications") || "Indicaciones" },
-    { id: "procedure", label: t("common.procedure") || "Procedimiento" },
-    { id: "aftercare", label: t("common.aftercare") || "Cuidados" },
-    { id: "faq", label: t("common.faq") || "FAQ" },
-  ]
-  const [, setActive] = useState("overview")
-  const observerRef = useRef<IntersectionObserver | null>(null)
-
-  useEffect(() => {
-    const opts = { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id) })
-    }, opts)
-    sections.forEach(s => {
-      const el = document.getElementById(s.id)
-      if (el) io.observe(el)
-    })
-    observerRef.current = io
-    return () => io.disconnect()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  // ficha técnica (usa campos de tu tipo si existen; pongo condicionales)
-  const facts = [
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (data as any)?.ficha?.duracion && { icon: <Clock className="w-4 h-4" />, k: "Duración", v: (data as any).ficha.duracion },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (data as any)?.ficha?.anestesia && { icon: <Syringe className="w-4 h-4" />, k: "Anestesia", v: (data as any).ficha.anestesia },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (data as any)?.ficha?.invasividad && { icon: <Scissors className="w-4 h-4" />, k: "Invasividad", v: (data as any).ficha.invasividad },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (data as any)?.ficha?.recuperacion && { icon: <Sparkles className="w-4 h-4" />, k: "Recuperación", v: (data as any).ficha.recuperacion },
-  ].filter(Boolean) as { icon: React.JSX.Element; k: string; v: string }[]
+    const allTreatments = TREATMENT_GROUPS.flatMap(g => g.items.map(t => t.slug))
+    return allTreatments.filter(s => s !== slug).slice(0, 3)
+  }, [slug])
 
   // SEO scripts
-  const faqJsonLd = useMemo(() => jsonLdFaq(content.faq), [content.faq])
   const procJsonLd = useMemo(
-    () => jsonLdMedicalProcedure({ name: content.title, description: content.excerpt, url: typeof window !== "undefined" ? window.location.href : "" }),
+    () => jsonLdMedicalProcedure({ 
+      name: content.title, 
+      description: content.excerpt, 
+      url: typeof window !== "undefined" ? window.location.href : "" 
+    }),
     [content.title, content.excerpt]
   )
 
@@ -140,221 +76,224 @@ export function TratamientoClient({ data }: TratamientoClientProps) {
 
       {/* JSON-LD (SEO) */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(procJsonLd) }} />
-      {content.faq?.length > 0 && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      )}
 
       <main className="min-h-screen">
-        {/* BREADCRUMBS */}
-        <div className="container pt-24 pb-4 text-sm flex flex-wrap items-center gap-2 opacity-80">
-          {crumbs.map((c, i) => (
-            <span key={i} className="flex items-center gap-2">
-              {i === 0 ? <Link className="hover:underline inline-flex items-center gap-1" href={c.href}>{c.icon}{c.label}</Link> :
-                i < crumbs.length - 1 ? <Link className="hover:underline" href={c.href}>{c.label}</Link> :
-                  <span aria-current="page" className="font-medium">{c.label}</span>}
-              {i < crumbs.length - 1 && <span>/</span>}
-            </span>
-          ))}
-        </div>
-
-        {/* HERO dividido + CTA lateral sticky */}
-        <div className="container pb-6 grid lg:grid-cols-[1fr_360px] gap-10">
-          {/* Columna principal */}
-          <div>
-            <section id="overview" className="grid md:grid-cols-2 gap-8 items-center scroll-mt-28">
+        {/* HERO SECTION - Horizontal Layout */}
+        <div className="container pt-24 pb-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Content */}
+            <div className="space-y-6">
               <div>
-                <h1 className="font-title text-4xl md:text-5xl">{content.title}</h1>
-                <p className="mt-4 opacity-80">{content.excerpt}</p>
-
-                {/* Ficha técnica */}
-                {facts.length > 0 && (
-                  <div className="mt-6 grid sm:grid-cols-2 gap-3">
-                    {facts.map((f, i) => (
-                      <div key={i} className="flex items-center gap-3 rounded-xl border p-3 bg-white/70">
-                        <div className="w-8 h-8 rounded-lg bg-accent/15 grid place-items-center">{f.icon}</div>
-                        <div className="text-sm">
-                          <div className="font-medium">{f.k}</div>
-                          <div className="opacity-70">{f.v}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                <h1 className="font-title text-4xl md:text-5xl mb-4">{content.title}</h1>
+                <p className="text-lg text-muted-foreground">{content.excerpt}</p>
               </div>
 
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-soft">
-                <Image
-                  src={data.imagenes.hero}
-                  alt={content.title}
-                  fill
-                  className={["object-cover", prefersReduced ? "" : "transition-transform duration-700 will-change-transform hover:scale-[1.02]"].join(" ")}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 560px"
-                  priority
-                />
-              </div>
-            </section>
-
-            {/* INDICACIONES / BENEFICIOS */}
-            {content.bullets?.length > 0 && (
-              <section id="indications" className="scroll-mt-28">
-                <Section title={t('common.indications') || 'Indicaciones'}>
-                  <ul className="grid sm:grid-cols-2 gap-3">
-                    {content.bullets.map((b, i) => (
-                      <li key={i} className="rounded-xl border p-4 bg-white/70">{b}</li>
-                    ))}
-                  </ul>
-                </Section>
-              </section>
-            )}
-
-            {/* PROCEDIMIENTO + ANTES/DESPUÉS */}
-            <section id="procedure" className="scroll-mt-28">
-              <Section title={t('common.procedure') || 'Procedimiento'}>
-                <div className="space-y-6 opacity-90">
-                  {/* Si tienes texto largo por tratamiento, colócalo aquí */}
-                  {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                  <p>{(data as any)?.contenidoLargo ?? t('common.procedureDefault') ?? 'Valoración médica, diseño del plan y aplicación del tratamiento según indicación.'}</p>
-                </div>
-              </Section>
-            </section>
-
-            {(data.imagenes.before && data.imagenes.after) && (
-              <Section title={t('common.beforeAfter') || 'Antes y después'}>
-                <BeforeAfter before={data.imagenes.before!} after={data.imagenes.after!} />
-              </Section>
-            )}
-
-            {/* CUIDADOS / RECUPERACIÓN */}
-            <section id="aftercare" className="scroll-mt-28">
-              <Section title={t('common.aftercare') || 'Cuidados y recuperación'}>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="rounded-2xl border p-5 bg-white/70">
-                    <div className="font-medium mb-1">{t('common.aftercareDo') || 'Recomendaciones'}</div>
-                    <ul className="list-disc list-inside opacity-80 space-y-1 text-sm">
-                      <li>{t('common.aftercareDo1') || 'Hidratación y fotoprotección diaria.'}</li>
-                      <li>{t('common.aftercareDo2') || 'Evitar calor intenso 24–48h.'}</li>
-                      <li>{t('common.aftercareDo3') || 'Seguir pauta cosmética indicada.'}</li>
-                    </ul>
-                  </div>
-                  <div className="rounded-2xl border p-5 bg-white/70">
-                    <div className="font-medium mb-1">{t('common.aftercareDont') || 'Evitar'}</div>
-                    <ul className="list-disc list-inside opacity-80 space-y-1 text-sm">
-                      <li>{t('common.aftercareDont1') || 'Exposición solar directa las primeras 48–72h.'}</li>
-                      <li>{t('common.aftercareDont2') || 'Sauna/baño turco y ejercicio intenso 24h.'}</li>
-                      <li>{t('common.aftercareDont3') || 'Manipular la zona tratada sin indicación.'}</li>
-                    </ul>
+              {/* Treatment Info Cards - Horizontal */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center gap-3 p-4 bg-card rounded-xl border">
+                  <Clock className="w-5 h-5 text-accent" />
+                  <div>
+                    <p className="font-medium text-sm">Duración</p>
+                    <p className="text-muted-foreground text-sm">A partir de 7 noches</p>
                   </div>
                 </div>
-              </Section>
-            </section>
-
-            {/* FAQ */}
-            {content.faq?.length > 0 && (
-              <section id="faq" className="scroll-mt-28">
-                <Section title={t('common.faq') || 'Preguntas frecuentes'}>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {content.faq.map((f, i) => (
-                      <div key={i} className="rounded-2xl border p-5 bg-white/70">
-                        <div className="font-medium mb-1">{f.q}</div>
-                        <p className="opacity-80">{f.a}</p>
-                      </div>
-                    ))}
+                <div className="flex items-center gap-3 p-4 bg-card rounded-xl border">
+                  <CheckCircle className="w-5 h-5 text-accent" />
+                  <div>
+                    <p className="font-medium text-sm">Desde</p>
+                    <p className="text-muted-foreground text-sm">4.500€ / USD $5.200</p>
                   </div>
-                </Section>
-              </section>
-            )}
-
-            {/* Aviso clínico */}
-            <div className="container pb-10">
-              <div className="flex items-start gap-3 rounded-2xl border p-4 bg-amber-50/60 text-amber-900">
-                <Info className="w-5 h-5 mt-0.5" />
-                <p className="text-sm">
-                  {t('common.medDisclaimer') ||
-                    "La información mostrada es general y no sustituye la valoración médica. Los resultados pueden variar según cada paciente."}
-                </p>
+                </div>
               </div>
+
+              {/* CTA Button */}
+              <Button size="lg" className="w-full">
+                Reservar programa
+              </Button>
             </div>
 
-            {/* Tratamientos relacionados */}
-            {related.length > 0 && (
-              <Section title={t('common.related') || 'También te puede interesar'}>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {related.map(slug => (
-                    <Link
-                      key={slug}
-                      href={`/tratamientos/${slug}`}
-                      className="rounded-2xl border p-4 hover:shadow-soft transition-shadow flex items-center justify-between"
-                    >
-                      <span className="font-medium capitalize">{slug.replace(/-/g, " ")}</span>
-                      <ArrowRight className="w-4 h-4 opacity-60" />
-                    </Link>
-                  ))}
-                </div>
-              </Section>
-            )}
+            {/* Right: Image */}
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src={data.imagenes.hero}
+                alt={content.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
           </div>
+        </div>
 
-          {/* Sidebar sticky */}
-          <aside aria-label="Reserva y acciones" className="relative">
-            <div className="lg:sticky lg:top-24 space-y-4">
-              {/* Card de reserva */}
-              <div className="rounded-2xl border p-5 bg-white/80 backdrop-blur">
-                <div className="flex items-center gap-2 mb-3">
-                  <ShieldCheck className="w-5 h-5 text-accent" />
-                  <div className="font-medium">{t('common.medicalAssessment') || 'Valoración médica'}</div>
-                </div>
-                <p className="text-sm opacity-80 mb-4">
-                  {t('common.bookingCopy') || 'Reserva una consulta y diseñaremos tu plan personalizado.'}
+        {/* DESCRIPTION SECTION */}
+        <Section>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-title text-3xl mb-6">{content.title}</h2>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Este programa está diseñado para ofrecer resultados tangibles en la detoxificación y reactivación metabólica. 
+              Mediante estrategias personalizadas, incluyendo un plan de nutrición antiinflamatoria, se promueve una depuración 
+              efectiva y sostenible, revitalizando el metabolismo y estableciendo las bases para alcanzar y mantener una salud 
+              óptima a largo plazo.
+            </p>
+          </div>
+        </Section>
+
+        {/* OBJECTIVES & GUEST PROFILE - Horizontal */}
+        <Section>
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Objectives */}
+            <div>
+              <h3 className="font-title text-2xl mb-6">Objetivos</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Potenciar el proceso de depuración del organismo mediante la fusión de dos importantes enfoques</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Analizar diversos indicadores de metabolismo y detoxificación</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Promover la actividad física como componente esencial</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Guest Profile */}
+            <div>
+              <h3 className="font-title text-2xl mb-6">Perfil del Huésped</h3>
+              <div className="space-y-4">
+                <p className="font-medium">¿A quién va dirigido?</p>
+                <p className="text-muted-foreground">
+                  A personas cuyos hábitos son inadecuados como el consumo excesivo de café, bebidas con alcohol, 
+                  tabaco, medicamentos y/o mala alimentación, entre otros.
                 </p>
-                <div className="grid grid-cols-2 gap-2">
-                  {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                  {(data as any)?.contact?.whatsapp && (
-                    <Button asChild className="rounded-xl">
-                      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                      <a href={`https://wa.me/${(data as any).contact.whatsapp}`} target="_blank" rel="noopener noreferrer">
-                        <MessageCircle className="w-4 h-4 mr-2" /> WhatsApp
-                      </a>
-                    </Button>
-                  )}
-                  {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                  {(data as any)?.contact?.telefono && (
-                    <Button asChild variant="outline" className="rounded-xl">
-                      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                      <a href={`tel:${(data as any).contact.telefono}`}>
-                        <Phone className="w-4 h-4 mr-2" /> Llamar
-                      </a>
-                    </Button>
-                  )}
+                <div className="grid grid-cols-2 gap-3 mt-4">
+                  <div className="p-3 bg-accent/10 rounded-lg text-center text-sm">Mejorar apariencia</div>
+                  <div className="p-3 bg-accent/10 rounded-lg text-center text-sm">Mejorar estado de salud</div>
+                  <div className="p-3 bg-accent/10 rounded-lg text-center text-sm">Lograr peso óptimo</div>
+                  <div className="p-3 bg-accent/10 rounded-lg text-center text-sm">Detoxificar organismo</div>
                 </div>
-              </div>
-
-              {/* Compartir */}
-              <div className="rounded-2xl border p-5 bg-white/80 backdrop-blur">
-                <div className="flex items-center gap-2 mb-3">
-                  <Share2 className="w-5 h-5 text-accent" />
-                  <div className="font-medium">{t('common.share') || 'Compartir'}</div>
-                </div>
-                <div className="flex gap-2">
-                  <Button variant="ghost" size="sm" className="rounded-xl"
-                    onClick={() => navigator.share?.({ title: content.title, text: content.excerpt, url: window.location.href })}>
-                    {t('common.shareNative') || 'Nativo'}
-                  </Button>
-                  <Button variant="ghost" size="sm" className="rounded-xl"
-                    onClick={() => navigator.clipboard.writeText(window.location.href)}>
-                    {t('common.copyLink') || 'Copiar enlace'}
-                  </Button>
-                </div>
-                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                {(data as any)?.lastReviewed && (
-                  <p className="mt-4 text-xs opacity-70">
-                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                    {t('common.lastReviewed') || 'Última revisión'}: {(data as any).lastReviewed}
-                  </p>
-                )}
               </div>
             </div>
-          </aside>
-        </div>
+          </div>
+        </Section>
+
+        {/* METHODOLOGY */}
+        <Section>
+          <div className="max-w-4xl mx-auto">
+            <h3 className="font-title text-2xl mb-6">Nuestra metodología</h3>
+            <p className="text-muted-foreground mb-6">
+              A través de la supervisión y asesoría de nuestro equipo de profesionales, se busca un acercamiento a nuevos hábitos saludables, a través de:
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-6 bg-card rounded-xl border">
+                <h4 className="font-medium mb-2">Plan personalizado</h4>
+                <p className="text-sm text-muted-foreground">Un plan de alimentación y de salud personalizado</p>
+              </div>
+              <div className="p-6 bg-card rounded-xl border">
+                <h4 className="font-medium mb-2">Salud holística</h4>
+                <p className="text-sm text-muted-foreground">Tratamientos tecnológicos enfocados a la reducción de peso</p>
+              </div>
+              <div className="p-6 bg-card rounded-xl border">
+                <h4 className="font-medium mb-2">Control y seguimiento</h4>
+                <p className="text-sm text-muted-foreground">Control del peso y composición corporal</p>
+              </div>
+              <div className="p-6 bg-card rounded-xl border">
+                <h4 className="font-medium mb-2">Estilo de vida</h4>
+                <p className="text-sm text-muted-foreground">Recomendaciones de estilo de vida saludable</p>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* COMPARE PROGRAMS */}
+        <Section>
+          <div className="max-w-6xl mx-auto">
+            <h3 className="font-title text-2xl mb-8 text-center">Compare los programas</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Accomplish */}
+              <div className="p-6 bg-card rounded-xl border text-center">
+                <h4 className="font-title text-xl mb-2">Accomplish</h4>
+                <p className="text-muted-foreground mb-4">7 noches</p>
+                <div className="mb-6">
+                  <p className="text-2xl font-bold">4.500 €</p>
+                  <p className="text-sm text-muted-foreground">5,200 USD*</p>
+                  <p className="text-xs text-muted-foreground">*Estancia no incluida</p>
+                </div>
+                <Button className="w-full">Reservar</Button>
+              </div>
+
+              {/* Advanced Progress */}
+              <div className="p-6 bg-card rounded-xl border text-center">
+                <h4 className="font-title text-xl mb-2">Advanced Progress</h4>
+                <p className="text-muted-foreground mb-4">10 noches</p>
+                <div className="mb-6">
+                  <p className="text-2xl font-bold">6.000 €</p>
+                  <p className="text-sm text-muted-foreground">7,000 USD*</p>
+                  <p className="text-xs text-muted-foreground">*Estancia no incluida</p>
+                </div>
+                <Button className="w-full">Reservar</Button>
+              </div>
+
+              {/* Total Renewal */}
+              <div className="p-6 bg-accent/10 rounded-xl border border-accent text-center relative">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent text-white px-3 py-1 rounded-full text-xs">
+                  Recomendado
+                </div>
+                <h4 className="font-title text-xl mb-2">Total Renewal</h4>
+                <p className="text-muted-foreground mb-4">14 noches</p>
+                <div className="mb-6">
+                  <p className="text-2xl font-bold">8.000 €</p>
+                  <p className="text-sm text-muted-foreground">9,400 USD*</p>
+                  <p className="text-xs text-muted-foreground">*Estancia no incluida</p>
+                </div>
+                <Button className="w-full">Reservar</Button>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* BEFORE/AFTER */}
+        {(data.imagenes.before && data.imagenes.after) && (
+          <Section title="Antes y después">
+            <div className="max-w-4xl mx-auto">
+              <BeforeAfter before={data.imagenes.before!} after={data.imagenes.after!} />
+            </div>
+          </Section>
+        )}
+
+        {/* RELATED TREATMENTS */}
+        {related.length > 0 && (
+          <Section title="También te puede interesar">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {related.map(relatedSlug => (
+                <Link
+                  key={relatedSlug}
+                  href={`/tratamientos/${relatedSlug}`}
+                  className="p-6 rounded-xl border hover:shadow-lg transition-shadow text-center"
+                >
+                  <h4 className="font-medium capitalize">{relatedSlug.replace(/-/g, " ")}</h4>
+                </Link>
+              ))}
+            </div>
+          </Section>
+        )}
+
+        {/* FINAL CTA */}
+        <Section>
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="font-title text-2xl mb-4">¿Listo para comenzar?</h3>
+            <p className="text-muted-foreground mb-6">
+              Reserva tu consulta y diseñaremos tu plan personalizado
+            </p>
+            <Button size="lg">
+              Reservar consulta
+            </Button>
+          </div>
+        </Section>
       </main>
 
       <Footer />

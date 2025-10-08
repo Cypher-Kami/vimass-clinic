@@ -31,7 +31,7 @@ export const translations = {
       
       // Secciones principales
       bestVersion: {
-        title: 'Tu mejor versión',
+        title: 'Transformando Vidas',
         description: 'Realzamos tu belleza natural con técnicas avanzadas y un enfoque personalizado para cada paciente.'
       },
       starTreatment: {
@@ -39,7 +39,46 @@ export const translations = {
         description: 'Medicina integrativa que combina enfoques holísticos con técnicas avanzadas para resultados naturales y duraderos.'
       },
       draCelina: 'Dra. Celina Suárez',
-      draCelinaDesc: 'Más de 20 años transformando vidas a través de la medicina preventiva y regenerativa.',
+      draCelinaDesc: 'Extensa trayectoria transformando vidas a través de la medicina preventiva y regenerativa.',
+      
+      // Nuevas secciones
+      clinicValues: {
+        title: 'Valores de la Clínica',
+        excellence: {
+          title: 'Excelencia Médica',
+          description: 'Compromiso con los más altos estándares en medicina preventiva y regenerativa.'
+        },
+        personalization: {
+          title: 'Personalización',
+          description: 'Cada tratamiento es único, diseñado específicamente para las necesidades de cada paciente.'
+        },
+        innovation: {
+          title: 'Innovación',
+          description: 'Tecnología de vanguardia y técnicas avanzadas para resultados óptimos.'
+        },
+        integrity: {
+          title: 'Integridad',
+          description: 'Transparencia y honestidad en cada consulta y procedimiento.'
+        }
+      },
+      
+      facilities: {
+        title: 'Nuestras Instalaciones',
+        description: 'Espacios diseñados para tu bienestar y tranquilidad, equipados con la más avanzada tecnología médica.',
+        consultation: 'Consultas privadas',
+        treatment: 'Salas de tratamiento',
+        technology: 'Tecnología avanzada',
+        comfort: 'Ambiente relajante'
+      },
+      
+      philosophy: {
+        title: 'Nuestra Filosofía',
+        description: 'Creemos en una medicina integral que trata a la persona como un todo, abordando no solo los síntomas sino también las causas raíz para lograr una salud y bienestar óptimos.',
+        holistic: 'Enfoque holístico',
+        prevention: 'Medicina preventiva',
+        regeneration: 'Regeneración natural',
+        wellness: 'Bienestar integral'
+      },
       
       // Tratamientos
       treatmentsTitle: 'Nuestros tratamientos',
@@ -420,9 +459,9 @@ export const translations = {
       },
       
       // Equipo
-      teamTitle: 'Detrás de VIMASS Clinic',
+      teamTitle: 'Esencia de VIMASS Clinic',
       teamSubtitle: 'CEO & Fundadora • Directora Médica',
-      teamDescription1: 'Con más de dos décadas transformando vidas a través de la medicina preventiva y regenerativa. Reconocida internacionalmente como experta en longevidad saludable y medicina de precisión.',
+      teamDescription1: 'Con extensa trayectoria transformando vidas a través de la medicina preventiva y regenerativa. Reconocida internacionalmente como experta en longevidad saludable y medicina de precisión.',
       teamDescription2: 'Consultora senior en SHA Wellness Clinic, Centro Médico Teknon y Clínica Planas. Su enfoque integra medicina funcional, protocolos personalizados y las tecnologías más avanzadas.',
       teamDescription3: 'Más de 3,500 pacientes han confiado en su visión holística que va más allá de la estética: busca el bienestar integral y la optimización de la salud desde adentro hacia afuera.',
       teamCta: 'Conoce más sobre nuestro equipo',
@@ -467,7 +506,7 @@ export const translations = {
       // Ubicación
       locationTitle: '¿Dónde encontrarnos?',
       locationSubtitle: 'Nuestra ubicación',
-      locationDescription: 'En el corazón de Barcelona, fácil acceso en transporte público',
+      locationDescription: 'Prestigiosa localización en el corazón de Barcelona',
       
       // Contacto
       contactTitle: 'Agenda tu cita',
@@ -507,7 +546,7 @@ export const translations = {
       contact: {
         phone: 'Teléfono',
         whatsapp: 'WhatsApp',
-        whatsappText: '¡Escríbenos!',
+        whatsappText: 'Escríbenos',
         whatsappAction: 'Contactar por WhatsApp',
         email: 'Email',
         address: 'Dirección',
@@ -600,7 +639,7 @@ export const translations = {
         subtitle: 'Experiencia, innovación y dedicación al servicio de tu bienestar integral',
         draCelinaTitle: 'Dra. Celina Suárez',
         draCelinaSubtitle: 'Especialista en Medicina Preventiva y Regenerativa',
-        draCelinaDescription: 'Más de 20 años de experiencia en medicina preventiva y regenerativa. Pionera en tratamientos integrales que combinan la medicina tradicional con técnicas de vanguardia.',
+        draCelinaDescription: 'Extensa trayectoria en medicina preventiva y regenerativa. Pionera en tratamientos integrales que combinan la medicina tradicional con técnicas de vanguardia.',
         draCelinaEducation: 'Formación Médica',
         draCelinaEducationList: 'Licenciatura en Medicina - Universidad de Barcelona\nEspecialidad en Medicina Preventiva\nMáster en Medicina Regenerativa\nFormación Avanzada en Medicina Funcional',
         draCelinaExperience: 'Experiencia Profesional',
@@ -740,7 +779,7 @@ export const translations = {
       
       // Main sections
       bestVersion: {
-        title: 'Your best version',
+        title: 'Transforming Lives',
         description: 'We enhance your natural beauty with advanced techniques and a personalized approach for each patient.'
       },
       starTreatment: {
@@ -748,7 +787,46 @@ export const translations = {
         description: 'Integrative medicine that combines holistic approaches with advanced techniques for natural and lasting results.'
       },
       draCelina: 'Dr. Celina Suárez',
-      draCelinaDesc: 'Over 20 years transforming lives through preventive and regenerative medicine.',
+      draCelinaDesc: 'Extensive experience transforming lives through preventive and regenerative medicine.',
+      
+      // New sections
+      clinicValues: {
+        title: 'Clinic Values',
+        excellence: {
+          title: 'Medical Excellence',
+          description: 'Commitment to the highest standards in preventive and regenerative medicine.'
+        },
+        personalization: {
+          title: 'Personalization',
+          description: 'Each treatment is unique, specifically designed for each patient\'s needs.'
+        },
+        innovation: {
+          title: 'Innovation',
+          description: 'Cutting-edge technology and advanced techniques for optimal results.'
+        },
+        integrity: {
+          title: 'Integrity',
+          description: 'Transparency and honesty in every consultation and procedure.'
+        }
+      },
+      
+      facilities: {
+        title: 'Our Facilities',
+        description: 'Spaces designed for your wellbeing and tranquility, equipped with the most advanced medical technology.',
+        consultation: 'Private consultations',
+        treatment: 'Treatment rooms',
+        technology: 'Advanced technology',
+        comfort: 'Relaxing environment'
+      },
+      
+      philosophy: {
+        title: 'Our Philosophy',
+        description: 'We believe in integral medicine that treats the person as a whole, addressing not only symptoms but also root causes to achieve optimal health and wellbeing.',
+        holistic: 'Holistic approach',
+        prevention: 'Preventive medicine',
+        regeneration: 'Natural regeneration',
+        wellness: 'Integral wellness'
+      },
       
       // Treatments
       treatmentsTitle: 'Our treatments',
@@ -1129,9 +1207,9 @@ export const translations = {
       },
       
       // Team
-      teamTitle: 'Behind VIMASS Clinic',
+      teamTitle: 'Essence of VIMASS Clinic',
       teamSubtitle: 'CEO & Founder • Medical Director',
-      teamDescription1: 'With over two decades transforming lives through preventive and regenerative medicine. Internationally recognized as an expert in healthy longevity and precision medicine.',
+      teamDescription1: 'With extensive experience transforming lives through preventive and regenerative medicine. Internationally recognized as an expert in healthy longevity and precision medicine.',
       teamDescription2: 'Senior consultant at SHA Wellness Clinic, Centro Médico Teknon and Clínica Planas. Her approach integrates functional medicine, personalized protocols and the most advanced technologies.',
       teamDescription3: 'More than 3,500 patients have trusted her holistic vision that goes beyond aesthetics: seeking comprehensive wellness and health optimization from the inside out.',
       teamCta: 'Learn more about our team',
@@ -1176,7 +1254,7 @@ export const translations = {
       // Location
       locationTitle: 'Where to find us?',
       locationSubtitle: 'Our location',
-      locationDescription: 'In the heart of Barcelona, easy access by public transport',
+      locationDescription: 'Prestigious location in the heart of Barcelona',
       
       // Contact
       contactTitle: 'Schedule your appointment',
@@ -1216,7 +1294,7 @@ export const translations = {
       contact: {
         phone: 'Phone',
         whatsapp: 'WhatsApp',
-        whatsappText: 'Write to us!',
+        whatsappText: 'Write to us',
         whatsappAction: 'Contact via WhatsApp',
         email: 'Email',
         address: 'Address',

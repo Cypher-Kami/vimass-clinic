@@ -6,8 +6,16 @@ import { useLanguage } from "@/components/providers/language-provider"
 import { ImagePaths } from "@/lib/image-paths"
 
 const letter = {
-  hidden: { y: "0.8em", opacity: 0 },
-  visible: { y: 0, opacity: 1 },
+  hidden: { 
+    opacity: 0,
+    y: 20,
+    scale: 0.95
+  },
+  visible: { 
+    opacity: 1,
+    y: 0,
+    scale: 1
+  },
 }
 
 export default function HeroClinic() {
@@ -40,14 +48,14 @@ export default function HeroClinic() {
 
   return (
     <section className="relative h-[calc(100vh)] min-h-[640px] overflow-hidden bg-black">
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <motion.div
           key={index}
           className="absolute inset-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
+          transition={{ duration: 2, ease: "easeInOut" }}
         >
           <video 
             src={slides[index].video} 
@@ -72,7 +80,12 @@ export default function HeroClinic() {
                 initial="hidden"
                 animate="visible"
                 variants={letter}
-                transition={{ delay: 0.06 * i, duration: 0.7, ease: "easeOut" }}
+                transition={{ 
+                  delay: 0.8,
+                  duration: 2,
+                  ease: [0.25, 0.1, 0.25, 1],
+                  type: "tween"
+                }}
                 style={{ display: "inline-block", whiteSpace: "pre" }}
               >
                 {ch}

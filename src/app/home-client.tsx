@@ -3,19 +3,32 @@
 import Image from "next/image"
 import Link from "next/link"
 import HeroClinic from "@/components/hero/HeroClinic"
-import CategoryImageCarousel from "@/components/home/CategoryImageCarousel"
 import { Section } from "@/components/common/section"
 import { AnimatedCard } from "@/components/common/animated-card"
 import { Reviews } from "@/components/common/reviews"
 import { StatsSection } from "@/components/common/stats-section"
-import { ReserveDialog } from "@/components/common/reserve-dialog"
 import ContactForm from "@/components/common/contact-form"
+import ClinicValuesMinimal from "@/components/home/ClinicValuesMinimal"
+import PhilosophyVisual from "@/components/home/PhilosophyVisual"
+import EvidenceStrip from "@/components/home/EvidenceStrip"
+import WhyChoose from "@/components/home/WhyChoose"
+import PhilosophySteps from "@/components/home/PhilosophySteps"
 import { MainNav } from "@/components/layout/main-nav"
 import { Footer } from "@/components/layout/footer"
 import { CTAFloat } from "@/components/layout/cta-float"
 import { WhatsAppFloat } from "@/components/layout/whatsapp-float"
 import { Toaster } from "sonner"
-import { Sparkles, Star, CheckCircle, MapPin, Clock, Stethoscope, Calendar } from "lucide-react"
+import { 
+  Sparkles, 
+  Star, 
+  CheckCircle, 
+  MapPin, 
+  Clock, 
+  Stethoscope, 
+  Building,
+  Lightbulb,
+  Leaf
+} from "lucide-react"
 import { useLanguage } from "@/components/providers/language-provider"
 import { ImagePaths } from "@/lib/image-paths"
 import type { Tratamiento, Review } from "@/lib/types"
@@ -99,8 +112,58 @@ export function HomeClient({ clinica, reseñas, destacados }: HomeClientProps) {
           </div>
         </div>
 
-        {/* CATEGORÍAS (slider con imágenes) */}
-        <CategoryImageCarousel />
+        {/* Estadísticas con contadores animados */}
+        <StatsSection />
+
+        {/* ¿POR QUÉ ELEGIR VIMASS CLINIC? */}
+        <WhyChoose />
+        
+        {/* BANDA DE EVIDENCIAS */}
+        <div className="container">
+          <EvidenceStrip />
+        </div>
+
+        {/* INSTALACIONES */}
+        <Section title={t('home.facilities.title')}>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {t('home.facilities.description')}
+              </p>
+              {/* Pictogramas simplificados */}
+              <div className="grid grid-cols-4 gap-3">
+                <div className="grid place-items-center rounded-xl border py-6 px-6 bg-white/70">
+                  <Building className="h-6 w-6 text-accent mb-4" />
+                  <span className="text-xs font-medium text-center w-full -mt-1">{t('home.facilities.consultation')}</span>
+                </div>
+                <div className="grid place-items-center rounded-xl border py-6 px-6 bg-white/70">
+                  <Stethoscope className="h-6 w-6 text-accent mb-4" />
+                  <span className="text-xs font-medium text-center w-full -mt-1">{t('home.facilities.treatment')}</span>
+                </div>
+                <div className="grid place-items-center rounded-xl border py-6 px-6 bg-white/70">
+                  <Lightbulb className="h-6 w-6 text-accent mb-4" />
+                  <span className="text-xs font-medium text-center w-full -mt-1">{t('home.facilities.technology')}</span>
+                </div>
+                <div className="grid place-items-center rounded-xl border py-6 px-6 bg-white/70">
+                  <Leaf className="h-6 w-6 text-accent mb-4" />
+                  <span className="text-xs font-medium text-center w-full -mt-1">{t('home.facilities.comfort')}</span>
+                </div>
+              </div>
+            </div>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+              <Image 
+                src={ImagePaths.clinica.interior.mostrador} 
+                alt="Instalaciones VIMASS Clinic" 
+                fill 
+                className="object-cover" 
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        </Section>
+
+        {/* FILOSOFÍA - PASOS */}
+        <PhilosophySteps />
 
         {/* CTA Ver todos los tratamientos */}
         <div className="container text-center pt-2 pb-8">
@@ -217,9 +280,6 @@ export function HomeClient({ clinica, reseñas, destacados }: HomeClientProps) {
           <Reviews />
         </Section>
 
-        {/* Estadísticas con contadores animados */}
-        <StatsSection />
-
         {/* Formulario de contacto */}
         <section className="container py-16">
           <h2 className="font-title text-3xl md:text-4xl mb-12 text-center">{t('home.contactTitle')}</h2>
@@ -235,17 +295,6 @@ export function HomeClient({ clinica, reseñas, destacados }: HomeClientProps) {
               </div>
               
               <ContactForm />
-              
-              <div className="p-6 bg-accent/5 rounded-xl border border-accent/20">
-                <h4 className="font-semibold mb-2 flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-accent" />
-                  {t('home.form.callPreference')}
-                </h4>
-                <p className="text-muted-foreground mb-4 text-sm">
-                  {t('home.form.callDescription')}
-                </p>
-                <ReserveDialog />
-              </div>
             </div>
 
             {/* Map Section */}

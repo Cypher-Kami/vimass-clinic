@@ -11,5 +11,5 @@ export default async function TratamientoPage({ params }: { params: Promise<{ sl
   const data = getTratamiento(slug)
   if (!data) return notFound()
 
-  return <TratamientoClient data={data} />
+  return <TratamientoClient data={data} slug={slug} />
 }

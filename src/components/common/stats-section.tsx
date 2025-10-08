@@ -63,7 +63,7 @@ export function StatsSection() {
                   <AnimatedCounter 
                     end={stat.number} 
                     suffix={stat.suffix}
-                    duration={2.5}
+                    duration={9}
                   />
                   <h3 className="font-semibold text-lg text-foreground">
                     {stat.label}

@@ -12,44 +12,44 @@ export function Reviews() {
   const reviews = language === 'es' 
     ? [
         {
-          name: 'Dr. Joan Venceslao',
+          name: 'Dr. Joan',
           text: 'Tuve la suerte de conocer a la Dra. Celina Suárez en un momento crítico en la fase muy inicial del COVID a principios del 2020. Sin conocernos y por contacto telefónico me atendió y siguió durante mis dos meses de confinamiento y convalecencia. Su profesionalidad y sobretodo su empatía y factor humano me ayudaron mucho. Posteriormente, volvió a demostrarlo en una situación preocupante con mi hijo, que afortunadamente no pasó a más, pero que la Dra. nos volvió a ayudar. Un placer y un honor poder seguir contando con ella si por cualquier motivo la debamos necesitar.',
           role: 'Médico Colega'
         },
         {
-          name: 'Claudia Valsells',
+          name: 'Claudia',
           text: 'La Dra Celina Suárez es una gran profesional que hace dos años que es mi médico de medicina interna y ha sido de gran ayuda en todos los aspectos. Encantada de poder contar con su atención médica.',
           role: 'Paciente'
         },
         {
-          name: 'Elodia Kurt Van',
+          name: 'Elodia',
           text: 'En cuanto a la Doctora Celina solo puedo decirle que ojalá hubiese más profesionales como ella. Ayudó a mi marido y nadie sabía lo que le ocurría. Ella encontró el problema y la solución. Educada y tan amable siempre. Bellísima persona y excepcional profesional.',
           role: 'Paciente'
         },
         {
-          name: 'Claudia Contel',
+          name: 'Claudia',
           text: 'Celina aparte de ser compañera la considero amiga y trabajar con ella es siempre un placer. Es una gran profesional que se implica con sus pacientes y siempre busca la excelencia. Sin duda una gran doctora que tiene toda mi confianza.',
           role: 'Médico Colega'
         }
       ]
     : [
         {
-          name: 'Dr. Joan Venceslao',
+          name: 'Dr. Joan',
           text: 'I was fortunate to meet Dr. Celina Suárez at a critical moment in the very early phase of COVID in early 2020. Without knowing each other and by telephone contact, she attended to me and followed me during my two months of confinement and convalescence. Her professionalism and especially her empathy and human factor helped me a lot. Later, she demonstrated it again in a worrying situation with my son, which fortunately did not go further, but Dr. Celina helped us again. A pleasure and an honor to continue counting on her if for any reason we should need her.',
           role: 'Medical Colleague'
         },
         {
-          name: 'Claudia Valsells',
+          name: 'Claudia',
           text: 'Dr. Celina Suárez is a great professional who has been my internal medicine doctor for two years and has been of great help in all aspects. Delighted to be able to count on her medical attention.',
           role: 'Patient'
         },
         {
-          name: 'Elodia Kurt Van',
+          name: 'Elodia',
           text: 'Regarding Dr. Celina, I can only say that I wish there were more professionals like her. She helped my husband and no one knew what was wrong with him. She found the problem and the solution. Polite and so kind always. Beautiful person and exceptional professional.',
           role: 'Patient'
         },
         {
-          name: 'Claudia Contel',
+          name: 'Claudia',
           text: 'Celina, apart from being a colleague, I consider her a friend and working with her is always a pleasure. She is a great professional who gets involved with her patients and always seeks excellence. Without a doubt, a great doctor who has all my confidence.',
           role: 'Medical Colleague'
         }
