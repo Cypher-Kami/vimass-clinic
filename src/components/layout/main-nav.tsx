@@ -6,7 +6,7 @@ import { useState } from "react"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { ChevronDown, Menu, Syringe, Zap, User, Droplets, Dna, Monitor, Activity, Leaf } from "lucide-react"
+import { ChevronDown, Menu, Syringe, Zap, User, Droplets, Dna, Monitor, Activity, Leaf, ArrowRight } from "lucide-react"
 import { useLanguage } from "@/components/providers/language-provider"
 import { LanguageToggle } from "@/components/common/language-toggle"
 import { ImagePaths } from "@/lib/image-paths"
@@ -102,17 +102,17 @@ export function MainNav() {
               >
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   {TREATMENT_GROUPS.map(group => (
-                    <div key={group.id}>
-                      <div className="flex items-center gap-2 text-sm font-semibold text-accent uppercase tracking-wide mb-3 pb-1 border-b border-accent/20">
+                    <div key={group.id} className="flex flex-col">
+                      <div className="flex items-center justify-center gap-2 text-sm font-semibold text-accent uppercase tracking-wide mb-3 pb-1 border-b border-accent/20 min-h-[2rem]">
                         {getCategoryIcon(group.id)}
                         {t(group.titleKey)}
                       </div>
-                      <ul className="space-y-1">
+                      <ul className="space-y-1 flex-1">
                         {group.items.map(item => (
                           <li key={item.slug}>
                             <Link
                               href={item.href}
-                              className={`block px-3 py-2 text-sm transition-colors font-semibold ${
+                              className={`block px-3 py-2 text-sm text-center transition-colors font-semibold ${
                                 pathname === item.href
                                   ? 'text-foreground bg-accent'
                                   : 'text-foreground hover:bg-accent'
@@ -127,8 +127,9 @@ export function MainNav() {
                   ))}
                 </div>
                 <div className="pt-3 text-right">
-                  <Link href="/tratamientos" className="text-sm underline underline-offset-4 hover:text-accent">
+                  <Link href="/tratamientos" className="text-sm underline underline-offset-4 hover:text-accent flex items-center justify-end gap-1">
                     {t('treatments.viewAll')}
+                    <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
               </div>

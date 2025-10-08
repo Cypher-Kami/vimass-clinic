@@ -11,5 +11,7 @@ export default async function TratamientoPage({ params }: { params: Promise<{ sl
   const data = getTratamiento(slug)
   if (!data) return notFound()
 
-  return <TratamientoClient data={data} slug={slug} />
+  const url = `https://vimass-clinic.com/tratamientos/${slug}`
+
+  return <TratamientoClient data={data} slug={slug} url={url} />
 }
